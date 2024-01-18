@@ -35,7 +35,8 @@ const staticPath = path.resolve(__dirname, '../public')
 app.use(express.static(staticPath));
 
 app.get('/', (req, res) => {
-  res.send(`Connected to ${PORT}`)
+  res.send(`<pre>Connected to port ${PORT}
+${Date()}</pre>`)
 })
 
 // Add a WebSocket that uses the ws:// protocol and can keep a
