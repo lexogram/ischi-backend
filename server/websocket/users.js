@@ -161,6 +161,8 @@ const treatSystemMessage = ({ subject, sender_id, content }) => {
     case "confirmation":
       console.log(sender_id, content)
       return true // message was handled
+    case "get_existing_room":
+      return getExistingRoom(sender_id, content)
     case "set_user_name":
       return setName(sender_id, content)
   }
@@ -209,6 +211,23 @@ const reconnectUser = (user_id, temp_id, userData, content) => {
   delete users[temp_id]
 
   const { room, create_room } = content
+}
+
+
+const getExistingRoom = (sender_id, room) => {
+  // Accept room case-insensitively but return original name
+  const content = Object.keys(rooms).find( roomName => (
+    roomName.toLowerCase() === room.toLowerCase()
+  )) // original name of room or undefined
+
+  const message = {
+    recipient_id: sender_id,
+    sender_id: "system",
+    subject: "existing_room",
+    content
+  }
+
+  sendMessageToUser(message)
 }
 
 
