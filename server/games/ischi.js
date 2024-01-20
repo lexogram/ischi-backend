@@ -9,7 +9,7 @@ const {
   addMessageListener,
   removeMessageListener,
   sendMessageToUser,
-  sendMessageToGroup,
+  sendMessageToRoom,
   getUserNameFromId
 } = require("../websocket/users");
 const publicPath = "../../public/"
@@ -20,7 +20,7 @@ const { shuffle } = require('../utilities/shuffle')
 
 
 const ischiData = {}
-/*  { <group_name>: {
+/*  { <room>: {
         votes: {
           <pack_name>: [ <user_id>, ... ],
           ...
@@ -35,8 +35,8 @@ const ischiData = {}
 
 const treatGameMessages = (messageData) => {
   switch (messageData.subject) {
-    // case "join_group": // called directly from treatMessage
-    //   return joinGroup(messageData)
+    // case "set_user_name": // called directly from treatMessage
+    //   return setUserNameAndRoom(messageData)
     case "vote":
       return treatVote(messageData)
     case "select_pack":
@@ -51,11 +51,11 @@ const treatGameMessages = (messageData) => {
 }
 
 
-const joinGroup = ({ sender_id, content }) => {
-  const { group_name } = content
-  const groupData = ischiData[group_name]
-                || (ischiData[group_name] = {})
-  const { votes, gameData } = groupData
+const setUserNameAndRoom = ({ sender_id, content }) => {
+  const { room } = content
+  const roomData = ischiData[room]
+                || (ischiData[room] = {})
+  const { votes, gameData } = roomData
 
   if (votes) {
     const message = {
@@ -93,13 +93,13 @@ const anonymizeVotes = votes => {
 
 
 const treatVote = ({ sender_id, content }) => {
-  const { group_name, pack_name } = content
+  const { room, pack_name } = content
 
-  // Find the votes cast by members of group group_name
-  const groupData = ischiData[group_name]
-                || (ischiData[group_name] = {})
-  const votes     = groupData["votes"]
-                || (groupData["votes"] = {})
+  // Find the votes cast by members of room room
+  const roomData = ischiData[room]
+                || (ischiData[room] = {})
+  const votes     = roomData["votes"]
+                || (roomData["votes"] = {})
 
   // Remove any existing votes cast by sender_id
   Object.values(votes).some( votes => {
@@ -117,15 +117,15 @@ const treatVote = ({ sender_id, content }) => {
 
   content = anonymizeVotes(votes)
 
-  // Tell all the members of the group about it
+  // Tell all the members of the room about it
   const message = {
     sender_id: GAME,
-    recipient_id: group_name,
+    recipient_id: room,
     subject: "votes",
     content
   }
 
-  sendMessageToGroup(message)
+  sendMessageToRoom(message)
 
   return true // message was handled
 }
@@ -148,7 +148,7 @@ const createGameData = (pack_name, delay) => {
   gameData.last = count - 2
   gameData.randomIndices = randomIndices
   gameData.index = 0
-  gameData.nextIndex = 1 // so owner can click Next Card at start
+  gameData.nextIndex = 1 // so host can click Next Card at start
   gameData.root = index.replace(/\/[^/]+$/, "/images/")
   gameData.delay = delay
   gameData.lastClick = {}
@@ -159,35 +159,35 @@ const createGameData = (pack_name, delay) => {
 
 
 const selectPack = ({ content }) => {
-  const { group_name, pack_name, delay } = content
+  const { room, pack_name, delay } = content
 
-  const groupData = ischiData[group_name]
-                || (ischiData[group_name] = {})
+  const roomData = ischiData[room]
+                || (ischiData[room] = {})
 
   content = createGameData(pack_name, delay)
 
-  // Save for future group members
-  groupData.gameData = content
+  // Save for future room members
+  roomData.gameData = content
   // Reset votes
-  groupData.votes = {}
+  roomData.votes = {}
 
-  // Send game data to all the members of the group
+  // Send game data to all the members of the room
   const message = {
     sender_id: GAME,
-    recipient_id: group_name,
+    recipient_id: room,
     subject: "gameData",
     content
   }
 
-  sendMessageToGroup(message)
+  sendMessageToRoom(message)
 
   return true // message was handled
 }
 
 
 const scoreMatch = ({ sender_id, content }) => {
-  const { href, group_name } = content
-  const gameData = ischiData[group_name].gameData
+  const { href, room } = content
+  const gameData = ischiData[room].gameData
   const { index, randomIndices, images, cardData } = gameData
 
   if (index < 0 || isNaN(index)) {
@@ -209,7 +209,7 @@ const scoreMatch = ({ sender_id, content }) => {
 
     if (href === match) {
       // User sender_id is the first to find the match
-      data = { gameData, sender_id, group_name, href }
+      data = { gameData, sender_id, room, href }
       acknowledgeMatch(data)
     }
 
@@ -221,7 +221,7 @@ const scoreMatch = ({ sender_id, content }) => {
 const acknowledgeMatch = ({
   gameData,
   sender_id,
-  group_name,
+  room,
   href
 }) => {
   const user_name = getUserNameFromId(sender_id)
@@ -251,15 +251,15 @@ const acknowledgeMatch = ({
     score
   }
 
-  sendMessageToGroup({
+  sendMessageToRoom({
     sender_id: "game",
-    recipient_id: group_name,
+    recipient_id: room,
     subject: "match_found",
     content
   })
 
   if (isNaN(gameData.delay)) {
-    // Wait for the group owner to click on Next Card
+    // Wait for the room host to click on Next Card
     gameData.nextIndex = index
 
   } else {
@@ -268,24 +268,24 @@ const acknowledgeMatch = ({
       gameData.delay,
 
       gameData,
-      group_name,
+      room,
       index
     )
   }
 }
 
 
-const requestNextCard = ({ content: group_name }) => {
-  const gameData = ischiData[group_name].gameData
+const requestNextCard = ({ content: room }) => {
+  const gameData = ischiData[room].gameData
   const index = gameData.nextIndex
 
-  showNextCard(gameData, group_name, index)
+  showNextCard(gameData, room, index)
 
   return true // message was handled
 }
 
 
-const showNextCard = (gameData, group_name, content) => {
+const showNextCard = (gameData, room, content) => {
   gameData.index = content
   gameData.nextIndex = (content === gameData.last)
    ? "game_over"
@@ -299,9 +299,9 @@ const showNextCard = (gameData, group_name, content) => {
   // This will be ignored by any player already playing >>>
 
   // content will be next index to randomIndices or 'game_over'
-  sendMessageToGroup({
+  sendMessageToRoom({
     sender_id: "game",
-    recipient_id: group_name,
+    recipient_id: room,
     subject: "show_next_card",
     content
   })
@@ -310,5 +310,5 @@ const showNextCard = (gameData, group_name, content) => {
 
 addMessageListener([
   { recipient_id: GAME, callback: treatGameMessages },
-  { subject: "join_group", callback: joinGroup }
+  { subject: "set_user_name", callback: setUserNameAndRoom }
 ])

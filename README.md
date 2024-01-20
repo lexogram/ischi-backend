@@ -1,6 +1,6 @@
 # BACKEND FOR A MULTIPLAYER GAME #
 
-Demo of using WebSocket to run a muliple-user app with private groups.
+Demo of using WebSocket to run a muliple-user app with private rooms.
 
 [Not much to see in a browser.](https://player-backend-o5aj.onrender.com/)
 

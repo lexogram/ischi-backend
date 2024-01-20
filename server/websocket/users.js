@@ -10,7 +10,7 @@ const {
   treatMessage
 } = require('./messages')
 const users = {} // { <uuid>: { socket, user_name }}
-const groups = {} // { <name> : { owner_id, members: Set(uuid) }}
+const rooms = {} // { <name> : { host_id, members: Set(uuid) }}
 
 
 
@@ -44,23 +44,23 @@ const disconnect = (socket) => {
     user_name = user_name ? `(${user_name})` : ""
     console.log(`Socket closed for ${uuid}${user_name}`)
 
-    Object.entries(groups).forEach(([name, data]) => {
-      const { members, owner_id } = data
+    Object.entries(rooms).forEach(([name, data]) => {
+      const { members, host_id } = data
 
       if (members.has(uuid)) {
         members.delete(uuid)
 
         if (members.size) {
-          if (owner_id === uuid) {
-            // The departing member is owner. transfer ownership
+          if (host_id === uuid) {
+            // The departing member is host. transfer hostship
             // to the longest-serving member
-            data.owner_id = members.values().next().value
+            data.host_id = members.values().next().value
           }
-          broadcastMembersToGroup(name)
+          broadcastMembersToRoom(name)
 
         } else {
           // There's no-one left
-          delete groups[name]
+          delete rooms[name]
         }
       }
     })
@@ -83,7 +83,7 @@ const disconnect = (socket) => {
   //   return value
   // }
   // console.log("users", JSON.stringify(users, replacer, '  '));
-  // console.log("groups", JSON.stringify(groups, replacer, '  '));
+  // console.log("rooms", JSON.stringify(rooms, replacer, '  '));
 }
 
 
@@ -97,18 +97,18 @@ const sendMessageToUser = (message) => {
 }
 
 
-const sendMessageToGroup = (message) => {
+const sendMessageToRoom = (message) => {
   let { recipient_id } = message
-  // May be array of user_ids or string group name
+  // May be array of user_ids or string room name
 
   if (typeof recipient_id === "string") {
-    recipient_id = groups[recipient_id].members
+    recipient_id = rooms[recipient_id].members
   }
   if (recipient_id instanceof Set) {
     recipient_id = Array.from(recipient_id)
   }
   if (!Array.isArray(recipient_id)) {
-    return console.log(`Cannot send message to group ${message.recipient_id}`, message)
+    return console.log(`Cannot send message to room ${message.recipient_id}`, message)
   }
 
   try {
@@ -143,7 +143,7 @@ const getUserNameFromId = user_id => {
 module.exports = {
   newUser,
   disconnect,
-  sendMessageToGroup,
+  sendMessageToRoom,
   sendMessageToUser,
   getUserNameFromId,
   // Re-export message methods
@@ -161,8 +161,8 @@ const treatSystemMessage = ({ subject, sender_id, content }) => {
     case "confirmation":
       console.log(sender_id, content)
       return true // message was handled
-    case "join_group":
-      return joinGroup(sender_id, content)
+    case "set_user_name":
+      return setName(sender_id, content)
   }
 }
 
@@ -173,10 +173,22 @@ addMessageListener({
 })
 
 
-const joinGroup = (user_id, content) => {
+const setName = (user_id, content) => {
   console.log("user_id, content:", user_id, content);
 
-  const { user_name, group_name, create_group } = content
+  const { user_name, last_id } = content
+
+  if (last_id) {const lastData = users[last_id]
+    if (lastData) {
+      const last_name = lastData.user_name
+      if (last_name === user_name) {
+        // This user is reconnecting. Remove the temporary user_id
+        // from users, and use last_id instead.
+        return reconnectUser(last_id, user_id, lastData, content)
+      }
+    }
+  }
+
   // Ignore password for now
   const userData = users[user_id]
   if (!userData) {
@@ -188,52 +200,65 @@ const joinGroup = (user_id, content) => {
 
   // Give a name to this user_id
   userData.user_name = user_name
+  joinRoom(user_id, content)
+}
 
-  // Join the group?
-  let owner_id, members, owner, status
-  let groupObject = groups[group_name]
 
-  if (groupObject) {
-    // A group of this name already exists
-    ({ owner_id, members } = groupObject)
-    owner = getUserNameFromId(owner_id)
+const reconnectUser = (user_id, temp_id, userData, content) => {
+  users[user_id] = userData
+  delete users[temp_id]
+
+  const { room, create_room } = content
+}
+
+
+const joinRoom = (user_id, content) => {
+  const { user_name, room, create_room } = content
+  // Join the room?
+  let host_id, members, host, status
+  let roomObject = rooms[room]
+
+  if (roomObject) {
+    // A room of this name already exists
+    ({ host_id, members } = roomObject)
+    host = getUserNameFromId(host_id)
   }
 
-  if (create_group) {
-    // Try to create a group, if requested
-    if (groupObject) {
+  if (create_room) {
+    // Try to create a room, if requested
+    if (roomObject) {
       status = "create-failed"
 
     } else {
       members = new Set().add(user_id)
-      groups[group_name] = groupObject = {
-        owner_id: user_id,
+      rooms[room] = roomObject = {
+        host_id: user_id,
         members
       }
       status = "created"
-      owner = user_name
-      broadcastMembersToGroup(group_name)
+      host = user_name
+      broadcastMembersToRoom(room)
     }
 
-  } else if (groupObject) {
+  } else if (roomObject) {
     members.add(user_id)
     status = "joined"
-    broadcastMembersToGroup(group_name)
+    broadcastMembersToRoom(room)
 
 
   } else {
-    // The group does not yet exist, and there was no request to
+    // The room does not yet exist, and there was no request to
     // create it.
     status = "join-failed"
   }
 
-  content = { status, user_name, group_name, owner }
+  content = { status, user_name, room, host }
 
   // Reply
   const message = {
     sender_id: "system",
     recipient_id: user_id,
-    subject: "group_joined",
+    subject: "room_joined",
     content
   }
 
@@ -243,8 +268,8 @@ const joinGroup = (user_id, content) => {
 }
 
 
-const broadcastMembersToGroup = (group_name) => {
-  let { owner_id, members } = groups[group_name]
+const broadcastMembersToRoom = (room) => {
+  let { host_id, members } = rooms[room]
 
   recipient_id = Array.from(members)
   members = recipient_id.reduce((memberMap, user_id) => {
@@ -252,21 +277,21 @@ const broadcastMembersToGroup = (group_name) => {
     return memberMap
   }, {})
 
-  const owner = users[owner_id]
+  const host = users[host_id]
 
   const content = {
-    group_name,
+    room,
     members,
-    owner,
-    owner_id
+    host,
+    host_id
   }
 
   const message = {
     sender_id: "system",
     recipient_id,
-    subject: "group_members",
+    subject: "room_members",
     content
   }
 
-  sendMessageToGroup(message)
+  sendMessageToRoom(message)
 }
