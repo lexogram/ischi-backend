@@ -159,7 +159,7 @@ module.exports = {
 const treatSystemMessage = ({ subject, sender_id, content }) => {
   switch (subject) {
     case "confirmation":
-      console.log(sender_id, content)
+      // console.log(sender_id, content)
       return true // message was handled
     case "get_existing_room":
       return getExistingRoom(sender_id, content)
@@ -176,7 +176,7 @@ addMessageListener({
 
 
 const sendUserToRoom = (user_id, content) => {
-  console.log("user_id, content:", user_id, content);
+  // console.log("user_id, content:", user_id, content);
 
   const { user_name, last_id } = content
 

@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000
 
 // CORS
 const allowedOrigins = require('./utilities/cors')
-console.log("allowedOrigins:", allowedOrigins);
+// console.log("allowedOrigins:", allowedOrigins);
 
 
 // WebSocket (more below)
@@ -62,7 +62,7 @@ function optionalCallbackForListen() {
 // app.use(cors) must come before setting the static path
 const corsOptions = {
   origin: (origin, callback) => {
-    console.log("corsOptions origin:", origin);
+    // console.log("corsOptions origin:", origin);
 
     const lower = (origin || "").toLowerCase() // may be undefined
     let isAllowed = false
@@ -95,12 +95,12 @@ const corsOptions = {
     })
 
     if (authorized || !origin) {
-      console.log(`${origin} is authorized
-      `)
+      // console.log(`${origin} is authorized
+      // `)
 
     } else {
-      console.log(`${origin} should be refused access
-      `)
+      // console.log(`${origin} should be refused access
+      // `)
     }
 
     callback(null, origin)
