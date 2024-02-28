@@ -298,7 +298,7 @@ const broadcastMembersToRoom = (room) => {
     return memberMap
   }, {})
 
-  const host = users[host_id]
+  const host = getUserNameFromId(host_id)
 
   const content = {
     room,

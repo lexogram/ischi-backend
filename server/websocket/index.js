@@ -3,6 +3,7 @@
  * 
  */
 
+const WebSocket = require('ws')
 const {
   newUser,
   treatMessage,
@@ -10,12 +11,12 @@ const {
 } = require('./users')
 
 
-const websocket = (server) => {
-  const WebSocket = require('ws')
 
+const websocket = (server) => {
   const WSServer = new WebSocket.Server({ server })
 
   WSServer.on('connection', (socket) => {
+    let pingInterval
     newUser(socket)
 
     socket.on('message', message => {
@@ -39,7 +40,18 @@ at ${new Date()}`)
 
     socket.on('close', () => {
       disconnect(socket)
+      clearInterval(pingInterval)
     })
+
+    socket.on('pong', () => console.log("pong", new Date()))
+
+
+    const sendPing = () => {
+      socket.ping()
+    }
+
+
+    pingInterval = setInterval(sendPing, 30000)
   })
 }
 
