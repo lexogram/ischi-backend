@@ -43,7 +43,7 @@ const websocket = (server) => {
       clearInterval(pingInterval)
     })
 
-    socket.on('pong', () => console.log("pong", new Date()))
+    socket.on('pong', () => {}) // console.log("pong", new Date()))
 
 
     const sendPing = () => {
