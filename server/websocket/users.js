@@ -163,8 +163,8 @@ const treatSystemMessage = ({ subject, sender_id, content }) => {
       return true // message was handled
     case "get_existing_room":
       return getExistingRoom(sender_id, content)
-    case "set_user_name":
-      return setName(sender_id, content)
+    case "send_user_to_room":
+      return sendUserToRoom(sender_id, content)
   }
 }
 
@@ -175,7 +175,7 @@ addMessageListener({
 })
 
 
-const setName = (user_id, content) => {
+const sendUserToRoom = (user_id, content) => {
   console.log("user_id, content:", user_id, content);
 
   const { user_name, last_id } = content
@@ -228,6 +228,8 @@ const getExistingRoom = (sender_id, room) => {
   }
 
   sendMessageToUser(message)
+
+  return true // message handled
 }
 
 

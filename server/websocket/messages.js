@@ -1,6 +1,6 @@
 /**
  * server/websocket/messages.js
- */ 
+ */
 
 
 const messageListeners = {
@@ -15,7 +15,7 @@ const messageListeners = {
  * messages.
  * Messages with a recipient_id of "system" will be treated
  * separately, regardless of their subject
- * 
+ *
  * Listeners can subscribe to either...
  * - All messages with a given subject (e.g. "make_move")
  * or:
@@ -40,7 +40,7 @@ const removeMessageListener = (listener) => {
       removeMessageListener(listener)
     })
   }
-  
+
   treatMessageListener("remove", listener)
 }
 
@@ -81,8 +81,8 @@ const treatMessage = (message) => {
     subject,
     recipient_id
   } = message
-  console.log("New message:", message);
-  let handled = false 
+  // console.log("New message:", message);
+  let handled = false
 
   // The same message can be handled twice.
   // Once for its recipient (treat messages to "system" first)...
@@ -90,12 +90,12 @@ const treatMessage = (message) => {
     messageListeners.recipient_id[recipient_id] || []
   )
   handled = listeners.some( listener => listener( message ))
- 
+
   // ... and once for its subject
   listeners = Array.from(messageListeners.subject[subject] || [])
   handled = listeners.some( listener => listener( message ))
          || handled
-  
+
   if (!handled) {
     console.log("Unhandled message:", message);
   }

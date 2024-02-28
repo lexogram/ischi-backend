@@ -19,6 +19,10 @@ const websocket = (server) => {
     newUser(socket)
 
     socket.on('message', message => {
+      console.log(`
+socket got ${JSON.stringify(JSON.parse(message), null, " ")}
+at ${new Date()}`)
+
       let data
       try {
         data = JSON.parse(message.toString())

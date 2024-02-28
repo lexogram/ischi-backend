@@ -35,7 +35,7 @@ const ischiData = {}
 
 const treatGameMessages = (messageData) => {
   switch (messageData.subject) {
-    // case "set_user_name": // called directly from treatMessage
+    // case "send_user_to_room": // called directly from treatMessage
     //   return setUserNameAndRoom(messageData)
     case "vote":
       return treatVote(messageData)
@@ -310,5 +310,5 @@ const showNextCard = (gameData, room, content) => {
 
 addMessageListener([
   { recipient_id: GAME, callback: treatGameMessages },
-  { subject: "set_user_name", callback: setUserNameAndRoom }
+  { subject: "send_user_to_room", callback: setUserNameAndRoom }
 ])
