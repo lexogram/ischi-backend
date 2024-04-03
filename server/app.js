@@ -1,21 +1,25 @@
+/**
+ * server/app.js
+ */
+
+
+require('dotenv').config()
+
+// Ensure that it's possible to connect to the database
+require('./database')
+
+// Utilities
+const path = require('path')
+
 // Create a basic http server running express
 const http = require('http')
 const express = require('express')
 const cors = require('cors')
 
-// Utilities
-const path = require('path')
-
-require('dotenv').config() // read from .env before using cors.js
 const PORT = process.env.PORT || 3000
-
-// const openDB =
-require('./data/connection.js')
-
 
 // CORS
 const corsOptions = require('./utilities/cors')
-// console.log("allowedOrigins:", allowedOrigins);
 
 
 // WebSocket (more below)
@@ -26,20 +30,25 @@ const websocket = require('./websocket')
 const app = express()
 const server = http.createServer(app)
 
+app.use(cors(corsOptions))
+
+// Tell client/index.html where to find images and scripts
+const staticPath = path.resolve(__dirname, '../public')
+app.use(express.static(staticPath));
+
+
+app.get('/', (req, res) => {
+  const protocol = req.protocol
+  const host = req.headers.host
+  res.send(`<pre>Connected to ${protocol}://${host}
+${Date()}</pre>`)
+})
+
 
 // Start the server
-server.listen(PORT, optionalCallbackForListen)
+server.listen(PORT, logHostsToConsole)
 
 
-
-async function optionalCallbackForListen() {
-  logHostsToConsole()
-  // const db = await openDB()
-  // console.log("db:", db);
-  
-}
-
-//Print out some useful information in the Terminal
 function logHostsToConsole() {
   // Check what IP addresses are used by your
   // development computer.
@@ -68,44 +77,6 @@ function logHostsToConsole() {
   ${hosts}
   `);
 }
-
-
-app.use(cors(corsOptions))
-
-
-// Tell client/index.html where to find images and scripts
-const staticPath = path.resolve(__dirname, '../public')
-app.use(express.static(staticPath));
-
-
-app.get('/ping', (req, res) => {
-  const protocol = req.protocol
-  const host = req.headers.host
-  res.send(`<pre>Connected to ${protocol}://${host}
-${Date()}</pre>`)
-})
-
-
-app.get('/echo-req', (req, res) => {
-
-  const headerOrigin = req.header('Origin')
-  const remoteAddress = req.socket.remoteAddress
-  const _ = "____"
-  const headers = {...req.headers, _, headerOrigin, remoteAddress}
-
-  const replacer = (key, value) => {
-    if (value === undefined) {
-      return "--undefined--"
-    }
-
-    return value
-  }
-
-  const message = `<pre>
-${JSON.stringify(headers, replacer, "  ")}
-</pre>`
-  res.send(message)
-})
 
 
 // Add a WebSocket that uses the ws:// protocol and can keep a
