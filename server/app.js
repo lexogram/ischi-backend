@@ -9,9 +9,12 @@ const path = require('path')
 require('dotenv').config() // read from .env before using cors.js
 const PORT = process.env.PORT || 3000
 
+// const openDB =
+require('./data/connection.js')
+
 
 // CORS
-const allowedOrigins = require('./utilities/cors')
+const corsOptions = require('./utilities/cors')
 // console.log("allowedOrigins:", allowedOrigins);
 
 
@@ -28,8 +31,16 @@ const server = http.createServer(app)
 server.listen(PORT, optionalCallbackForListen)
 
 
+
+async function optionalCallbackForListen() {
+  logHostsToConsole()
+  // const db = await openDB()
+  // console.log("db:", db);
+  
+}
+
 //Print out some useful information in the Terminal
-function optionalCallbackForListen() {
+function logHostsToConsole() {
   // Check what IP addresses are used by your
   // development computer.
   const nets = require("os").networkInterfaces()
@@ -59,54 +70,6 @@ function optionalCallbackForListen() {
 }
 
 
-// app.use(cors) must come before setting the static path
-const corsOptions = {
-  origin: (origin, callback) => {
-    // console.log("corsOptions origin:", origin);
-
-    const lower = (origin || "").toLowerCase() // may be undefined
-    let isAllowed = false
-
-    const authorized = allowedOrigins.some( allowed => {
-      // console.log("allowed:", allowed);
-      if (allowed instanceof RegExp) {
-        isAllowed = allowed.test(origin)
-        isAllowed && console.log(`
-          ${origin} matches ${allowed}
-        `
-        )
-
-      } else if (typeof allowed === "string") {
-        isAllowed = lower === allowed.toLowerCase()
-        isAllowed && console.log(`
-          ${origin} case-insensitive matches ${allowed}
-        `
-        )
-
-      } else { // should not happen
-        isAllowed = origin === allowed
-        isAllowed && console.log(`
-          ${origin} === ${allowed}
-        `
-        )
-      }
-
-      return isAllowed
-    })
-
-    if (authorized || !origin) {
-      // console.log(`${origin} is authorized
-      // `)
-
-    } else {
-      // console.log(`${origin} should be refused access
-      // `)
-    }
-
-    callback(null, origin)
-  }
-}
-// app.use(cors({ origin: allowedOrigins }))
 app.use(cors(corsOptions))
 
 
@@ -115,8 +78,10 @@ const staticPath = path.resolve(__dirname, '../public')
 app.use(express.static(staticPath));
 
 
-app.get('/', (req, res) => {
-  res.send(`<pre>Connected to port ${PORT}
+app.get('/ping', (req, res) => {
+  const protocol = req.protocol
+  const host = req.headers.host
+  res.send(`<pre>Connected to ${protocol}://${host}
 ${Date()}</pre>`)
 })
 

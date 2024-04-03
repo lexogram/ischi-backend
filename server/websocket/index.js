@@ -1,6 +1,6 @@
 /**
  * websocket.js
- * 
+ *
  */
 
 const WebSocket = require('ws')
@@ -17,7 +17,11 @@ const websocket = (server) => {
 
   WSServer.on('connection', (socket) => {
     let pingInterval
+    let missedPongs = 0
+
+
     newUser(socket)
+
 
     socket.on('message', message => {
 //       console.log(`
@@ -38,16 +42,26 @@ const websocket = (server) => {
       }
     })
 
+
     socket.on('close', () => {
       disconnect(socket)
       clearInterval(pingInterval)
     })
 
-    socket.on('pong', () => {}) // console.log("pong", new Date()))
+
+    socket.on('pong', () => {
+      missedPongs = 0
+    })
 
 
     const sendPing = () => {
-      socket.ping()
+      if (missedPongs++ > 3) {
+        // It seems that the client has lost contact
+        socket.close()
+
+      } else {
+        socket.ping()
+      }
     }
 
 

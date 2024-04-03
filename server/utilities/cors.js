@@ -32,7 +32,7 @@
 
 
 
-// Cross-Origin connections
+// Cross-Origins connections
 const PROTOCOL = process.env.PROTOCOL || "https"
 const ORIGINS = process.env.ORIGINS
 const PORTS = process.env.PORTS
@@ -40,6 +40,8 @@ const PORTS = process.env.PORTS
 // console.log("PROTOCOL:", PROTOCOL);
 // console.log("ORIGINS:", ORIGINS);
 // console.log("PORTS:", PORTS);
+
+const IS_REGEX = /^\/(.+)\/(.+)?/ // /expression/flags?
 
 
 
@@ -58,54 +60,54 @@ const ports = (() => {
 // console.log("ports:", ports);
 
 // Define which domains are allowed...
-let origin
+let allowedOrigins
 try {
-  origin = JSON.parse(ORIGINS)
-  // console.log("parsed origin:", origin);
+  allowedOrigins = JSON.parse(ORIGINS)
+  // console.log("parsed allowedOrigins:", allowedOrigins);
 
-  origin = origin.map( origin => {
-    const match = /\/(.+)\/(.+)?/.exec(origin)
+  // Convert RegExp string to regular expressions and apply
+  // the appropriate PROTOCOL to all non-RegExp strings
+  allowedOrigins = allowedOrigins.map( origin => {
+    const regexMatch = IS_REGEX.exec(origin)
 
-    if (match) {
-      // console.log("match:", match);
+    if (regexMatch) {
+      // console.log("regexMatch:", regexMatch);
 
       // Extract the regular expression and use it
-      const [ , expression, options ] = match
+      const [ , expression, flags ] = regexMatch
       // console.log("expression:", expression);
-      // console.log("options:", options);
+      // console.log("flags:", flags);
 
-
-      isOnLAN &&= isLocalHost(expression)
-      origin = new RegExp(expression, options)
-      // console.log("(in map) regex origin:", origin);
-
+      isOnLAN = isOnLAN && isLocalHost(expression)
+      origin = new RegExp(expression, flags)
+      // console.log("(in map) regex allowedOrigins:", allowedOrigins);
 
     } else {
       // Apply the given protocol to every string host
-      isOnLAN &&= isLocalHost(origin)
+      isOnLAN = isOnLAN && isLocalHost(origin)
       origin = `${PROTOCOL}://${origin}`
-      // console.log("(in map) standard origin:", origin);
-
+      // console.log("(in map) standard allowedOrigins:", allowedOrigins);
     }
 
     return origin
   })
 
-  // console.log("mapped origin:", origin);
+  // console.log("mapped allowedOrigins:", allowedOrigins);
 
   // ... and include all the acceptable ports
-  origin = origin.reduce(( origin, hostname ) => {
-    origin.push(hostname) // in all cases, RegExp or raw string
+  allowedOrigins = allowedOrigins.reduce(( allowed, origin ) => {
+    allowed.push(origin) // in all cases, RegExp or raw string
 
-    if (hostname instanceof RegExp || /:\d+$/.test(hostname)) {
+    if (origin instanceof RegExp || /:\d+$/.test(origin)) {
       // Ignore Regular Expressions and entries with a port
       // console.log("RegExp simply added as is")
+
     } else {
       // console.log("Adding ports:", ports)
-      ports.forEach( port => origin.push(`${hostname}:${port}`))
+      ports.forEach( port => allowed.push(`${origin}:${port}`))
     }
 
-    return origin
+    return allowed
   }, [])
 
   originsParsed = true
@@ -115,23 +117,23 @@ try {
   // .env is not correctly set up
   console.log(`Caught ${error}`)
 
-  origin = []
+  allowedOrigins = []
 }
 
-// console.log("originsParsed:", originsParsed);
+// console.log("allowedOriginsParsed:", allowedOriginsParsed);
 // console.log("isOnLAN:", isOnLAN);
-// console.log("treated origin:", origin);
+// console.log("treated allowedOrigins:", allowedOrigins);
 
 
 
-if (!origin.length && originsParsed && isOnLAN) {
+if (!allowedOrigins.length && originsParsed && isOnLAN) {
   // Allow all connections when working on a local network
-  // console.log("setting origin safely to *")
-  origin = "*"
+  // console.log("setting allowedOrigins safely to *")
+  allowedOrigins = "*"
 }
 
 function isLocalHost(expression) {
-  if (/localhost/.test(expression)) {
+  if (/^localhost(:\d+)?$/.test(expression)) {
     return true
   } else if (/0\.0\.0\.0/.test(expression)) {
     return true
@@ -151,6 +153,57 @@ function isLocalHost(expression) {
   return false
 }
 
-// console.log("module.exports =", origin);
+// console.log("allowedOrigins:", allowedOrigins)
 
-module.exports = origin
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // console.log("corsOptions allowedOrigins:", allowedOrigins);
+
+    const lower = (origin || "").toLowerCase() // may be undefined
+    let isAllowed = false
+
+    const authorized = allowedOrigins.some( allowed => {
+      // console.log("allowed:", allowed);
+      if (allowed instanceof RegExp) {
+        isAllowed = allowed.test(allowedOrigins)
+        isAllowed && console.log(`
+          ${allowedOrigins} matches ${allowed}
+        `
+        )
+
+      } else if (typeof allowed === "string") {
+        isAllowed = lower === allowed.toLowerCase()
+        isAllowed && console.log(`
+          ${allowedOrigins} case-insensitive matches ${allowed}
+        `
+        )
+
+      } else { // should not happen
+        isAllowed = allowedOrigins === allowed
+        isAllowed && console.log(`
+          ${allowedOrigins} === ${allowed}
+        `
+        )
+      }
+
+      return isAllowed
+    })
+
+    if (authorized || !allowedOrigins) {
+      // console.log(`${allowedOrigins} is authorized
+      // `)
+
+    } else {
+      // console.log(`${allowedOrigins} should be refused access
+      // `)
+    }
+
+    callback(null, allowedOrigins)
+  }
+}
+
+// console.log("corsOptions:", corsOptions);
+
+
+module.exports = corsOptions
