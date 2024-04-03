@@ -1,0 +1,62 @@
+<!-- public/sign/out/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Sign Out</title>
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <form
+    method="post"
+    action="/signout"
+  >
+    <button
+      type="submit"
+    >
+      Sign Out
+    </button>
+  </form>
+
+  <script>
+  ;(function () {
+    "use strict"
+    const form = document.getElementsByTagName("form")[0]
+    const method = form.getAttribute("method")
+    const url = form.getAttribute("action")
+    const headers = {
+      "Content-Type": "application/json"
+    }
+
+    form.onsubmit = event => {
+      event.preventDefault()
+      const formData = new FormData(form)
+
+      const options = {
+        method,
+        headers
+      }
+
+      fetch(url, options)
+        .then(response => response.json())
+        .then(json => console.log("signout response:", json))
+        .catch(error => console.log("signout error:", error))
+    }
+  })()
+  </script>
+</body>
+</html>

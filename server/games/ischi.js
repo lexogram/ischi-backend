@@ -12,7 +12,7 @@ const {
   sendMessageToRoom,
   getUserNameFromId
 } = require("../websocket/users");
-const publicPath = "../../public/"
+const publicPath = "../../public/packs/"
 const packData = require(
   `${publicPath}packs.json`
 )

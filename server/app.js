@@ -8,6 +8,9 @@ require('dotenv').config()
 // Ensure that it's possible to connect to the database
 require('./database')
 
+const PORT = process.env.PORT || 3000
+const COOKIE_SECRET = process.env.COOKIE_SECRET || "string needed"
+
 // Utilities
 const path = require('path')
 
@@ -15,11 +18,17 @@ const path = require('path')
 const http = require('http')
 const express = require('express')
 const cors = require('cors')
+const cookieSession = require('cookie-session')
 
-const PORT = process.env.PORT || 3000
+const cookieOptions = {
+  name: "authorisation",
+  keys: [ COOKIE_SECRET ],
+  httpOnly: true,
+  sameSite: true
+}
 
 // CORS
-const corsOptions = require('./utilities/cors')
+const corsOptions = require('./utilities/')
 
 
 // WebSocket (more below)
@@ -31,10 +40,14 @@ const app = express()
 const server = http.createServer(app)
 
 app.use(cors(corsOptions))
+app.use(cookieSession(cookieOptions))
 
 // Tell client/index.html where to find images and scripts
 const staticPath = path.resolve(__dirname, '../public')
 app.use(express.static(staticPath));
+app.use(express.json())
+
+require('./routes')(app)
 
 
 app.get('/', (req, res) => {

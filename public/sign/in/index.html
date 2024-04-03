@@ -1,0 +1,106 @@
+<!-- public/sign/in/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Sign In</title>
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    form {
+      width: 12em;
+      background-color: #222;
+      color: #ddd;
+      padding: 1em;
+      border-radius: 1em;
+    }
+    label {
+      display: block;
+      margin-bottom: 1em;
+    }
+    span {
+      display: block;
+    }
+    input:invalid {
+      border: 1px solid #f00;
+    }
+    form:invalid button {
+      pointer-events: none;
+      opacity: 0.25;
+    }
+  </style>
+</head>
+
+<body>
+  <form
+    action="/signin"
+    method="POST"
+  >
+    <label for="id">
+      <span>Username OR Email:</span>
+      <input
+        type="text"
+        id="id"
+        name="id"
+        value=""
+      />
+    </label>
+    <label for="password">
+      <span>Password:</span>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        value=""
+        required
+      />
+    </label>
+    <button
+      type="submit"
+    >
+      Sign In
+    </button>
+  </form>
+
+  <script>
+  ;(function () {
+    "use strict"
+    const form = document.getElementsByTagName("form")[0]
+    const method = form.getAttribute("method")
+    const url = form.getAttribute("action")
+    const headers = {
+      "Content-Type": "application/json"
+    }
+
+    form.onsubmit = event => {
+      event.preventDefault()
+      const formData = new FormData(form)
+      const body = JSON.stringify(
+        Object.fromEntries(formData)
+      )
+
+      const options = {
+        method,
+        headers,
+        body,
+      }
+
+    fetch(url, options)
+      .then(response => response.text())
+      .then(text => console.log("signin response:", text))
+      .catch(error => console.log("error:", error))
+    }
+  })()
+  </script>
+</body>
+</html>
