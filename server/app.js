@@ -24,7 +24,9 @@ const cookieOptions = {
   name: "authorisation",
   keys: [ COOKIE_SECRET ],
   httpOnly: true,
-  sameSite: true
+  sameSite: "none",
+  secure: true,
+  partitioned: true,
 }
 
 // CORS

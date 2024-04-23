@@ -16,7 +16,7 @@ function signUp(req, res) {
     ? { username, organisation, email, hash }
     : { username, email, hash }
 
-  let message
+  let message = {}
 
   new User(userData)
     .save()
@@ -26,25 +26,21 @@ function signUp(req, res) {
 
   function treatSuccess(user) {
     const { username, email, id } = user
-    message = {
-      message: "User record created",
-      user: {
-        username,
-        email
-      }
+    message.success = "User record created",
+    message.user = {
+      username,
+      email
     }
-    message = JSON.stringify(message, null, "  ")
-    const token = makeToken({ id })
-    req.session.token = token
   }
 
   function treatError(error) {
-    message = `ERROR: User for "${username}" not saved
-${error}`
+    console.log("signUp error:", req.body, error);
+
+    message.fail = `User for "${username}" not saved`
   }
 
   function proceed () {
-    res.send(message )
+    res.json(message )
   }
 }
 

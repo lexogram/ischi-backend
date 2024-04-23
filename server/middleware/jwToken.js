@@ -1,4 +1,20 @@
-/* middleware/jwToken.js */
+/**
+ * server/middleware/jwToken.js
+ *
+ * makeToken()
+ *   Creates a token with whatever payload is provided, with
+ *   default or custom options.
+ *   Currently called by treatSuccess in signIn.js, with the
+ *   payload { id } (of the user who is signing in)
+ *
+ * verifyToken()
+ *   Checks if a session cookie exists that contains a token
+ *   If not, responds with 403 Forbidden
+ *   If so, and the token is still valid and it contains an `id`
+ *   value, sets req.userId to that value
+ *   If not, responds with 401 Unauthorized
+ */
+
 
 const jwt = require("jsonwebtoken")
 const JWT_SECRET = process.env.JWT_SECRET
@@ -17,7 +33,7 @@ const makeToken = ( payload, options = {} ) => {
 
   // Overwrite DEFAULTS with explicit options with the same key
   options = { ...DEFAULTS, ...options }
-  
+
   // <<< Remove entries that can be in payload OR in options,
   // but not in both places. If this is not done, jwt.sign()
   // will throw an error.

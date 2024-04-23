@@ -5,15 +5,15 @@
 
 const bcrypt = require('bcryptjs')
 const { User } = require('../database')
-const { makeToken } = require('../middleware')
+const { makeToken } = require('../middleware/jwToken')
 
 
-function signIn(req, res) {
-  const { username, email, id, password } = req.body
+function signIn(req, res, next) {
+  const { username, email, id, password, auto_login } = req.body
   // id, here, may be either username or password
 
   let status = 0
-  let message = ""
+  let message = next instanceof Function ? {} : next
 
 
   // Allow user to log in with either username or email
@@ -52,18 +52,33 @@ function signIn(req, res) {
 
 
   function treatSuccess(user) {
-    const { id } = user
+    const { id, username, email } = user
     // id, here, is the unique value stored in MongoDB
-    const token = makeToken({ id })
+
+    let token
+    if (auto_login) {
+      const maxAge = 90 * 24 * 3600 * 1000 // 90 days in ms
+      req.sessionOptions = { maxAge }
+      token = makeToken({ id, expiresIn: maxAge })
+
+    } else { // create a token that expires when the session ends
+      token = makeToken({ id })
+    }
+
     req.session.token = token
-    message = { success: "Logged in!" }
+
+    message.success = "signed_in",
+    message.user = {
+      username,
+      email
+    }
   }
 
 
   function treatError(error) {
     console.log("Error in signIn:\n", error);
     status = 401 // Unauthorized
-    message = { fail: "Invalid login credentials" }
+    message.fail = "Invalid login credentials"
   }
 
 
@@ -72,7 +87,7 @@ function signIn(req, res) {
       res.status(status)
     }
 
-    res.send(message)
+    res.json(message)
   }
 }
 
