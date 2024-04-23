@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     >
-    <title>Upload</title>
+    <title>Packs</title>
 
     <style>
       body {
@@ -54,35 +54,46 @@
     </style>
   </head>
 <body>
-  <h1>Search by:</h1>
+  <h1>Get Packs:</h1>
   <form
-    action="/images/get"
+    action="/packs/get"
     method="post"
   >
-    <label for="user">
-      <span>User:</span>
+    <label for="owner_id">
+      <span>Owner id:</span>
       <input
-        id="user"
-        name="user"
+        id="Owner id"
+        name="Owner_id"
         type="text"
         placeholder="user"
       />
     </label>
-    <label for="set">
-      <span>Set:</span>
-      <input
-        id="set"
-        name="set"
-        placeholder="set"
-      />
+    <label for="owner_type">
+      <span>Owner Type:</span>
+      <select
+        name="owner_type"
+        id="owner_type"
+      >
+        <option value="None" selected>None</option>
+        <option value="User">User</option>
+        <option value="Organization">Organization</option>
+      </select>
     </label>
     <label for="name">
-      <span>Image Name:</span>
+      <span>Pack Name:</span>
       <input
         id="name"
         name="name"
         type="text"
         placeholder="name"
+      />
+    </label> <label for="folder">
+      <span>Pack Name:</span>
+      <input
+        id="folder"
+        name="folder"
+        type="text"
+        placeholder="folder"
       />
     </label>
     <label
@@ -123,6 +134,7 @@ function checkForInput() {
   empty.forEach( key => {
     delete query[key]
   })
+  
 
   // Check if query has any values, and disable the button if not
   const disabled = !Object.keys(query).length
@@ -131,11 +143,12 @@ function checkForInput() {
 }
 
 
-const method = form.getAttribute("method")
 const url = form.getAttribute("action")
+const method = form.getAttribute("method")
 const headers = {
   "Content-Type": "application/json"
 }
+const credentials = "include"
 
 
 form.onsubmit = event => {
@@ -143,9 +156,13 @@ form.onsubmit = event => {
 
   const body = JSON.stringify({ query })
 
+  console.log("Get Packs body:", body);
+  
+
   const options = {
     headers,
     method,
+    credentials,
     body,
   }
 
@@ -172,21 +189,21 @@ function treatResponse([status, response]) {
   }
 
   // Refill it with the selected images
-  response.forEach(addImageToDiv)
+  response.packs.forEach(addPackToDiv)
 
-  function addImageToDiv(src) {
-    const img = document.createElement("img")
-    img.setAttribute("src", src)
-    const match = nameRegex.exec(src)
-    const name = match ? match[1] : ""
-    if (name) {
-      img.setAttribute("title", name)
-      img.setAttribute("alt", name)
-    }
+  function addPackToDiv(pack) {
+    let text = ""
+    Object.entries(pack).forEach(([ key, value ]) =>
+      text += `${key}: ${value}\n`
+    )
+    const pre = document.createElement("pre")
+    pre.textContent = text
 
-    div.append(img)
+    div.append(pre)
   }
 }
+
+checkForInput()
 })()
 </script>
 </body>

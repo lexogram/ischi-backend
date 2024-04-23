@@ -7,6 +7,8 @@ const { signIn } = require('./signin.js')
 const { signOut } = require('./signout.js')
 const { signUp } = require('./signup.js')
 const { treatQuery } = require('./treatQuery.js')
+const { setPack } = require('./setPack.js')
+const { getPacks } = require('./getPacks.js')
 const { uploader } = require('./uploader.js')
 
 
@@ -15,5 +17,7 @@ module.exports = {
   signOut,
   signUp,
   treatQuery,
+  setPack,
+  getPacks,
   uploader
 }

@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     >
-    <title>Upload</title>
+    <title>Packs</title>
 
     <style>
       body {
@@ -54,35 +54,75 @@
     </style>
   </head>
 <body>
-  <h1>Search by:</h1>
+  <h1>Make Pack:</h1>
   <form
-    action="/images/get"
+    action="/packs/set"
     method="post"
   >
-    <label for="user">
-      <span>User:</span>
+    <label for="owner_id">
+      <span>Owner ID (optional):</span>
       <input
-        id="user"
-        name="user"
+        id="owner_id"
+        name="owner_id"
         type="text"
-        placeholder="user"
+        placeholder="owner_id"
+        value="662760d7313f472ba53fe38a"
       />
     </label>
-    <label for="set">
-      <span>Set:</span>
-      <input
-        id="set"
-        name="set"
-        placeholder="set"
-      />
+    <label for="owner_type">
+      <span>Owner Type:</span>
+      <select
+        name="owner_type"
+        id="owner_type"
+        required
+      >
+        <option value="None" selected>None</option>
+        <option value="User">User</option>
+        <option value="Organization">Organization</option>
+      </select>
     </label>
     <label for="name">
-      <span>Image Name:</span>
+      <span>Pack Name:</span>
       <input
         id="name"
         name="name"
         type="text"
         placeholder="name"
+        value="PackName"
+        required
+      />
+    </label>
+    <label for="count">
+      <span>Number of cards:</span>
+      <input
+        id="count"
+        name="count"
+        type="text"
+        placeholder="count"
+        value="31"
+        required
+      />
+    </label>
+    <label for="folder">
+      <span>Folder:</span>
+      <input
+        id="folder"
+        name="folder"
+        type="text"
+        placeholder="folder"
+        value="packname"
+        required
+      />
+    </label>
+    <label for="thumbnail">
+      <span>Thumbnail:</span>
+      <input
+        id="thumbnail"
+        name="thumbnail"
+        type="text"
+        placeholder="thumbnail"
+        value="thumbnail.webp"
+        required
       />
     </label>
     <label
@@ -92,7 +132,7 @@
         type="submit"
         disabled
       >
-        Show Images
+        Create Pack
       </button>
     </label>
   </form>
@@ -124,6 +164,8 @@ function checkForInput() {
     delete query[key]
   })
 
+  console.log("Pack data:", query);
+
   // Check if query has any values, and disable the button if not
   const disabled = !Object.keys(query).length
   const action = disabled ? "setAttribute" :  "removeAttribute"
@@ -131,21 +173,23 @@ function checkForInput() {
 }
 
 
-const method = form.getAttribute("method")
 const url = form.getAttribute("action")
+const method = form.getAttribute("method")
 const headers = {
   "Content-Type": "application/json"
 }
+const credentials = "include"
 
 
 form.onsubmit = event => {
   event.preventDefault()
 
-  const body = JSON.stringify({ query })
+  const body = JSON.stringify(query)
 
   const options = {
     headers,
     method,
+    credentials,
     body,
   }
 
@@ -164,29 +208,11 @@ function treatResponse([status, response]) {
     div.textContent = response.fail
     return
   }
-  const nameRegex = /\/([^/.]+)\.\w+$/
-
-  // Empty the div
-  while (div.firstChild) {
-      div.removeChild(div.firstChild);
-  }
-
-  // Refill it with the selected images
-  response.forEach(addImageToDiv)
-
-  function addImageToDiv(src) {
-    const img = document.createElement("img")
-    img.setAttribute("src", src)
-    const match = nameRegex.exec(src)
-    const name = match ? match[1] : ""
-    if (name) {
-      img.setAttribute("title", name)
-      img.setAttribute("alt", name)
-    }
-
-    div.append(img)
-  }
+  
+  div.textContent = response.success
 }
+
+checkForInput()
 })()
 </script>
 </body>

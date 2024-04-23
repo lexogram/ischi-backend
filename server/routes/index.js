@@ -8,7 +8,9 @@ const {
   signIn,
   signOut,
   uploader,
-  treatQuery
+  treatQuery,
+  setPack,
+  getPacks
 } = require('../controllers')
 const {
   readFields,
@@ -22,6 +24,8 @@ const routes = (app) => {
   app.post("/signout", signOut)
   app.post("/images/set", readFields, uploader)
   app.post("/images/get", treatQuery)
+  app.post("/packs/get", getPacks)
+  app.post("/packs/set", setPack)
 }
 
 

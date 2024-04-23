@@ -1,6 +1,16 @@
 /**
- * controllers/treatQuery.js
+ * server/controllers/treatQuery.js
+ *
+ * Reads a query of the form...
+ *    { user: <string>, set: <string>, name: <string> }
+ * ... where all fields are optional.
+ *
+ * Uses the query to find the relevant Image records, and responds
+ * with an array of urls, or a string which explains why no image
+ * urls were returned.
  */
+
+
 
 const { Image } = require('../database')
 
@@ -16,6 +26,7 @@ const treatQuery = (req, res) => {
     const stringQuery = JSON.stringify(query)
     const fail = `Unable to treat query ${stringQuery}`
     message = { fail }
+
     return proceed()
   }
 
@@ -34,6 +45,16 @@ const treatQuery = (req, res) => {
       message = { fail }
 
     } else {
+      // [{
+      //   _id: ObjectId('662787625765a09654f60685'),
+      //   user: 'user',
+      //   set: 'set',
+      //   name: 'name',
+      //   src: '/uploads/set/nydqaYo-name.jpg',
+      //   mimetype: 'image/jpeg',
+      //   __v: 0
+      // }, ...]
+
       message = images.map( image => image.src )
     }
   }
@@ -53,7 +74,7 @@ const treatQuery = (req, res) => {
       res.status(status)
     }
 
-    res.send(message)
+    res.json(message)
   }
 
 }
