@@ -58,7 +58,13 @@ function signIn(req, res, next) {
     let token
     if (auto_login) {
       const maxAge = 90 * 24 * 3600 * 1000 // 90 days in ms
-      req.sessionOptions = { maxAge }
+      req.sessionOptions = {
+        maxAge,
+        httpOnly: true,
+        sameSite: "none",
+        secure: true,
+        partitioned: true,
+      }
       token = makeToken({ id, expiresIn: maxAge })
 
     } else { // create a token that expires when the session ends
@@ -76,9 +82,9 @@ function signIn(req, res, next) {
 
 
   function treatError(error) {
-    console.log("Error in signIn:\n", error);
+    console.log("Error in signIn:\n", req.body, error);
     status = 401 // Unauthorized
-    message.fail = "Invalid login credentials"
+    message.fail = "unauthorized"
   }
 
 

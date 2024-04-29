@@ -1,0 +1,37 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="30"
+  viewBox="0 0 26 36"
+  stroke-linecap="round"
+>
+  <circle
+    cx="18"
+    cy="28"
+    r="8"
+    fill="#0301"
+  />
+  <line
+    x1="10"
+    y1="10"
+    x2="13"
+    y2="27"
+    stroke="#888"
+    stroke-width="6"
+  />
+  <circle
+    cx="10"
+    cy="10"
+    r="10"
+    fill="#060"
+  />
+  <path
+    d="
+      M 10 4
+      A 6 6 0 0 0 4 10
+    "
+    fill="none"
+    stroke="#dfd"
+    stroke-width="2"
+  />
+</svg>

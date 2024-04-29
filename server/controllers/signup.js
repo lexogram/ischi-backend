@@ -5,7 +5,6 @@
 
 const bcrypt = require('bcryptjs')
 const { User } = require('../database')
-const { makeToken } = require('../middleware')
 
 
 function signUp(req, res) {
@@ -25,7 +24,7 @@ function signUp(req, res) {
     .finally(proceed)
 
   function treatSuccess(user) {
-    const { username, email, id } = user
+    const { username, email } = user
     message.success = "User record created",
     message.user = {
       username,
@@ -40,7 +39,7 @@ function signUp(req, res) {
   }
 
   function proceed () {
-    res.json(message )
+    res.json(message)
   }
 }
 

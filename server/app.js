@@ -9,17 +9,69 @@ require('dotenv').config()
 require('./database')
 
 const PORT = process.env.PORT || 3000
+const IS_DEV = process.env.NODE_ENV === "development"
 const COOKIE_SECRET = process.env.COOKIE_SECRET || "string needed"
 
-// Utilities
+// Find the "./public" directory relative to this script,
+// regardless of where this script was launched from.
+// (express.static() will use process.env.cwd() as the root, which
+// is incorrect if this script is called from its parent folder.)
 const path = require('path')
+const public = path.resolve(__dirname, "public")
 
-// Create a basic http server running express
-const http = require('http')
-const express = require('express')
+
+// WebSocket, CORS and cookies (more below)
+const websocket = require('./websocket')
 const cors = require('cors')
 const cookieSession = require('cookie-session')
 
+
+// Run express in HTTPS mode during development. In production,
+// express will run locally in HTTP mode and nginx will provide
+// an HTTPS proxy for it.
+// This allows cookies with sameSite: "none" and  secure: true
+// to be sent from the server and treated in the browser.
+// NOTE: the https/ folder will be added to .gitignore, since it
+// won't be needed for deployment
+let express,
+    app,
+    server
+
+if (IS_DEV) {
+  const https = require("../https/server");
+
+  const HOST = process.env.HOST || "localhost";
+  const NAME = process.env.NAME || "Secure";
+
+  ({ express, app, server } = https(HOST, PORT, NAME));
+
+} else {
+  // In production, express will run in HTTP mode by default
+  const http = require('http')
+  express = require('express')
+  app = express()
+  server = http.createServer(app)
+  server.listen(PORT, logHostsToConsole)
+}
+
+
+// CORS
+// const corsOptions = require('./utilities/')
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174"
+  ],
+  // some legacy browsers (IE11, various SmartTVs) choke on 204
+  optionsSuccessStatus: 200,
+  credentials: true
+}
+app.use(cors(corsOptions))
+
+
+// COOKIES
 const cookieOptions = {
   name: "authorisation",
   keys: [ COOKIE_SECRET ],
@@ -28,26 +80,13 @@ const cookieOptions = {
   secure: true,
   partitioned: true,
 }
-
-// CORS
-const corsOptions = require('./utilities/')
-
-
-// WebSocket (more below)
-const websocket = require('./websocket')
-
-
-// Express
-const app = express()
-const server = http.createServer(app)
-
-app.use(cors(corsOptions))
 app.use(cookieSession(cookieOptions))
 
+
 // Tell client/index.html where to find images and scripts
-const staticPath = path.resolve(__dirname, '../public')
-app.use(express.static(staticPath));
+app.use(express.static(public));
 app.use(express.json())
+
 
 require('./routes')(app)
 
@@ -58,10 +97,6 @@ app.get('/', (req, res) => {
   res.send(`<pre>Connected to ${protocol}://${host}
 ${Date()}</pre>`)
 })
-
-
-// Start the server
-server.listen(PORT, logHostsToConsole)
 
 
 function logHostsToConsole() {

@@ -5,21 +5,23 @@
 
 function signOut(req, res) {
   let status = 0
-  let message
+  let message = {}
 
   try {
     req.session = null
-    message = { success: "Signed out." }
+    message.success = "Signed out."
 
   } catch(error) {
-    message = error
+    status = 400
+    console.log("signOut error:", req.body, error);
+    message.fail = "Sign Out Error"
   }
 
   if (status) {
     res.status(status)
   }
 
-  res.send(message)
+  res.json(message)
 }
 
 
