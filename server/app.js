@@ -17,8 +17,7 @@ const COOKIE_SECRET = process.env.COOKIE_SECRET || "string needed"
 // (express.static() will use process.env.cwd() as the root, which
 // is incorrect if this script is called from its parent folder.)
 const path = require('path')
-const public = path.resolve(__dirname, "public")
-
+const public = path.resolve(process.cwd(), "public")
 
 // WebSocket, CORS and cookies (more below)
 const websocket = require('./websocket')
