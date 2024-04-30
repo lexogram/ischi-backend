@@ -1,0 +1,2075 @@
+{
+  "creatorId": "blackslate",
+  "name": "Test",
+  "total": 31,
+  "imagesPerCard": 6,
+  "useSunburst": true,
+  "customLayout": true,
+  "cropByDefault": false,
+  "layouts": {
+    "Hexagon 66.37": [
+      { "cx": 0, "cy": -33.37, "r": 16.629, "fill": "#880" },
+      { "cx": 28.885, "cy": -16.709, "r": 16.629, "fill": "#090" },
+      { "cx": 28.921, "cy": 16.645, "r": 16.629, "fill": "#066" },
+      { "cx": 0.054, "cy": 33.37, "r": 16.629, "fill": "#048" },
+      { "cx": -28.98, "cy": 16.543, "r": 16.629, "fill": "#009" },
+      { "cx": -28.875, "cy": -16.726, "r": 16.629, "fill": "#840" }
+    ],
+    "Isolated 73.99": [
+      { "cx": 0.615, "cy": 25.313, "r": 24.679, "fill": "#840" },
+      { "cx": -26.841, "cy": -11.338, "r": 20.861, "fill": "#880" },
+      { "cx": 27.39, "cy": -17.242, "r": 17.634, "fill": "#090" },
+      { "cx": 0.018, "cy": -35.093, "r": 14.906, "fill": "#066" },
+      { "cx": 35.433, "cy": 11.964, "r": 12.6, "fill": "#048" },
+      { "cx": -34.3, "cy": 19.281, "r": 10.651, "fill": "#009" }
+    ],
+    "Muscling In 73.81": [
+      { "cx": 6.857, "cy": 24.374, "r": 24.679, "fill": "#840" },
+      { "cx": -26.814, "cy": -11.443, "r": 20.846, "fill": "#880" },
+      { "cx": 27.311, "cy": -17.415, "r": 17.608, "fill": "#090" },
+      { "cx": 0.018, "cy": -35.126, "r": 14.873, "fill": "#066" },
+      { "cx": -30.393, "cy": 21.857, "r": 12.563, "fill": "#048" },
+      { "cx": 38.445, "cy": 8.565, "r": 10.612, "fill": "#009" }
+    ],
+    "Not for You 73.03": [
+      { "cx": 6.613, "cy": 24.567, "r": 24.557, "fill": "#840" },
+      { "cx": -27.098, "cy": -11.042, "r": 20.738, "fill": "#880" },
+      { "cx": 15.526, "cy": -28.537, "r": 17.512, "fill": "#090" },
+      { "cx": 35.103, "cy": -2.756, "r": 14.788, "fill": "#066" },
+      { "cx": -30.355, "cy": 22.037, "r": 12.488, "fill": "#048" },
+      { "cx": -10.975, "cy": -37.896, "r": 10.546, "fill": "#009" }
+    ],
+    "Hanging Loose 73.00": [
+      { "cx": -27.961, "cy": -0.127, "r": 22.037, "fill": "#840" },
+      { "cx": 1.308, "cy": 30.163, "r": 19.808, "fill": "#880" },
+      { "cx": -3.652, "cy": -31.987, "r": 17.804, "fill": "#090" },
+      { "cx": 32.022, "cy": 11.416, "r": 16.003, "fill": "#066" },
+      { "cx": 28.76, "cy": -21.007, "r": 14.384, "fill": "#048" },
+      { "cx": 6.958, "cy": -3.071, "r": 12.929, "fill": "#009" }
+    ],
+    "Space Inside 72.84": [
+      { "cx": -25.936, "cy": 2.917, "r": 23.9, "fill": "#840" },
+      { "cx": 11.254, "cy": 27.259, "r": 20.508, "fill": "#880" },
+      { "cx": -3.675, "cy": -32.192, "r": 17.598, "fill": "#090" },
+      { "cx": 34.893, "cy": 0.612, "r": 15.1, "fill": "#066" },
+      { "cx": 26.288, "cy": -26.096, "r": 12.957, "fill": "#048" },
+      { "cx": 8.964, "cy": -5.393, "r": 11.119, "fill": "#009" }
+    ],
+    "Hide and Seek 72.38": [
+      { "cx": 4.654, "cy": 25.495, "r": 24.082, "fill": "#840" },
+      { "cx": -28.746, "cy": -6.49, "r": 20.529, "fill": "#880" },
+      { "cx": -0.859, "cy": -32.487, "r": 17.5, "fill": "#090" },
+      { "cx": 29.099, "cy": -19.593, "r": 14.918, "fill": "#066" },
+      { "cx": 36.603, "cy": 7.082, "r": 12.717, "fill": "#048" },
+      { "cx": -30.268, "cy": 24.844, "r": 10.841, "fill": "#009" }
+    ],
+    "Encircled 72.31": [
+      { "cx": -25.886, "cy": 2.959, "r": 23.944, "fill": "#840" },
+      { "cx": 11.652, "cy": 27.125, "r": 20.477, "fill": "#880" },
+      { "cx": -3.685, "cy": -32.277, "r": 17.512, "fill": "#090" },
+      { "cx": 27.346, "cy": -21.88, "r": 14.976, "fill": "#066" },
+      { "cx": 36.926, "cy": 4.43, "r": 12.808, "fill": "#048" },
+      { "cx": 8.331, "cy": -4.232, "r": 10.953, "fill": "#009" }
+    ],
+    "Captured 71.72": [
+      { "cx": -21.964, "cy": 10.987, "r": 25.44, "fill": "#840" },
+      { "cx": 1.234, "cy": -29.112, "r": 20.861, "fill": "#880" },
+      { "cx": 32.135, "cy": -7.023, "r": 17.106, "fill": "#090" },
+      { "cx": 9.807, "cy": 34.609, "r": 14.027, "fill": "#066" },
+      { "cx": 31.828, "cy": 21.657, "r": 11.502, "fill": "#048" },
+      { "cx": 12.934, "cy": 11.33, "r": 9.431, "fill": "#009" }
+    ],
+    "Kept Apart 71.65": [
+      { "cx": 4.135, "cy": 25.708, "r": 23.961, "fill": "#840" },
+      { "cx": -28.763, "cy": -6.876, "r": 20.425, "fill": "#880" },
+      { "cx": -0.862, "cy": -32.576, "r": 17.412, "fill": "#090" },
+      { "cx": 35.089, "cy": 2.171, "r": 14.843, "fill": "#066" },
+      { "cx": 28.214, "cy": -24.468, "r": 12.653, "fill": "#048" },
+      { "cx": -30.736, "cy": 24.35, "r": 10.786, "fill": "#009" }
+    ],
+    "Way Out 70.96": [
+      { "cx": -28.295, "cy": -1.326, "r": 21.673, "fill": "#840" },
+      { "cx": 1.291, "cy": -30.466, "r": 19.505, "fill": "#880" },
+      { "cx": 31.359, "cy": -8.321, "r": 17.555, "fill": "#090" },
+      { "cx": -11.445, "cy": 32.227, "r": 15.799, "fill": "#066" },
+      { "cx": 27.055, "cy": 23.414, "r": 14.219, "fill": "#048" },
+      { "cx": 5.117, "cy": 7.527, "r": 12.797, "fill": "#009" }
+    ]
+  },
+  "images": [
+    { "source": "111_Animals/anteater.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/badger.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/bear.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/bumblebee.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/cat.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/clownfish.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/cow.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/crab.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/crocodile.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/dove.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/duck.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/fish.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/flamingo.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/frog.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/hamster.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/horse.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/lion.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/owl.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/panda.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/peacock.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/pelican.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/prawn.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/puffin.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/rabbit.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/seahorse.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/sheep.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/sloth.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/squirrel.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/starfish.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/stork.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/swallow.png", "crop": 0, "selfScale": 1 },
+
+    { "source": "111_Animals/wolf.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/ant.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/antelope.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/bacteria.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/bat.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/beaver.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/beetle.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/bison.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/budgie.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/bullfinch.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/butterfly.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/camel.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/cock.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/crane.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/deer.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/dog.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/dolphin.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/donkey.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/elephant.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/falcon.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/fly.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/fox.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/gecko.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/giraffe.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/goat.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/grasshopper.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/hare.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/hedgehog.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/hermit-crab.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/hummingbird.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/kangaroo.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/kingfisher.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/kiwi.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/koala.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/ladybird.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/lemur.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/leopard.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/llama.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/lobster.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/monarch.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/moose.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/moth.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/mouse.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/nautilus.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/octopus.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/orca.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/ostrich.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/otter.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/parrot.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/penguin.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/pig.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/porcupine.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/puffer-fish.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/raccoon.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/ram.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/rat.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/rhinoceros.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/salmon.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/sea-anemone.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/sea-urchin.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/seagull.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/seal.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/shark.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/snail.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/snake.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/snow-macaque.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/squid.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/stingray.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/swan.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/tarantula.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/tiger.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/turkey.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/turtle.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/unicorn.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/walrus.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/weasel.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/weevil.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/whale.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/yellow-tang.png", "crop": 0, "selfScale": 1 },
+    { "source": "111_Animals/zebra.png", "crop": 0, "selfScale": 1 }
+  ],
+  "cardData": [
+    {
+      "images": [
+        {
+          "imageIndex": 0,
+          "specificScale": 1,
+          "rotation": 75.71391084,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 1,
+          "specificScale": 1,
+          "rotation": 149.45027112,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 2,
+          "specificScale": 1,
+          "rotation": 265.22386164000005,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 3,
+          "specificScale": 1,
+          "rotation": 92.27404943999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 4,
+          "specificScale": 1,
+          "rotation": 10.977197399999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 5,
+          "specificScale": 1,
+          "rotation": 270.80092728,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hexagon 66.37",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 6,
+          "specificScale": 1,
+          "rotation": 276.11574047999994,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 0,
+          "specificScale": 1,
+          "rotation": 217.18869516000004,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 7,
+          "specificScale": 1,
+          "rotation": 134.61444936,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 8,
+          "specificScale": 1,
+          "rotation": 304.02477971999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 9,
+          "specificScale": 1,
+          "rotation": 189.28436399999998,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 10,
+          "specificScale": 1,
+          "rotation": 37.014992279999966,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Way Out 70.96",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 11,
+          "specificScale": 1,
+          "rotation": 11.59242084,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 12,
+          "specificScale": 1,
+          "rotation": 70.66287936,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 0,
+          "specificScale": 1,
+          "rotation": 281.76176555999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 13,
+          "specificScale": 1,
+          "rotation": 113.90222951999999,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 14,
+          "specificScale": 1,
+          "rotation": 128.27159604,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 15,
+          "specificScale": 1,
+          "rotation": 44.220126240000056,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Encircled 72.31",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 16,
+          "specificScale": 1,
+          "rotation": 92.07209592000001,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 17,
+          "specificScale": 1,
+          "rotation": 3.61601028,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 18,
+          "specificScale": 1,
+          "rotation": 6.911824319999999,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 0,
+          "specificScale": 1,
+          "rotation": 292.13065548000003,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 19,
+          "specificScale": 1,
+          "rotation": 51.035564880000024,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 20,
+          "specificScale": 1,
+          "rotation": 81.57826259999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Way Out 70.96",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 21,
+          "specificScale": 1,
+          "rotation": 109.39554971999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 22,
+          "specificScale": 1,
+          "rotation": 128.51967384,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 23,
+          "specificScale": 1,
+          "rotation": 152.60052132,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 24,
+          "specificScale": 1,
+          "rotation": 348.51187584,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 0,
+          "specificScale": 1,
+          "rotation": 272.22839532,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 25,
+          "specificScale": 1,
+          "rotation": 44.10200232,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Not for You 73.03",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 26,
+          "specificScale": 1,
+          "rotation": 245.57696784,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 27,
+          "specificScale": 1,
+          "rotation": 260.47335996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 28,
+          "specificScale": 1,
+          "rotation": 41.91697080000001,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 29,
+          "specificScale": 1,
+          "rotation": 233.44533828,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 30,
+          "specificScale": 1,
+          "rotation": 317.20998815999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 0,
+          "specificScale": 1,
+          "rotation": 201.78476171999998,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Not for You 73.03",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 1,
+          "specificScale": 1,
+          "rotation": 355.66660116,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 6,
+          "specificScale": 1,
+          "rotation": 56.97275184000003,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 11,
+          "specificScale": 1,
+          "rotation": 110.04890076,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 16,
+          "specificScale": 1,
+          "rotation": 357.24255192000004,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 21,
+          "specificScale": 1,
+          "rotation": 181.9365066,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 26,
+          "specificScale": 1,
+          "rotation": 306.57691583999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hexagon 66.37",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 12,
+          "specificScale": 1,
+          "rotation": 242.75224296000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 7,
+          "specificScale": 1,
+          "rotation": 292.22420148,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 1,
+          "specificScale": 1,
+          "rotation": 50.60157264000006,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 17,
+          "specificScale": 1,
+          "rotation": 52.84345211999998,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 22,
+          "specificScale": 1,
+          "rotation": 112.75225848000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 27,
+          "specificScale": 1,
+          "rotation": 303.4002906,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hanging Loose 73.00",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 8,
+          "specificScale": 1,
+          "rotation": 229.83645132,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 18,
+          "specificScale": 1,
+          "rotation": 289.50418440000004,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 13,
+          "specificScale": 1,
+          "rotation": 18.35941716,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 1,
+          "specificScale": 1,
+          "rotation": 290.57213808,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 23,
+          "specificScale": 1,
+          "rotation": 71.61406235999999,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 28,
+          "specificScale": 1,
+          "rotation": 163.53735192,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hide and Seek 72.38",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 9,
+          "specificScale": 1,
+          "rotation": 6.7981824,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 14,
+          "specificScale": 1,
+          "rotation": 350.29405548,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 24,
+          "specificScale": 1,
+          "rotation": 213.30058536,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 19,
+          "specificScale": 1,
+          "rotation": 210.97896948,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 1,
+          "specificScale": 1,
+          "rotation": 94.51448208,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 29,
+          "specificScale": 1,
+          "rotation": 174.33754812,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Isolated 73.99",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 10,
+          "specificScale": 1,
+          "rotation": 201.64217796,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 15,
+          "specificScale": 1,
+          "rotation": 14.892482880000024,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 20,
+          "specificScale": 1,
+          "rotation": 158.773563,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 30,
+          "specificScale": 1,
+          "rotation": 214.98260040000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 25,
+          "specificScale": 1,
+          "rotation": 2.1597915600000217,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 1,
+          "specificScale": 1,
+          "rotation": 354.05540784,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Captured 71.72",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 2,
+          "specificScale": 1,
+          "rotation": 215.52315479999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 24,
+          "specificScale": 1,
+          "rotation": 83.71160676,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 6,
+          "specificScale": 1,
+          "rotation": 103.12165439999998,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 12,
+          "specificScale": 1,
+          "rotation": 297.83532204,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 18,
+          "specificScale": 1,
+          "rotation": 208.23520104000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 30,
+          "specificScale": 1,
+          "rotation": 110.78416692000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hexagon 66.37",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 7,
+          "specificScale": 1,
+          "rotation": 279.35233020000004,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 2,
+          "specificScale": 1,
+          "rotation": 117.1860876,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 25,
+          "specificScale": 1,
+          "rotation": 174.04189956,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 26,
+          "specificScale": 1,
+          "rotation": 328.67798111999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 13,
+          "specificScale": 1,
+          "rotation": 260.69370444000003,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 19,
+          "specificScale": 1,
+          "rotation": 39.75925895999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Muscling In 73.81",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 14,
+          "specificScale": 1,
+          "rotation": 221.02203888000003,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 8,
+          "specificScale": 1,
+          "rotation": 267.14980764,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 27,
+          "specificScale": 1,
+          "rotation": 130.64011416,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 2,
+          "specificScale": 1,
+          "rotation": 148.15023012,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 20,
+          "specificScale": 1,
+          "rotation": 20.288851199999982,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 21,
+          "specificScale": 1,
+          "rotation": 49.14159083999999,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Isolated 73.99",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 15,
+          "specificScale": 1,
+          "rotation": 30.270132359999984,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 9,
+          "specificScale": 1,
+          "rotation": 114.03149328,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 16,
+          "specificScale": 1,
+          "rotation": 14.102700120000033,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 28,
+          "specificScale": 1,
+          "rotation": 109.4652972,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 2,
+          "specificScale": 1,
+          "rotation": 339.74021700000003,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 22,
+          "specificScale": 1,
+          "rotation": 175.66496927999998,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Space Inside 72.84",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 23,
+          "specificScale": 1,
+          "rotation": 329.77710792,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 10,
+          "specificScale": 1,
+          "rotation": 54.41300244,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 17,
+          "specificScale": 1,
+          "rotation": 27.268132319999978,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 11,
+          "specificScale": 1,
+          "rotation": 168.15792348000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 29,
+          "specificScale": 1,
+          "rotation": 118.47444696,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 2,
+          "specificScale": 1,
+          "rotation": 318.18928356,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Encircled 72.31",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 3,
+          "specificScale": 1,
+          "rotation": 89.96831531999999,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 20,
+          "specificScale": 1,
+          "rotation": 147.94524648,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 29,
+          "specificScale": 1,
+          "rotation": 137.5367058,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 22,
+          "specificScale": 1,
+          "rotation": 271.75462991999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 6,
+          "specificScale": 1,
+          "rotation": 7.429146839999987,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 13,
+          "specificScale": 1,
+          "rotation": 120.27567096,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Captured 71.72",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 30,
+          "specificScale": 1,
+          "rotation": 205.91893728000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 23,
+          "specificScale": 1,
+          "rotation": 313.55471052,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 3,
+          "specificScale": 1,
+          "rotation": 216.14097672,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 7,
+          "specificScale": 1,
+          "rotation": 79.68205907999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 16,
+          "specificScale": 1,
+          "rotation": 167.42317680000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 14,
+          "specificScale": 1,
+          "rotation": 224.33232924,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hexagon 66.37",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 17,
+          "specificScale": 1,
+          "rotation": 7.454315879999989,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 3,
+          "specificScale": 1,
+          "rotation": 95.11863552,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 8,
+          "specificScale": 1,
+          "rotation": 284.35793004,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 15,
+          "specificScale": 1,
+          "rotation": 285.27775272,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 26,
+          "specificScale": 1,
+          "rotation": 27.148822919999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 24,
+          "specificScale": 1,
+          "rotation": 39.68944272,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hide and Seek 72.38",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 18,
+          "specificScale": 1,
+          "rotation": 329.51352887999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 11,
+          "specificScale": 1,
+          "rotation": 80.94218436,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 9,
+          "specificScale": 1,
+          "rotation": 13.910448960000057,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 25,
+          "specificScale": 1,
+          "rotation": 352.29990924,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 27,
+          "specificScale": 1,
+          "rotation": 64.84845384000003,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 3,
+          "specificScale": 1,
+          "rotation": 267.49407636,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hanging Loose 73.00",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 28,
+          "specificScale": 1,
+          "rotation": 289.89212508,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 21,
+          "specificScale": 1,
+          "rotation": 294.77930327999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 19,
+          "specificScale": 1,
+          "rotation": 244.9708938,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 10,
+          "specificScale": 1,
+          "rotation": 352.60801344000004,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 3,
+          "specificScale": 1,
+          "rotation": 210.2001246,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 12,
+          "specificScale": 1,
+          "rotation": 39.91364711999999,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hexagon 66.37",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 4,
+          "specificScale": 1,
+          "rotation": 211.46089679999997,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 25,
+          "specificScale": 1,
+          "rotation": 78.56769276,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 14,
+          "specificScale": 1,
+          "rotation": 151.53082488,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 6,
+          "specificScale": 1,
+          "rotation": 228.56645124000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 28,
+          "specificScale": 1,
+          "rotation": 288.96367968,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 17,
+          "specificScale": 1,
+          "rotation": 307.4397678,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Encircled 72.31",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 29,
+          "specificScale": 1,
+          "rotation": 328.171005,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 4,
+          "specificScale": 1,
+          "rotation": 21.24793584,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 21,
+          "specificScale": 1,
+          "rotation": 48.923890199999995,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 18,
+          "specificScale": 1,
+          "rotation": 82.65998232000001,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 15,
+          "specificScale": 1,
+          "rotation": 39.06608292,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 7,
+          "specificScale": 1,
+          "rotation": 50.77411200000001,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hexagon 66.37",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 19,
+          "specificScale": 1,
+          "rotation": 291.7424196,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 30,
+          "specificScale": 1,
+          "rotation": 124.53315444,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 22,
+          "specificScale": 1,
+          "rotation": 148.383972,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 4,
+          "specificScale": 1,
+          "rotation": 152.97245243999998,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 11,
+          "specificScale": 1,
+          "rotation": 291.05425080000003,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 8,
+          "specificScale": 1,
+          "rotation": 95.34528324,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hanging Loose 73.00",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 20,
+          "specificScale": 1,
+          "rotation": 214.50159756,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 26,
+          "specificScale": 1,
+          "rotation": 242.81606088,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 4,
+          "specificScale": 1,
+          "rotation": 7.535933640000074,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 9,
+          "specificScale": 1,
+          "rotation": 221.168556,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 12,
+          "specificScale": 1,
+          "rotation": 260.00082396,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 23,
+          "specificScale": 1,
+          "rotation": 108.44598744,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Muscling In 73.81",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 13,
+          "specificScale": 1,
+          "rotation": 285.24044736,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 16,
+          "specificScale": 1,
+          "rotation": 187.35205932,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 10,
+          "specificScale": 1,
+          "rotation": 104.04411624000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 27,
+          "specificScale": 1,
+          "rotation": 217.66219956,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 24,
+          "specificScale": 1,
+          "rotation": 195.38276688,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 4,
+          "specificScale": 1,
+          "rotation": 111.69447804,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hide and Seek 72.38",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 27,
+          "specificScale": 1,
+          "rotation": 47.17323396,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 19,
+          "specificScale": 1,
+          "rotation": 263.2994352,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 15,
+          "specificScale": 1,
+          "rotation": 299.16072396000004,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 23,
+          "specificScale": 1,
+          "rotation": 162.795474,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 5,
+          "specificScale": 1,
+          "rotation": 89.37924948,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 6,
+          "specificScale": 1,
+          "rotation": 67.67935343999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hexagon 66.37",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 24,
+          "specificScale": 1,
+          "rotation": 87.97006872,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 28,
+          "specificScale": 1,
+          "rotation": 351.38154276,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 5,
+          "specificScale": 1,
+          "rotation": 221.52900095999996,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 20,
+          "specificScale": 1,
+          "rotation": 170.44957548,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 7,
+          "specificScale": 1,
+          "rotation": 60.12610343999998,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 11,
+          "specificScale": 1,
+          "rotation": 57.12397812,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hexagon 66.37",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 25,
+          "specificScale": 1,
+          "rotation": 156.11829948,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 29,
+          "specificScale": 1,
+          "rotation": 178.24415544,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 12,
+          "specificScale": 1,
+          "rotation": 224.47062468000001,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 5,
+          "specificScale": 1,
+          "rotation": 337.60569888,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 8,
+          "specificScale": 1,
+          "rotation": 179.70664716,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 16,
+          "specificScale": 1,
+          "rotation": 86.73647688000001,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Way Out 70.96",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 5,
+          "specificScale": 1,
+          "rotation": 126.03410352000003,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 13,
+          "specificScale": 1,
+          "rotation": 123.84830556,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 30,
+          "specificScale": 1,
+          "rotation": 29.749284719999984,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 21,
+          "specificScale": 1,
+          "rotation": 24.511939560000027,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 17,
+          "specificScale": 1,
+          "rotation": 177.88521024000002,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 9,
+          "specificScale": 1,
+          "rotation": 354.94286508,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Isolated 73.99",
+      "cardScale": 1
+    },
+    {
+      "images": [
+        {
+          "imageIndex": 22,
+          "specificScale": 1,
+          "rotation": 259.71919668,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 5,
+          "specificScale": 1,
+          "rotation": 137.88774864,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 26,
+          "specificScale": 1,
+          "rotation": 49.35695867999995,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 14,
+          "specificScale": 1,
+          "rotation": 353.65099896,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 10,
+          "specificScale": 1,
+          "rotation": 51.55559172000005,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        },
+        {
+          "imageIndex": 18,
+          "specificScale": 1,
+          "rotation": 75.38880096,
+          "offsetX": 0,
+          "offsetY": 0,
+          "zIndex": 0,
+          "crop": 0
+        }
+      ],
+      "layoutName": "Hanging Loose 73.00",
+      "cardScale": 1
+    }
+  ]
+}

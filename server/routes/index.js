@@ -11,7 +11,8 @@ const {
   uploader,
   treatQuery,
   setPack,
-  getPacks
+  getPacks,
+  getOwnedPacks
 } = require('../controllers')
 const {
   readFields,
@@ -29,6 +30,7 @@ const routes = (app) => {
   app.post("/images/get", treatQuery)
   app.post("/packs/get", getPacks)
   app.post("/packs/set", setPack)
+  app.post("/packs/owned", getOwnedPacks)
 }
 
 

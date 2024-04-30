@@ -4,12 +4,12 @@ const { User } = require('../database')
 
 
 function signedIn(req, res) {
-  const { userId } = req
+  const { user_id } = req // may also contain organization_id
 
   let message = {}
   let status = 0
 
-  User.findById(userId)
+  User.findById(user_id)
     .then(treatSuccess)
     .catch(treatError)
     .finally(proceed)
@@ -17,12 +17,13 @@ function signedIn(req, res) {
 
   function treatSuccess(user) {
     if (user) {
-      const { username, email } = user
+      const { username, email, organization } = user
 
       message.success = "signed_in",
       message.user = {
         username,
-        email
+        email,
+        organization
       }
     } else {
       message.fail = "not-signed-in"

@@ -9,7 +9,8 @@ const mongoose = require("mongoose");
 const {
   Image,
   Pack,
-  User
+  User,
+  Organization
 } = require("./models")
 
 mongoose.set("strictQuery", true); // false by default > v6
@@ -31,7 +32,8 @@ const db = {
   mongoose,
   Image,
   Pack,
-  User
+  User,
+  Organization
 }
 
 

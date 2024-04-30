@@ -48,9 +48,6 @@
         width: 128px;
         height: 128px;
       }
-      div {
-        display: flex;
-      }
     </style>
   </head>
 <body>
@@ -59,41 +56,48 @@
     action="/packs/get"
     method="post"
   >
-    <label for="owner_id">
+    <label>
       <span>Owner id:</span>
       <input
-        id="Owner id"
-        name="Owner_id"
+        name="owner_id"
         type="text"
         placeholder="user"
       />
     </label>
-    <label for="owner_type">
+    <label>
       <span>Owner Type:</span>
       <select
         name="owner_type"
-        id="owner_type"
       >
-        <option value="None" selected>None</option>
-        <option value="User">User</option>
+        <option value="" selected>...</option>
+        <option value="None">None</option>
         <option value="Organization">Organization</option>
+        <option value="User">User</option>
+        <option value="Sampler">Sampler</option>
       </select>
     </label>
-    <label for="name">
+    <label>
       <span>Pack Name:</span>
       <input
-        id="name"
         name="name"
         type="text"
-        placeholder="name"
+        placeholder="pack name"
       />
-    </label> <label for="folder">
-      <span>Pack Name:</span>
+    </label>
+    <label>
+      <span>Folder:</span>
       <input
-        id="folder"
         name="folder"
         type="text"
         placeholder="folder"
+      />
+    </label>
+    <label>
+      <span>Count:</span>
+      <input
+        name="count"
+        type="text"
+        placeholder="number"
       />
     </label>
     <label
@@ -103,7 +107,7 @@
         type="submit"
         disabled
       >
-        Show Images
+        Get Packs
       </button>
     </label>
   </form>
@@ -151,10 +155,15 @@ const headers = {
 const credentials = "include"
 
 
+const replacer = (key, value) => {
+  return !!value ? value : undefined
+}
+
+
 form.onsubmit = event => {
   event.preventDefault()
 
-  const body = JSON.stringify({ query })
+  const body = JSON.stringify({ query }, replacer, "")
 
   console.log("Get Packs body:", body);
   

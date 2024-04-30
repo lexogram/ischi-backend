@@ -10,8 +10,9 @@
  * verifyToken()
  *   Checks if a session cookie exists that contains a token
  *   If not, responds with 403 Forbidden
- *   If so, and the token is still valid and it contains an `id`
- *   value, sets req.userId to that value
+ *   If so, and the token is still valid and it contains values
+ *   for `user_id` (and `organization_id`), sets req.xxx_id to
+ *   the appropriate value(s)
  *   If not, responds with 401 Unauthorized
  */
 
@@ -83,7 +84,8 @@ const verifyToken = (req, res, next) => {
       message = "Unauthorized"
 
     } else {
-      req.userId = payload.id
+      req.user_id = payload.user_id
+      req.organization_id = payload.organization_id // undefined?
       proceed()
     }
   }

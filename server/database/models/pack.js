@@ -12,7 +12,7 @@
  */
 
 const { Schema, model } = require('mongoose')
-const ownerTypes = [ "User", "Organization", "None" ]
+const ownerTypes = [ "User", "Organization", "None", "Sampler" ]
 
 const schema = new Schema({
   owner_id:   { type: Schema.Types.ObjectId },

@@ -9,7 +9,7 @@ const { makeToken } = require('../middleware/jwToken')
 
 
 function signIn(req, res, next) {
-  const { username, email, id, password, auto_login } = req.body
+  const { username, email, user_id, password, auto_login } = req.body
   // id, here, may be either username or password
 
   let status = 0
@@ -20,8 +20,8 @@ function signIn(req, res, next) {
   const promises = [
     findUser({ email }),
     findUser({ username }),
-    findUser({ email: id }),
-    findUser({ username: id })
+    findUser({ email: user_id }),
+    findUser({ username: user_id })
   ]
 
 
@@ -52,11 +52,22 @@ function signIn(req, res, next) {
 
 
   function treatSuccess(user) {
-    const { id, username, email } = user
+    const {
+      id: user_id,
+      organization_id,
+      organization,
+      username,
+      email
+    } = user
     // id, here, is the unique value stored in MongoDB
+
+    const tokenData = organization_id
+      ? { user_id, organization_id }
+      : { user_id }
 
     let token
     if (auto_login) {
+      // create a persistent token and cookie
       const maxAge = 90 * 24 * 3600 * 1000 // 90 days in ms
       req.sessionOptions = {
         maxAge,
@@ -65,18 +76,18 @@ function signIn(req, res, next) {
         secure: true,
         partitioned: true,
       }
-      token = makeToken({ id, expiresIn: maxAge })
-
-    } else { // create a token that expires when the session ends
-      token = makeToken({ id })
-    }
+      tokenData.expiresIn = maxAge
+    } // else create a token that expires when the session ends
+    
+    token = makeToken(tokenData)
 
     req.session.token = token
 
     message.success = "signed_in",
     message.user = {
       username,
-      email
+      email,
+      organization // will only be sent if not undefined
     }
   }
 
