@@ -14,6 +14,11 @@
  *   for `user_id` (and `organization_id`), sets req.xxx_id to
  *   the appropriate value(s)
  *   If not, responds with 401 Unauthorized
+ * 
+ * checkForToken()
+ *   Allows the requested action to proceed even if no token is
+ *   available. Adds `user_id` (and `organization_id`) to req if
+ *   a valid token is found.
  */
 
 
@@ -63,6 +68,27 @@ const makeToken = ( payload, options = {} ) => {
 }
 
 
+/**
+ * Adds user_id (and perhaps organization_id) to req, if a valid
+ * token is provided. Continues without this, if not.
+ */
+const checkForToken = (req, res, next) => {
+  const token = req.session?.token
+
+  if (!token) {
+    return next()
+  }
+
+  verifyToken(req, res, next)
+}
+
+
+
+/**
+ * Prevents the requeted action if no token is available or if
+ * it is not valid. Adds user_id (and perhaps organization_id) to
+ * req, if all is good.
+ */
 const verifyToken = (req, res, next) => {
   const token = req.session?.token
 
@@ -102,5 +128,6 @@ const verifyToken = (req, res, next) => {
 
 module.exports = {
   makeToken,
-  verifyToken
+  verifyToken,
+  checkForToken
 }

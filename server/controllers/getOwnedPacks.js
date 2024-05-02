@@ -9,7 +9,7 @@ function getOwnedPacks(req, res) {
   let status = 0
   let message = {}
 
-  const { user_id, organization_id } = req.body
+  const { user_id, organization_id } = req
 
   const request = organization_id
    ? {$or: [
@@ -46,6 +46,7 @@ function getOwnedPacks(req, res) {
           folder:     pack.folder,
           thumbnail:  pack.thumbnail,
           count:      pack.count,
+          owner_id:   pack.owner_id,
           owner_type: pack.owner_type
         }
       ))

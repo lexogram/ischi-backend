@@ -12,7 +12,8 @@ const {
 } = require('./directory.js')
 const {
   makeToken,
-  verifyToken
+  verifyToken,
+  checkForToken
 } = require('./jwToken.js')
 const { readFields } = require('./multer.js')
 const { validateSignup } = require('./validateSignup.js')
@@ -26,6 +27,7 @@ module.exports = {
   moveFile,
   makeToken,
   verifyToken,
+  checkForToken,
   readFields,
   validateSignup
 }

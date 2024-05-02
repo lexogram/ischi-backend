@@ -17,7 +17,8 @@ const {
 const {
   readFields,
   validateSignup,
-  verifyToken
+  verifyToken,
+  checkForToken
 } = require('../middleware')
 
 
@@ -30,7 +31,7 @@ const routes = (app) => {
   app.post("/images/get", treatQuery)
   app.post("/packs/get", getPacks)
   app.post("/packs/set", setPack)
-  app.post("/packs/owned", getOwnedPacks)
+  app.post("/packs/owned", checkForToken, getOwnedPacks)
 }
 
 
