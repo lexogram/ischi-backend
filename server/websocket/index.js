@@ -33,7 +33,9 @@ const websocket = (server) => {
         data = JSON.parse(message.toString())
         treatMessage(data)
 
-      } catch {
+      } catch(error) {
+        console.log("error:", error);
+
         if (data) {
           console.log("treatMessage failed")
         } else {

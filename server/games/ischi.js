@@ -202,7 +202,12 @@ const selectPack = ({ content }) => {
 const scoreMatch = ({ sender_id, content }) => {
   const { href, room } = content
   const gameData = ischiData[room].gameData
-  const { index, randomIndices, images, cardData } = gameData
+  const {
+    index,
+    randomIndices,
+    imageSources,
+    cardData
+  } = gameData
 
   if (index < 0 || isNaN(index)) {
     // Someone has already found the match, or the game is over.
@@ -219,7 +224,7 @@ const scoreMatch = ({ sender_id, content }) => {
     const imageIndex = images1.find(
       index => images2.indexOf(index) + 1
     )
-    const match = images[imageIndex].source
+    const match = imageSources[imageIndex].source
 
     if (href === match) {
       // User sender_id is the first to find the match
@@ -252,7 +257,7 @@ const acknowledgeMatch = ({
   // <<< Provide data for a user who joins the game between the
   // moment when a match is found and when the next card is shown
   gameData.foundBy = user_name
-  gameData.lastClick = { href, cardIndex: - 1 }
+  gameData.lastClick = { href, cardIndex: -1 }
   // This will be ignored by any player already playing >>>
 
   const score = gameData.score

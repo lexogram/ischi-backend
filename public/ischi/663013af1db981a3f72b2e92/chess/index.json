@@ -3,7 +3,7 @@
   "customLayout": true,
   "cropByDefault": false,
   "useSunburst": false,
-  "images": [
+  "imageSources": [
     { "source": "♔.webp", "crop": 0, "selfScale": 1 },
     { "source": "♕.webp", "crop": 0, "selfScale": 1 },
     { "source": "♖.webp", "crop": 0, "selfScale": 1 },

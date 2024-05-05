@@ -3,7 +3,7 @@
   "customLayout": false,
   "cropByDefault": true,
   "useSunburst": false,
-  "images": [
+  "imageSources": [
     { "source": "red.png", "crop": 0, "selfScale": 1 },
     { "source": "yellow.png", "crop": 0, "selfScale": 1 },
     { "source": "green.png", "crop": 0, "selfScale": 1 },

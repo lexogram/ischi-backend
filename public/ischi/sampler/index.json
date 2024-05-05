@@ -96,7 +96,7 @@
       { "cx": 5.117, "cy": 7.527, "r": 12.797, "fill": "#009" }
     ]
   },
-  "images": [
+  "imageSources": [
     { "source": "anteater.png", "crop": 0, "selfScale": 1 },
     { "source": "badger.png", "crop": 0, "selfScale": 1 },
     { "source": "bear.png", "crop": 0, "selfScale": 1 },
