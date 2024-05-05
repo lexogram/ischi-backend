@@ -3,19 +3,30 @@
  */
 
 const GAME = "game"
+const { Pack } = require('../database')
 
 
 const {
   addMessageListener,
-  removeMessageListener,
+  // removeMessageListener,
   sendMessageToUser,
   sendMessageToRoom,
   getUserNameFromId
 } = require("../websocket/users");
 const publicPath = "../../public/ischi/"
-const packData = require(
-  `${publicPath}packs.json`
-)
+// const packData = require(
+//   `${publicPath}packs.json`
+// )
+let packData
+;(async () => {
+  const fields = { count: 1, folder: 1, thumbnail: 1 }
+  const result = await Pack.find({})
+  packData = await result.map( pack => ({
+    count: pack.count,
+    folder: pack.folder,
+    thumbnail: pack.thumbnail
+  }))
+})()
 const { shuffle } = require('../utilities/shuffle')
 
 
@@ -131,25 +142,28 @@ const treatVote = ({ sender_id, content }) => {
 }
 
 
-const createGameData = (pack_name, delay) => {
+const createGameData = (folder, delay) => {
   const pack = packData.find(
-    pack => pack.name === pack_name
+    pack => pack.folder === folder
   )
-  const { index, count } = pack
-  const gameData = require(`${publicPath}${index}`)
+  const { count } = pack
+  const gameData = require(`${publicPath}${folder}/index.json`)
 
+  // Create an array of the numbers between 0 and count-1...
   const randomIndices = Array
     .from(
       {length: count},
       (_, index) => index
     )
+  // ... and shuffle it. This will be the order in which the
+  // `count` cards are shown
   shuffle(randomIndices)
 
   gameData.last = count - 2
   gameData.randomIndices = randomIndices
   gameData.index = 0
   gameData.nextIndex = 1 // so host can click Next Card at start
-  gameData.root = index.replace(/\/[^/]+$/, "/images/")
+  gameData.root = `${folder}/images/`
   gameData.delay = delay
   gameData.lastClick = {}
   // gameData.foundBy = ""
@@ -159,12 +173,12 @@ const createGameData = (pack_name, delay) => {
 
 
 const selectPack = ({ content }) => {
-  const { room, pack_name, delay } = content
+  const { room, folder, delay } = content
 
   const roomData = ischiData[room]
                 || (ischiData[room] = {})
 
-  content = createGameData(pack_name, delay)
+  content = createGameData(folder, delay)
 
   // Save for future room members
   roomData.gameData = content

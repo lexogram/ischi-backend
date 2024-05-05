@@ -9,15 +9,16 @@ function getPacks(req, res) {
   let status = 0
   let message = {}
 
-  const { query } = req.body
+  const query = req.body?.query || {}
 
-  if (typeof query !== "object") {
-    status = 400 // Bad Request
-    const stringQuery = JSON.stringify(query)
-    message.fail = `Unable to treat query ${stringQuery}`
+  // const { query } = body
+  // if (typeof query !== "object") {
+  //   status = 400 // Bad Request
+  //   const stringQuery = JSON.stringify(query)
+  //   message.fail = `Unable to treat query ${stringQuery}`
 
-    return proceed()
-  }
+  //   return proceed()
+  // }
 
   Pack
     .find(query)
