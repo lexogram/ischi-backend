@@ -30,7 +30,7 @@ const __cwd = process.cwd()
 
 const TEMP = path.join(__cwd, "temp")
 const PUBLIC = "public"
-const UPLOAD = "uploads"
+const UPLOAD = ""
 
 
 const createIfNecessary = directory => {
@@ -40,13 +40,13 @@ const createIfNecessary = directory => {
 }
 
 
-[TEMP, path.join(__cwd, PUBLIC, UPLOAD) ].forEach( directory => (
+[ TEMP, path.join(__cwd, PUBLIC, UPLOAD) ].forEach( directory => (
   createIfNecessary(directory)
 ))
 
 
-const absolutePath = (folder) => {
-  const directory = path.join(__cwd, PUBLIC, UPLOAD, folder)
+const absolutePath = (...folder) => {
+  const directory = path.join(__cwd, PUBLIC, UPLOAD, ...folder)
   createIfNecessary(directory)
 
   return directory

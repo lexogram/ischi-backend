@@ -18,7 +18,7 @@ const schema = new Schema({
   owner_id:   { type: Schema.Types.ObjectId },
   owner_type: { type: String, required: true, enum: ownerTypes },
   name:       { type: String, required: true },
-  count:      { type: Number, required: true },
+  total:      { type: Number, required: true },
   thumbnail:  { type: String, required: true },
   folder:     { type: String, required: true },
  });

@@ -21,16 +21,26 @@ const multer = require('multer')
 const { absolutePath, TEMP } = require('./directory')
 
 
+// Reduce the 13-digit number value of Date.now(), such as
+// 3333333333333 (18 August 2075) to a 7-character string
+const chars = /* a string of 64 unique characters */
+"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&$"
+function getMSHash(number) {
+  let hash = ""
+  let ms = Date.now()
+
+  while (ms) {
+    const index = ms % 64
+    hash += chars[index] // little endian
+    ms = (ms - index) / 64
+  }
+
+  return hash
+}
+
 
 function filename(req, file, callback) {
   let name = file.originalname
-  const { body } = req
-  let nameMap
-  try {
-    nameMap = JSON.parse(body?.nameMap)
-  } catch {
-    nameMap = {}
-  }
 
   // <<< HACK: Convert the originalname to UTF-8
   // Tested with Cyrillic filenames on:
@@ -42,27 +52,23 @@ function filename(req, file, callback) {
   // https://github.com/expressjs/multer/issues/962#issuecomment-1283500468
   // HACK >>>
 
-  const fileName = nameMap[name] || name
+  // Generate an almost-unique string based on the precise
+  // number of milliseconds since the Epoch when this function
+  // was called. This could fail if two files with identical names
+  // are treated within less than a millisecond of each other.
+  const hash = getMSHash()
+  const fileName = `${hash}-${name}`
   callback( null, fileName )
 }
 
 
-function getBreadcrumbs(req) {
-  const { body, user_id, organization_id } = req
-  const { app, packName } = (body || {})
-  const owner_id = organization_id || user_id || ""
-
-  return [ app, owner_id, packName ].filter( crumb => !!crumb )
-}
-
-
-function destination(req, file, cb) {
+function destination (req, file, cb) {
   // Define where a given file is to be saved
-  const breadcrumbs = getBreadcrumbs(req)
-
-  if (breadcrumbs.length ) {
+  const { body } = req
+  const { room: directoryName } = body
+  if (directoryName) {
     // Save file immediately in its final resting place
-    const path = absolutePath(...breadcrumbs)
+    const path = absolutePath(directoryName)
     cb(null, path)
 
   } else {
@@ -83,18 +89,15 @@ const upload = multer({ storage });
 
 // The HTML form sends the following fields. The `images` field
 // will contain file data that will be saved to req.files. The
-// 'owner_id' and 'packName' fields will be added to req.body.
+// 'user' and 'room' fields will be added to req.body.
 const fields = [
-  // { name: 'app', maxCount: 1 },
-  // { name: 'packName', maxCount: 1 },
-  // { name: 'nameMap',  maxCount: 1 },
-  // { name: 'packData', maxCount: 1 },
+  { name: 'user', maxCount: 1 },
+  { name: 'room', maxCount: 1 },
   { name: 'images' }
 ]
 const readFields = upload.fields(fields)
 
 
 module.exports = {
-  readFields,
-  getBreadcrumbs
+  readFields
 }

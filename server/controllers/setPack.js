@@ -1,5 +1,7 @@
 /**
  * server/controllers/setPack.js
+ * 
+ * Creates a Pack record
  */
 
 const { Pack } = require('../database')
@@ -20,15 +22,16 @@ function setPack(req, res) {
 
 
   function treatResult(pack) {
-    const { name,
-      count,
+    const {
+      name,
+      total,
       owner_type,
       owner_id
     } = pack
     message.success = "Pack record created",
     message.pack = {
       name,
-      count,
+      total,
       owner_type,
       owner_id
     }

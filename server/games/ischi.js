@@ -3,7 +3,6 @@
  */
 
 const GAME = "game"
-const { Pack } = require('../database')
 
 
 const {
@@ -14,19 +13,6 @@ const {
   getUserNameFromId
 } = require("../websocket/users");
 const publicPath = "../../public/ischi/"
-// const packData = require(
-//   `${publicPath}packs.json`
-// )
-let packData
-;(async () => {
-  const fields = { count: 1, folder: 1, thumbnail: 1 }
-  const result = await Pack.find({})
-  packData = await result.map( pack => ({
-    count: pack.count,
-    folder: pack.folder,
-    thumbnail: pack.thumbnail
-  }))
-})()
 const { shuffle } = require('../utilities/shuffle')
 
 
@@ -143,23 +129,23 @@ const treatVote = ({ sender_id, content }) => {
 
 
 const createGameData = (folder, delay) => {
-  const pack = packData.find(
-    pack => pack.folder === folder
-  )
-  const { count } = pack
+  // const pack = packData.find(
+  //   pack => pack.folder === folder
+  // )
+  // const { count } = pack
   const gameData = require(`${publicPath}${folder}/index.json`)
-
+  const { total } = gameData
   // Create an array of the numbers between 0 and count-1...
   const randomIndices = Array
     .from(
-      {length: count},
+      {length: total},
       (_, index) => index
     )
   // ... and shuffle it. This will be the order in which the
   // `count` cards are shown
   shuffle(randomIndices)
 
-  gameData.last = count - 2
+  gameData.last = total - 2
   gameData.randomIndices = randomIndices
   gameData.index = 0
   gameData.nextIndex = 1 // so host can click Next Card at start

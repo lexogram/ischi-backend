@@ -85,7 +85,7 @@ const checkForToken = (req, res, next) => {
 
 
 /**
- * Prevents the requeted action if no token is available or if
+ * Prevents the requested action if no token is available or if
  * it is not valid. Adds user_id (and perhaps organization_id) to
  * req, if all is good.
  */

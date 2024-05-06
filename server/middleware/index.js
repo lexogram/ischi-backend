@@ -15,7 +15,10 @@ const {
   verifyToken,
   checkForToken
 } = require('./jwToken.js')
-const { readFields } = require('./multer.js')
+const {
+  readFields,
+  getBreadcrumbs
+} = require('./multer')
 const { validateSignup } = require('./validateSignup.js')
 
 
@@ -29,5 +32,6 @@ module.exports = {
   verifyToken,
   checkForToken,
   readFields,
+  getBreadcrumbs,
   validateSignup
 }

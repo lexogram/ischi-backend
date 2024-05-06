@@ -8,10 +8,11 @@ const {
   signIn,
   signOut,
   signedIn,
-  uploader,
-  treatQuery,
+  // uploader,
+  // treatQuery,
   setPack,
   getPacks,
+  savePack,
   getOwnedPacks
 } = require('../controllers')
 const {
@@ -27,10 +28,11 @@ const routes = (app) => {
   app.post("/signin", signIn)
   app.post("/signout", signOut)
   app.get( '/signedin', verifyToken, signedIn)
-  app.post("/images/set", readFields, uploader)
-  app.post("/images/get", treatQuery)
+  // app.post("/images/set", readFields, uploader)
+  // app.post("/images/get", treatQuery)
   app.post("/packs/get", getPacks)
   app.post("/packs/set", setPack)
+  app.post("/packs/save", verifyToken, readFields, savePack)
   app.post("/packs/owned", checkForToken, getOwnedPacks)
 }
 
