@@ -7,6 +7,8 @@
 // variable 'path' elsewhere, with no conflicts.
 const { basename, join } = require('path')
 const fs = require('fs')
+const { recordPack } = require('../controllers/recordPack')
+
 
 const {
   UPLOAD,
@@ -101,16 +103,51 @@ const savePack = (req, res) => {
   })())
 
 
-  if (false) { // <<< TODO // TODO // TODO // TODO // TODO //
-    // This pack has not been saved yet: reate a new Pack record
+  if (true) { // <<< TODO // TODO // TODO // TODO // TODO //
+    // owner_id:   { type: Schema.Types.ObjectId },
+    // owner_type: { type: String, required: true, enum: ownerTypes },
+    // name:       { type: String, required: true },
+    // total:      { type: Number, required: true },
+    // thumbnail:  { type: String, required: true },
+    // folder:     { type: String, required: true },
+
+    // This pack has not been saved yet: create a new Pack record
     promises.push((() => {
       return new Promise(createPackRecord)
 
       function createPackRecord(resolve) {
-        const query = JSON.stringify({
+        // Assemble the record data
+        const { user_id, organization_id } = req
+        const [ owner_id, owner_type ] = organization_id
+        ? [ organization_id, "Organization" ]
+        : [ user_id, "User" ]
 
-        })
-        resolve(query)
+        const { packName, name, total, thumbnail } = body
+        const folder = join(owner_id, packName)
+
+        const record = {
+          owner_id,
+          owner_type,
+          name,
+          folder,
+          total,
+          thumbnail
+        }
+
+        const callback = (error, result) => {
+          if (error) {
+            console.log("RecordPack error:\n", error);
+
+            return resolve({
+              status: 500,
+              error: `Pack record not created`
+            })
+          }
+
+          resolve(result)
+        }
+
+        recordPack(record, callback)
       }
     })()) // TODO // TODO // TODO // TODO // TODO >>>
   }

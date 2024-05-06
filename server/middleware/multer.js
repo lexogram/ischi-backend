@@ -85,10 +85,13 @@ const upload = multer({ storage });
 // will contain file data that will be saved to req.files. The
 // 'owner_id' and 'packName' fields will be added to req.body.
 const fields = [
-  // { name: 'app', maxCount: 1 },
-  // { name: 'packName', maxCount: 1 },
-  // { name: 'nameMap',  maxCount: 1 },
-  // { name: 'packData', maxCount: 1 },
+  { name: 'app',       maxCount: 1 },
+  { name: 'name',      maxCount: 1 },
+  { name: 'packName',  maxCount: 1 },
+  { name: 'nameMap',   maxCount: 1 },
+  { name: 'total',     maxCount: 1 },
+  { name: 'packData',  maxCount: 1 },
+  { name: 'thumbnail', maxCount: 1 },
   { name: 'images' }
 ]
 const readFields = upload.fields(fields)
