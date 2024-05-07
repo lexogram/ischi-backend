@@ -46,7 +46,7 @@ function getOwnedPacks(req, res) {
           name:       pack.name,
           folder:     pack.folder,
           thumbnail:  pack.thumbnail,
-          count:      pack.count,
+          total:      pack.total,
           owner_type: pack.owner_type
         }
       ))
