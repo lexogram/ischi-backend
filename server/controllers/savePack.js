@@ -31,7 +31,7 @@ const savePack = (req, res) => {
   // UPLOAD manually in the relative path, but absolutePath()
   // will add it automatically
   const breadcrumbs = getBreadcrumbs(req)
-  const folder = join(UPLOAD, ...breadcrumbs)
+  const folder = join(...breadcrumbs, UPLOAD)
   // Ensure that the destination directory exists
   const fullPath = absolutePath(...breadcrumbs)
 
@@ -82,7 +82,7 @@ const savePack = (req, res) => {
     return new Promise(savePackData)
 
     function savePackData(resolve) {
-      const jsonFile = join(fullPath, JSON_FILE)
+      const jsonFile = join(fullPath, "..", JSON_FILE)
       fs.writeFile(jsonFile, packData, completeWrite)
 
       function completeWrite(error) {

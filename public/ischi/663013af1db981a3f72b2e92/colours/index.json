@@ -1,276 +1,379 @@
 {
-  "creatorId": "blackslate",
-  "total": 7,
-  "customLayout": false,
-  "cropByDefault": true,
-  "useSunburst": false,
-  "imageSources": [
-    { "source": "red.png", "crop": 0, "selfScale": 1 },
-    { "source": "yellow.png", "crop": 0, "selfScale": 1 },
-    { "source": "green.png", "crop": 0, "selfScale": 1 },
-    { "source": "cyan.png", "crop": 0, "selfScale": 1 },
-    { "source": "blue.png", "crop": 0, "selfScale": 1 },
-    { "source": "magenta.png", "crop": 0, "selfScale": 1 },
-    { "source": "black.png", "crop": 0, "selfScale": 1 }
+ "total": 7,
+ "customLayout": false,
+ "cropByDefault": true,
+ "turnConstraint": false,
+ "useSunburst": false,
+ "layouts": {
+  "Triangle 64.60": [
+   {
+    "cx": 0,
+    "cy": -26.796,
+    "r": 23.203,
+    "fill": "#800"
+   },
+   {
+    "cx": 23.204,
+    "cy": 13.402,
+    "r": 23.203,
+    "fill": "#080"
+   },
+   {
+    "cx": -23.204,
+    "cy": 13.402,
+    "r": 23.203,
+    "fill": "#008"
+   }
   ],
-  "layouts": {
-    "Triangle 64.60": [
-      { "cx": 0, "cy": -26.796, "r": 23.203, "fill": "#800" },
-      { "cx": 23.204, "cy": 13.402, "r": 23.203, "fill": "#080" },
-      { "cx": -23.204, "cy": 13.402, "r": 23.203, "fill": "#008" }
-    ],
-    "Ratio .950 64.430": [
-      { "cx": 0, "cy": -25.651, "r": 24.348, "fill": "#800" },
-      { "cx": -20.589, "cy": 17.263, "r": 23.13, "fill": "#080" },
-      { "cx": 24.429, "cy": 13.736, "r": 21.973, "fill": "#008" }
-    ],
-    "Ratio .900 64.16": [
-      { "cx": 0, "cy": -24.496, "r": 25.503, "fill": "#800" },
-      { "cx": -17.096, "cy": 20.959, "r": 22.952, "fill": "#080" },
-      { "cx": 25.941, "cy": 13.715, "r": 20.656, "fill": "#008" }
-    ],
-    "Ratio .850 63.22": [
-      { "cx": 0, "cy": -23.463, "r": 26.536, "fill": "#800" },
-      { "cx": 12.044, "cy": 24.66, "r": 22.555, "fill": "#080" },
-      { "cx": -28.084, "cy": 12.716, "r": 19.171, "fill": "#008" }
-    ],
-    "Ratio .825 63.20": [
-      { "cx": 0, "cy": -22.86, "r": 27.139, "fill": "#800" },
-      { "cx": 9.711, "cy": 25.835, "r": 22.399, "fill": "#080" },
-      { "cx": -28.942, "cy": 12.463, "r": 18.488, "fill": "#008" }
-    ]
-  },
-  "cardData": [
-    {
-      "images": [
-        {
-          "imageIndex": 0,
-          "specificScale": 1,
-          "rotation": 75.71391084,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 1,
-          "specificScale": 1,
-          "rotation": 149.45027112,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 2,
-          "specificScale": 1,
-          "rotation": 265.22386164000005,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        }
-      ],
-      "layoutName": "Ratio .950 64.430",
-      "cardScale": 1
-    },
-    {
-      "images": [
-        {
-          "imageIndex": 3,
-          "specificScale": 1,
-          "rotation": 10.977197399999996,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 0,
-          "specificScale": 1,
-          "rotation": 270.80092728,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 4,
-          "specificScale": 1,
-          "rotation": 332.65321668,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        }
-      ],
-      "layoutName": "Ratio .900 64.16",
-      "cardScale": 1
-    },
-    {
-      "images": [
-        {
-          "imageIndex": 5,
-          "specificScale": 1,
-          "rotation": 217.18869516000004,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 6,
-          "specificScale": 1,
-          "rotation": 134.61444936,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 0,
-          "specificScale": 1,
-          "rotation": 304.02477971999997,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        }
-      ],
-      "layoutName": "Ratio .850 63.22",
-      "cardScale": 1
-    },
-    {
-      "images": [
-        {
-          "imageIndex": 1,
-          "specificScale": 1,
-          "rotation": 37.014992279999966,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 5,
-          "specificScale": 1,
-          "rotation": 235.02805848,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 3,
-          "specificScale": 1,
-          "rotation": 11.59242084,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        }
-      ],
-      "layoutName": "Ratio .825 63.20",
-      "cardScale": 1
-    },
-    {
-      "images": [
-        {
-          "imageIndex": 6,
-          "specificScale": 1,
-          "rotation": 281.76176555999996,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 4,
-          "specificScale": 1,
-          "rotation": 113.90222951999999,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 1,
-          "specificScale": 1,
-          "rotation": 128.27159604,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        }
-      ],
-      "layoutName": "Triangle 64.60",
-      "cardScale": 1
-    },
-    {
-      "images": [
-        {
-          "imageIndex": 2,
-          "specificScale": 1,
-          "rotation": 344.5591014,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 3,
-          "specificScale": 1,
-          "rotation": 92.07209592000001,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 6,
-          "specificScale": 1,
-          "rotation": 3.61601028,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        }
-      ],
-      "layoutName": "Ratio .900 64.16",
-      "cardScale": 1
-    },
-    {
-      "images": [
-        {
-          "imageIndex": 4,
-          "specificScale": 1,
-          "rotation": 292.13065548000003,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 2,
-          "specificScale": 1,
-          "rotation": 51.035564880000024,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        },
-        {
-          "imageIndex": 5,
-          "specificScale": 1,
-          "rotation": 81.57826259999996,
-          "offsetX": 0,
-          "offsetY": 0,
-          "zIndex": 0,
-          "crop": 0
-        }
-      ],
-      "layoutName": "Ratio .825 63.20",
-      "cardScale": 1
-    }
+  "Ratio .950 64.430": [
+   {
+    "cx": 0,
+    "cy": -25.651,
+    "r": 24.348,
+    "fill": "#800"
+   },
+   {
+    "cx": -20.589,
+    "cy": 17.263,
+    "r": 23.13,
+    "fill": "#080"
+   },
+   {
+    "cx": 24.429,
+    "cy": 13.736,
+    "r": 21.973,
+    "fill": "#008"
+   }
+  ],
+  "Ratio .900 64.16": [
+   {
+    "cx": 0,
+    "cy": -24.496,
+    "r": 25.503,
+    "fill": "#800"
+   },
+   {
+    "cx": -17.096,
+    "cy": 20.959,
+    "r": 22.952,
+    "fill": "#080"
+   },
+   {
+    "cx": 25.941,
+    "cy": 13.715,
+    "r": 20.656,
+    "fill": "#008"
+   }
+  ],
+  "Ratio .850 63.22": [
+   {
+    "cx": 0,
+    "cy": -23.463,
+    "r": 26.536,
+    "fill": "#800"
+   },
+   {
+    "cx": 12.044,
+    "cy": 24.66,
+    "r": 22.555,
+    "fill": "#080"
+   },
+   {
+    "cx": -28.084,
+    "cy": 12.716,
+    "r": 19.171,
+    "fill": "#008"
+   }
+  ],
+  "Ratio .825 63.20": [
+   {
+    "cx": 0,
+    "cy": -22.86,
+    "r": 27.139,
+    "fill": "#800"
+   },
+   {
+    "cx": 9.711,
+    "cy": 25.835,
+    "r": 22.399,
+    "fill": "#080"
+   },
+   {
+    "cx": -28.942,
+    "cy": 12.463,
+    "r": 18.488,
+    "fill": "#008"
+   }
   ]
+ },
+ "cardData": [
+  {
+   "images": [
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 75.71391084,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 149.45027112,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 265.22386164000005,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Ratio .950 64.430",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 10.977197399999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 270.80092728,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 332.65321668,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Ratio .900 64.16",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 217.18869516000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 134.61444936,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 304.02477971999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Ratio .850 63.22",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 37.014992279999966,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 235.02805848,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 11.59242084,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Ratio .825 63.20",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 281.76176555999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 113.90222951999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 128.27159604,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Triangle 64.60",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 344.5591014,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 92.07209592000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 3.61601028,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Ratio .900 64.16",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 292.13065548000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 51.035564880000024,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 81.57826259999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Ratio .825 63.20",
+   "cardScale": 1
+  }
+ ],
+ "imageSources": [
+  {
+   "source": "red.png",
+   "crop": 0,
+   "selfScale": 1
+  },
+  {
+   "source": "yellow.png",
+   "crop": 0,
+   "selfScale": 1
+  },
+  {
+   "source": "green.png",
+   "crop": 0,
+   "selfScale": 1
+  },
+  {
+   "source": "cyan.png",
+   "crop": 0,
+   "selfScale": 1
+  },
+  {
+   "source": "blue.png",
+   "crop": 0,
+   "selfScale": 1
+  },
+  {
+   "source": "magenta.png",
+   "crop": 0,
+   "selfScale": 1
+  },
+  {
+   "source": "black.png",
+   "crop": 0,
+   "selfScale": 1
+  }
+ ]
 }
