@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 3000
 const IS_DEV = process.env.NODE_ENV === "development"
 const COOKIE_SECRET = process.env.COOKIE_SECRET || "string needed"
 
+const origin = IS_DEV
+  ? JSON.parse(process.env.ORIGIN_DEV)
+  : process.env.ORIGIN
+
 // Find the "./public" directory relative to this script,
 // regardless of where this script was launched from.
 // (express.static() will use process.env.cwd() as the root, which
@@ -57,12 +61,7 @@ if (IS_DEV) {
 // CORS
 // const corsOptions = require('./utilities/')
 const corsOptions = {
-  origin: [
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "http://127.0.0.1:5173",
-    "http://127.0.0.1:5174"
-  ],
+  origin,
   // some legacy browsers (IE11, various SmartTVs) choke on 204
   optionsSuccessStatus: 200,
   credentials: true
