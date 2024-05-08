@@ -32,8 +32,8 @@ const routes = (app) => {
   // app.post("/images/get", treatQuery)
   app.post("/packs/get", getPacks)
   app.post("/packs/set", setPack)
-  app.post("/packs/save", verifyToken, readFields, savePack)
-  app.post("/packs/owned", checkForToken, getOwnedPacks)
+  app.post("/save", verifyToken, readFields, savePack)
+  app.post("/owned", checkForToken, getOwnedPacks)
 }
 
 
