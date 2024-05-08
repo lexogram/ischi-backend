@@ -5,61 +5,95 @@
 
 require('dotenv').config()
 
-// Ensure that it's possible to connect to the database
+// Connect to the database or process.exit() if it's not possible
 require('./database')
+
+
+// <<< HARD-CODED certificate names
+const certificates = {
+  key: "key.pem",
+  cert: "cert.pem"
+}
+// HARD-CODED >>
+
+
+const fs = require("fs");
+const path = require("path")
+const https = require("https");
+
+const express = require("express");
+const cors = require('cors')
+const cookieSession = require('cookie-session')
+
+const websocket = require('./websocket')
 
 const PORT = process.env.PORT || 3000
 const IS_DEV = process.env.NODE_ENV === "development"
 const COOKIE_SECRET = process.env.COOKIE_SECRET || "string needed"
-
-const origin = IS_DEV
-  ? JSON.parse(process.env.ORIGIN_DEV)
-  : process.env.ORIGIN
-
-// Find the "./public" directory relative to this script,
-// regardless of where this script was launched from.
-// (express.static() will use process.env.cwd() as the root, which
-// is incorrect if this script is called from its parent folder.)
-const path = require('path')
-const public = path.resolve(process.cwd(), "public")
-
-// WebSocket, CORS and cookies (more below)
-const websocket = require('./websocket')
-const cors = require('cors')
-const cookieSession = require('cookie-session')
+const HOST = process.env.HOST || "localhost";
+const NAME = process.env.NAME || "Secure";
 
 
-// Run express in HTTPS mode during development. In production,
-// express will run locally in HTTP mode and nginx will provide
-// an HTTPS proxy for it.
-// This allows cookies with sameSite: "none" and  secure: true
-// to be sent from the server and treated in the browser.
-// NOTE: the https/ folder will be added to .gitignore, since it
-// won't be needed for deployment
-let express,
-    app,
-    server
+const getCertPaths = (directoryPath) => {
+  const errors = {}
+  const keys = Object.keys(certificates)
+  const certsExist = keys.every( key => {
+    const certPath = path.join(directoryPath, certificates[key])
+    const certExists = fs.existsSync(certPath)
 
-if (IS_DEV) {
-  const https = require("../https/server");
+    if (certExists) {
+      certificates[key] = certPath
+    } else {
+      errors[key] = certificates[key]
+    }
 
-  const HOST = process.env.HOST || "localhost";
-  const NAME = process.env.NAME || "Secure";
+    return certExists
+  })
 
-  ({ express, app, server } = https(HOST, PORT, NAME));
+  if (!certsExist) {
+    console.log("Missing or misnamed certificates", errors)
+    process.exit(0)
+  }
 
-} else {
-  // In production, express will run in HTTP mode by default
-  const http = require('http')
-  express = require('express')
-  app = express()
-  server = http.createServer(app)
-  server.listen(PORT, logHostsToConsole)
+  return certificates
+}
+
+
+// Run express in HTTPS mode. This allows cookies with
+// `sameSite: "none"` and  `secure: true` to be sent from the
+// server and treated in the browser.
+
+const certPath = path.join(__dirname, "certificates", HOST)
+const certPaths = getCertPaths(certPath)
+// console.log("certPaths:", certPaths);
+
+
+const app = express();
+
+// Create a NodeJS HTTPS listener on PORT that points to the
+// Express app
+// Use a callback function to tell when the server is created.
+const server = https.createServer({
+    key: fs.readFileSync(certPaths.key),
+    cert: fs.readFileSync(certPaths.cert),
+  }, app)
+  .listen(PORT, logStuffToConsole);
+
+function logStuffToConsole() {
+  console.log(
+    `${NAME} server listening at HTTPS://${HOST}:${PORT}`
+  );
 }
 
 
 // CORS
-// const corsOptions = require('./utilities/')
+const origin = IS_DEV
+  ? JSON.parse(process.env.ORIGIN_DEV)
+  : process.env.ORIGIN
+
+console.log("origin:", origin);
+
+
 const corsOptions = {
   origin,
   // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -81,9 +115,19 @@ const cookieOptions = {
 app.use(cookieSession(cookieOptions))
 
 
+// REQ.BODY
+app.use(express.json())
+
+
+// Find the "./public" directory relative to this script,
+// regardless of where this script was launched from.
+// (express.static() will use process.env.cwd() as the root, which
+// is incorrect if this script is called from its parent folder.)
+const public = path.resolve(process.cwd(), "public")
+console.log("public:", public);
+
 // Tell client/index.html where to find images and scripts
 app.use(express.static(public));
-app.use(express.json())
 
 
 require('./routes')(app)
@@ -95,36 +139,6 @@ app.get('/', (req, res) => {
   res.send(`<pre>Connected to ${protocol}://${host}
 ${Date()}</pre>`)
 })
-
-
-function logHostsToConsole() {
-  // Check what IP addresses are used by your
-  // development computer.
-  const nets = require("os").networkInterfaces()
-  const ips = Object.values(nets)
-  .flat()
-  .filter(({ family }) => (
-    family === "IPv4")
-  )
-  .map(({ address }) => address)
-
-  // ips will include `127.0.0.1` which is the
-  // "loopback" address for your computer. This
-  // address is not accessible from other
-  // computers on your network. The host name
-  // "localhost" can be used as an alias for
-  // `127.0.0.1`, so you can add that, too.
-  ips.unshift("localhost")
-
-  // Show in the Terminal the URL(s) where you
-  // can connect to your server
-  const hosts = ips.map( ip => (
-    `http://${ip}:${PORT}`)
-  ).join("\n  ")
-  console.log(`Express server listening at:
-  ${hosts}
-  `);
-}
 
 
 // Add a WebSocket that uses the ws:// protocol and can keep a
