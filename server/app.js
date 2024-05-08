@@ -140,7 +140,8 @@ app.get('/', (req, res) => {
   const protocol = req.protocol
   const host = req.headers.host
   res.send(`<pre>Connected to ${protocol}://${host}
-${Date()}</pre>`)
+${Date()}
+Node version: ${process.version}</pre>`)
 })
 
 
