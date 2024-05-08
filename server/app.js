@@ -92,13 +92,16 @@ const origin = IS_DEV
   : process.env.ORIGIN
 
 console.log("origin:", origin);
+console.log("process.version:", process.version);
+
 
 
 const corsOptions = {
   origin,
   // some legacy browsers (IE11, various SmartTVs) choke on 204
   optionsSuccessStatus: 200,
-  credentials: true
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
 }
 app.use(cors(corsOptions))
 
