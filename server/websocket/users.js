@@ -9,7 +9,15 @@ const {
   removeMessageListener,
   treatMessage
 } = require('./messages')
-const users = {} // { <uuid>: { socket, user_name }}
+const users = {}
+// { <uuid>: {
+//     socket,      // <object>
+//     user_name,   // <Case Sensitive string>
+//     munged_name, // <lowercase user_name>
+//     choices,     // [ [<emoji>, owners[]], ... ]
+//     emoji        // <emoji>
+//   }, ...
+// }
 const rooms = {} // { <name> : { host_id, members: Set(uuid) }}
 
 
@@ -141,6 +149,7 @@ const getUserNameFromId = user_id => {
 
 
 module.exports = {
+  users, // for emojis
   newUser,
   disconnect,
   sendMessageToRoom,

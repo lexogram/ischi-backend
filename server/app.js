@@ -150,4 +150,5 @@ Node version: ${process.version}</pre>`)
 websocket(server)
 
 
+require('./emojis')
 require('./games')

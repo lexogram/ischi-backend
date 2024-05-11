@@ -107,8 +107,3 @@ module.exports = {
   removeMessageListener,
   treatMessage
 }
-// export {
-//   addMessageListener,
-//   removeMessageListener,
-//   treatMessage
-// }
