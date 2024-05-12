@@ -13,6 +13,7 @@ const { getPacks } = require('./getPacks.js')
 const { savePack } = require('./savePack.js')
 const { recordPack } = require('./recordPack.js')
 const { getOwnedPacks } = require('./getOwnedPacks.js')
+const { getEventPacks } = require('./getEventPacks.js')
 
 
 module.exports = {
@@ -26,4 +27,5 @@ module.exports = {
   savePack,
   recordPack,
   getOwnedPacks,
+  getEventPacks
 }

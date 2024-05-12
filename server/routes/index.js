@@ -13,7 +13,8 @@ const {
   setPack,
   getPacks,
   savePack,
-  getOwnedPacks
+  getOwnedPacks,
+  getEventPacks
 } = require('../controllers')
 const {
   readFields,
@@ -34,6 +35,7 @@ const routes = (app) => {
   app.post("/packs/set", setPack)
   app.post("/save", verifyToken, readFields, savePack)
   app.post("/owned", checkForToken, getOwnedPacks)
+  app.post("/event", getEventPacks)
 }
 
 

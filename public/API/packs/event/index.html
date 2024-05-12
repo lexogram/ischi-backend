@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
+    <title>Packs for Event</title>
+
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #222;
+        color: #ddd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+      }
+      form {
+        position: relative;
+        padding: 1em;
+        background-color: #333;
+        border-radius: 1em;
+      }
+      label,
+      span,
+      img {
+        display: block;
+        margin-top: 1em;
+      }
+      label {
+        margin-bottom: 1em;
+      }
+      input {
+        display: inline-block;
+        width: 100%;
+      }
+      .button {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 0;
+      }
+      img {
+        width: 128px;
+        height: 128px;
+      }
+    </style>
+  </head>
+<body>
+  <h1>Get Packs For Event</h1>
+  <p>(no Sampler packs)</p>
+  <form
+    action="/event"
+    method="post"
+  >
+  <label>
+    <span>Organization Name:</span>
+    <input
+      name="name"
+      type="text"
+      placeholder="organization name"
+    />
+  </label>
+  <label>
+    <span>Munged Name:</span>
+    <input
+      name="munged_name"
+      type="text"
+      placeholder="munged_name"
+    />
+  </label>
+    <label
+      class="button"
+    >
+      <button
+        type="submit"
+        disabled
+      >
+        Get Packs for Event
+      </button>
+    </label>
+  </form>
+
+  <div>
+
+<script>
+;(function () {
+"use strict"
+const form = document.getElementsByTagName("form")[0]
+const button = document.getElementsByTagName("button")[0]
+const div = document.getElementsByTagName("div")[0]
+let query = {}
+
+form.addEventListener("keyup", checkForInput)
+
+function checkForInput() {
+  // Disable submit button unless at least one field has a value
+  const formData = new FormData(form)
+
+  query = Object.fromEntries(formData)
+  
+  // Find which fields are empty...
+  const empty = Object.keys(query)
+    .filter( key => !query[key] )
+
+  // ... and delete them from query
+  empty.forEach( key => {
+    delete query[key]
+  })
+  
+
+  // Check if query has any values, and disable the button if not
+  const disabled = !Object.keys(query).length
+  // const action = disabled ? "setAttribute" :  "removeAttribute"
+  const action = "removeAttribute"
+  button[action]("disabled", "")
+}
+
+
+const url = form.getAttribute("action")
+const method = form.getAttribute("method")
+const headers = {
+  "Content-Type": "application/json"
+}
+const credentials = "include"
+
+
+const renderer = (key, value) => {
+  return !!value ? value : undefined
+}
+
+
+form.onsubmit = event => {
+  event.preventDefault()
+
+  const body = JSON.stringify({ query }, renderer, "")
+
+  console.log("Get Packs body:", body);
+  
+
+  const options = {
+    headers,
+    method,
+    credentials,
+    body,
+  }
+
+  fetch(url, options)
+    .then(response => {
+      response.json()
+        .then(json => [ response.status, json ])
+        .then(treatResponse)
+        .catch(error => console.log("error:", error))
+    })
+    .catch(error => console.log("error:", error))
+}
+
+function treatResponse([status, response]) {
+  if (status !== 200) {
+    div.textContent = response.fail
+    return
+  }
+  const nameRegex = /\/([^/.]+)\.\w+$/
+
+  // Empty the div
+  while (div.firstChild) {
+      div.removeChild(div.firstChild);
+  }
+
+  // Refill it with the selected images
+  response.packs.forEach(addPackToDiv)
+
+  function addPackToDiv(pack) {
+    let text = ""
+    Object.entries(pack).forEach(([ key, value ]) =>
+      text += `${key}: ${value}\n`
+    )
+    const pre = document.createElement("pre")
+    pre.textContent = text
+
+    div.append(pre)
+  }
+}
+
+checkForInput()
+})()
+</script>
+</body>
+</html>
