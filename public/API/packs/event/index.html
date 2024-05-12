@@ -151,8 +151,12 @@ form.onsubmit = event => {
 
   fetch(url, options)
     .then(response => {
-      response.json()
-        .then(json => [ response.status, json ])
+      response.text()
+        .then(text => {
+          console.log("text:", text);    
+          const json = JSON.parse(text)
+          return [ response.status, json ]
+        })
         .then(treatResponse)
         .catch(error => console.log("error:", error))
     })
