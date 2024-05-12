@@ -195,8 +195,11 @@ function pushSwapsToClients(owner_id, munged_owner, emoji) {
   // Treat only other users who could choose emoji to register
   const active = Object.entries(users).filter(([ id, data ]) => (
        id !== owner_id // This isn't the user taking ownership...
-    && data.choices.length // ... and they have not yet registerd
+    && data.choices?.length // ... and they haven't yet registered
     // NOTE: data.choices will be [] if this user is confirmed
+    // It will be undefined if a user connected and then
+    // disconnected without registering ... and the garbage hasn't
+    // been cleaned up yet.
   ))
 
   const unused = getNeverClaimed() // [ [<emoji>, []], ... ]

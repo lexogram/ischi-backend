@@ -20,12 +20,15 @@ const users = {}
 // }
 const rooms = {} // { <name> : { host_id, members: Set(uuid) }}
 
+const DELETE_USER_DELAY = 2 * 60 * 60 * 1000 // 2 hours
+
 
 
 const newUser = (socket) => {
   const user_id = uuid()
-  console.log(`New connection from: ${user_id}`)
   users[user_id] = { socket }
+
+  logConnectionEvent("connect", user_id)
 
   const message = JSON.stringify({
     subject: "connection",
@@ -43,35 +46,23 @@ const disconnect = (socket) => {
     data.socket === socket
   ))
 
-
   if (userEntry) {
-    const uuid = userEntry[0]
-    delete users[uuid]
+    const [ uuid, data ] = userEntry
 
-    let user_name = userEntry[1].user_name
-    user_name = user_name ? `(${user_name})` : ""
-    console.log(`Socket closed for ${uuid}${user_name}`)
+    logConnectionEvent("disconnect", uuid, data)
 
-    Object.entries(rooms).forEach(([name, data]) => {
-      const { members, host_id } = data
+    // The socket is no longer needed...
+    delete data.socket
 
-      if (members.has(uuid)) {
-        members.delete(uuid)
-
-        if (members.size) {
-          if (host_id === uuid) {
-            // The departing member is host. transfer hostship
-            // to the longest-serving member
-            data.host_id = members.values().next().value
-          }
-          broadcastMembersToRoom(name)
-
-        } else {
-          // There's no-one left
-          delete rooms[name]
-        }
-      }
-    })
+    // ... but don't delete the user yet. Set timeout for 2 hours
+    // to give the user time to reconnect and continue from where
+    // they left off. The restoreUserId() function will clear this
+    // timeout.
+    data.deleteTimeout = setTimeout(
+      deleteUserData
+    , DELETE_USER_DELAY
+    , uuid
+    )
   } else {
     console.log(`
       ALERT
@@ -80,18 +71,35 @@ const disconnect = (socket) => {
       `
     )
   }
+}
 
-  // const replacer = (key, value) => {
-  //   if (key === "socket") {
-  //     return "[ WebServer Socket ]" // too much information
-  //   } else if (value instanceof Set) {
-  //     return [...value] // sets don't stringify, arrays do
-  //   }
-  //
-  //   return value
-  // }
-  // console.log("users", JSON.stringify(users, replacer, '  '));
-  // console.log("rooms", JSON.stringify(rooms, replacer, '  '));
+
+
+const deleteUserData = uuid => {
+  console.log(`At ${new Date().toLocaleString()}: deleting entry for user ${uuid}`)
+
+  delete users[uuid]
+
+  Object.entries(rooms).forEach(([name, data]) => {
+    const { members, host_id } = data
+
+    if (members.has(uuid)) {
+      members.delete(uuid)
+
+      if (members.size) {
+        if (host_id === uuid) {
+          // The departing member is host. transfer hostship
+          // to the longest-serving member
+          data.host_id = members.values().next().value
+        }
+        broadcastMembersToRoom(name)
+
+      } else {
+        // There's no-one left
+        delete rooms[name]
+      }
+    }
+  })
 }
 
 
@@ -167,6 +175,8 @@ module.exports = {
 
 const treatSystemMessage = ({ subject, sender_id, content }) => {
   switch (subject) {
+    case "restore_user_id":
+      return restoreUserId(sender_id, content) // last_id
     case "confirmation":
       // console.log(sender_id, content)
       return true // message was handled
@@ -184,21 +194,89 @@ addMessageListener({
 })
 
 
+const logConnectionEvent = (event, user_id, userData, more) => {
+  const message = (() => {
+    const padding = 10 - event.length
+    return `${event} for${" ".repeat(padding)}`
+  })()
+  let name = userData?.user_name || userData?.name
+  name = name ? ` (${name})` : ""
+
+  const time = new Date().toLocaleString()
+  more = more ? `\n                       ${more}` : ""
+  console.log(
+    `${time}: ${message} ${user_id}${name}${more}`
+  )
+}
+
+
+
+/** The client logged in previously and was given a user_id. If
+ *  the server has not been restarted since, then their data may
+ *  still be available for this re-connection
+ *
+ * @param {*} temp_id
+ * @param {*} last_id
+ * @returns {boolean}
+ */
+const restoreUserId = (temp_id, last_id) => {
+  // data for user[last_id] may have been cleared, so fall back
+  // to continuing with the new connection data with the old id
+
+  let userData = users[last_id] // [ <uuid>, { deleteTimeout }]
+  let more = ""
+  if (userData) {
+    clearTimeout(userData.deleteTimeout)
+    delete userData.deleteTimeout
+    // Use temp's socket to replace the deleted socket
+    userData.socket = users[temp_id].socket
+    userData.dataNotRestored = false
+    more = `(deleted: temp ${temp_id})`
+
+  } else { // adopt last_id but continue with userData for temp
+    userData = users[temp_id]
+    users[last_id] = userData
+    userData.dataNotRestored = true
+    more = `(previous data no longer available)`
+  }
+
+  delete users[temp_id]
+
+  logConnectionEvent("reconnect", last_id, userData, more)
+
+  const content = { ...userData } // may only contain socket
+  delete content.socket // not needed on the client
+
+
+  const message = {
+    sender_id: "system",
+    recipient_id: last_id,
+    subject: "user_id_restored",
+    content
+  }
+
+  sendMessageToUser(message)
+
+  return true // message was handled
+}
+
+
 const sendUserToRoom = (user_id, content) => {
   // console.log("user_id, content:", user_id, content);
 
   const { user_name, last_id } = content
 
-  if (last_id) {const lastData = users[last_id]
-    if (lastData) {
-      const last_name = lastData.user_name
-      if (last_name === user_name) {
-        // This user is reconnecting. Remove the temporary user_id
-        // from users, and use last_id instead.
-        return reconnectUser(last_id, user_id, lastData, content)
-      }
-    }
-  }
+  // if (last_id) {
+  //   const lastData = users[last_id]
+  //   if (lastData) {
+  //     const last_name = lastData.user_name
+  //     if (last_name === user_name) {
+  //       // This user is reconnecting. Remove the temporary user_id
+  //       // from users, and use last_id instead.
+  //       return reconnectUser(last_id, user_id, lastData, content)
+  //     }
+  //   }
+  // }
 
   // Ignore password for now
   const userData = users[user_id]
@@ -216,10 +294,10 @@ const sendUserToRoom = (user_id, content) => {
 
 
 const reconnectUser = (user_id, temp_id, userData, content) => {
-  users[user_id] = userData
-  delete users[temp_id]
+  // users[user_id] = userData
+  // delete users[temp_id]
 
-  const { room, create_room } = content
+  // const { room, create_room } = content
 }
 
 
