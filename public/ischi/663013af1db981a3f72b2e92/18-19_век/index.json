@@ -1,0 +1,5744 @@
+{
+ "total": 57,
+ "customLayout": true,
+ "cropByDefault": true,
+ "turnConstraint": true,
+ "useSunburst": false,
+ "layouts": {
+  "Big Centre (79.66)": [
+   {
+    "cx": 0,
+    "cy": 0,
+    "r": 19.74999,
+    "fill": "#840"
+   },
+   {
+    "cx": 0,
+    "cy": -34.875,
+    "r": 15.125,
+    "fill": "#880"
+   },
+   {
+    "cx": 27.26637295107254,
+    "cy": -21.744206839823335,
+    "r": 15.125,
+    "fill": "#090"
+   },
+   {
+    "cx": 34.0006109373411,
+    "cy": 7.760417571726462,
+    "r": 15.125,
+    "fill": "#066"
+   },
+   {
+    "cx": 15.131695401724844,
+    "cy": 31.421289268096864,
+    "r": 15.125,
+    "fill": "#048"
+   },
+   {
+    "cx": -15.131695401724844,
+    "cy": 31.421289268096864,
+    "r": 15.125,
+    "fill": "#009"
+   },
+   {
+    "cx": -34.0006109373411,
+    "cy": 7.760417571726462,
+    "r": 15.125,
+    "fill": "#408"
+   },
+   {
+    "cx": -27.26637295107254,
+    "cy": -21.744206839823335,
+    "r": 15.125,
+    "fill": "#804"
+   }
+  ],
+  "Orange 78.43": [
+   {
+    "cx": 1.37,
+    "cy": 5.064,
+    "r": 19.011,
+    "fill": "#840"
+   },
+   {
+    "cx": -0.05,
+    "cy": -32.114,
+    "r": 17.885,
+    "fill": "#880"
+   },
+   {
+    "cx": -29.867,
+    "cy": -14.225,
+    "r": 16.826,
+    "fill": "#090"
+   },
+   {
+    "cx": 29.937,
+    "cy": -16.472,
+    "r": 15.83,
+    "fill": "#066"
+   },
+   {
+    "cx": -30.42,
+    "cy": 17.524,
+    "r": 14.892,
+    "fill": "#048"
+   },
+   {
+    "cx": 33.417,
+    "cy": 13.359,
+    "r": 14.01,
+    "fill": "#00a"
+   },
+   {
+    "cx": -8.956,
+    "cy": 35.712,
+    "r": 13.181,
+    "fill": "#408"
+   },
+   {
+    "cx": 16.594,
+    "cy": 33.739,
+    "r": 12.4,
+    "fill": "#804"
+   }
+  ],
+  "Yellow 77.36": [
+   {
+    "cx": 0,
+    "cy": -30.312,
+    "r": 19.687,
+    "fill": "#840"
+   },
+   {
+    "cx": 2.239,
+    "cy": 7.566,
+    "r": 18.247,
+    "fill": "#880"
+   },
+   {
+    "cx": -31.179,
+    "cy": -11.075,
+    "r": 16.911,
+    "fill": "#090"
+   },
+   {
+    "cx": 31.371,
+    "cy": -13.93,
+    "r": 15.674,
+    "fill": "#066"
+   },
+   {
+    "cx": -29.014,
+    "cy": 20.407,
+    "r": 14.527,
+    "fill": "#048"
+   },
+   {
+    "cx": 33.187,
+    "cy": 15.277,
+    "r": 13.464,
+    "fill": "#009"
+   },
+   {
+    "cx": -7.493,
+    "cy": 36.764,
+    "r": 12.479,
+    "fill": "#408"
+   },
+   {
+    "cx": 17.054,
+    "cy": 34.442,
+    "r": 11.566,
+    "fill": "#804"
+   }
+  ],
+  "Green 77.17": [
+   {
+    "cx": 0,
+    "cy": -30,
+    "r": 20,
+    "fill": "#840"
+   },
+   {
+    "cx": -31.003,
+    "cy": 6.005,
+    "r": 18.42,
+    "fill": "#880"
+   },
+   {
+    "cx": 4.403,
+    "cy": 6.73,
+    "r": 16.964,
+    "fill": "#090"
+   },
+   {
+    "cx": 31.611,
+    "cy": -13.505,
+    "r": 15.624,
+    "fill": "#066"
+   },
+   {
+    "cx": -12.24,
+    "cy": 33.439,
+    "r": 14.39,
+    "fill": "#048"
+   },
+   {
+    "cx": 33.385,
+    "cy": 15.352,
+    "r": 13.253,
+    "fill": "#00a"
+   },
+   {
+    "cx": 15.32,
+    "cy": 34.548,
+    "r": 12.206,
+    "fill": "#408"
+   },
+   {
+    "cx": -30.657,
+    "cy": -23.712,
+    "r": 11.242,
+    "fill": "#804"
+   }
+  ],
+  "Teal 77.12": [
+   {
+    "cx": 0,
+    "cy": -29.124,
+    "r": 20.875,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.712,
+    "cy": 4.851,
+    "r": 18.906,
+    "fill": "#880"
+   },
+   {
+    "cx": 31.811,
+    "cy": -8.297,
+    "r": 17.124,
+    "fill": "#090"
+   },
+   {
+    "cx": 3.603,
+    "cy": 8.195,
+    "r": 15.51,
+    "fill": "#066"
+   },
+   {
+    "cx": -13.686,
+    "cy": 33.245,
+    "r": 14.047,
+    "fill": "#048"
+   },
+   {
+    "cx": 13.124,
+    "cy": 34.889,
+    "r": 12.723,
+    "fill": "#00a"
+   },
+   {
+    "cx": 32.602,
+    "cy": 20.432,
+    "r": 11.523,
+    "fill": "#408"
+   },
+   {
+    "cx": -31.037,
+    "cy": -24.533,
+    "r": 10.437,
+    "fill": "#804"
+   }
+  ],
+  "Yellow 76.98": [
+   {
+    "cx": 0.107,
+    "cy": -31.484,
+    "r": 18.515,
+    "fill": "#840"
+   },
+   {
+    "cx": 2.631,
+    "cy": 4.481,
+    "r": 17.522,
+    "fill": "#880"
+   },
+   {
+    "cx": -32.804,
+    "cy": 6.372,
+    "r": 16.582,
+    "fill": "#090"
+   },
+   {
+    "cx": 30.686,
+    "cy": -15.341,
+    "r": 15.692,
+    "fill": "#066"
+   },
+   {
+    "cx": -14.346,
+    "cy": 32.088,
+    "r": 14.85,
+    "fill": "#048"
+   },
+   {
+    "cx": 32.951,
+    "cy": 14.364,
+    "r": 14.053,
+    "fill": "#00a"
+   },
+   {
+    "cx": 13.823,
+    "cy": 33.997,
+    "r": 13.299,
+    "fill": "#408"
+   },
+   {
+    "cx": -29.748,
+    "cy": -22.688,
+    "r": 12.586,
+    "fill": "#804"
+   }
+  ],
+  "Royal 76.82": [
+   {
+    "cx": 0,
+    "cy": -27.5,
+    "r": 22.5,
+    "fill": "#840"
+   },
+   {
+    "cx": -29.491,
+    "cy": 6.848,
+    "r": 19.723,
+    "fill": "#880"
+   },
+   {
+    "cx": -2.842,
+    "cy": 32.586,
+    "r": 17.289,
+    "fill": "#090"
+   },
+   {
+    "cx": 34.755,
+    "cy": -2.478,
+    "r": 15.156,
+    "fill": "#066"
+   },
+   {
+    "cx": 26.934,
+    "cy": 24.948,
+    "r": 13.286,
+    "fill": "#048"
+   },
+   {
+    "cx": 8.821,
+    "cy": 5.804,
+    "r": 11.646,
+    "fill": "#009"
+   },
+   {
+    "cx": -32.46,
+    "cy": -23.012,
+    "r": 10.209,
+    "fill": "#408"
+   },
+   {
+    "cx": 31.456,
+    "cy": -26.373,
+    "r": 8.949,
+    "fill": "#804"
+   }
+  ],
+  "Pink+Purple 76.68": [
+   {
+    "cx": 0,
+    "cy": -28.4,
+    "r": 21.6,
+    "fill": "#840"
+   },
+   {
+    "cx": -10.583,
+    "cy": 28.851,
+    "r": 19.268,
+    "fill": "#880"
+   },
+   {
+    "cx": 32.157,
+    "cy": -6.521,
+    "r": 17.187,
+    "fill": "#090"
+   },
+   {
+    "cx": 23.97,
+    "cy": 25.044,
+    "r": 15.332,
+    "fill": "#066"
+   },
+   {
+    "cx": -32.925,
+    "cy": -15.338,
+    "r": 13.677,
+    "fill": "#048"
+   },
+   {
+    "cx": -36.328,
+    "cy": 10.44,
+    "r": 12.2,
+    "fill": "#009"
+   },
+   {
+    "cx": 5.839,
+    "cy": 3.561,
+    "r": 10.883,
+    "fill": "#408"
+   },
+   {
+    "cx": -14.565,
+    "cy": -0.181,
+    "r": 9.708,
+    "fill": "#804"
+   }
+  ],
+  "Green 76.52": [
+   {
+    "cx": 0,
+    "cy": -27.5,
+    "r": 22.5,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.23,
+    "cy": 1.962,
+    "r": 19.706,
+    "fill": "#880"
+   },
+   {
+    "cx": 5.802,
+    "cy": 11.994,
+    "r": 17.259,
+    "fill": "#090"
+   },
+   {
+    "cx": 33.396,
+    "cy": -10.079,
+    "r": 15.116,
+    "fill": "#066"
+   },
+   {
+    "cx": -17.417,
+    "cy": 32.372,
+    "r": 13.239,
+    "fill": "#048"
+   },
+   {
+    "cx": 34.596,
+    "cy": 16.673,
+    "r": 11.595,
+    "fill": "#009"
+   },
+   {
+    "cx": 4.902,
+    "cy": 39.542,
+    "r": 10.155,
+    "fill": "#408"
+   },
+   {
+    "cx": 23.218,
+    "cy": 33.919,
+    "r": 8.894,
+    "fill": "#804"
+   }
+  ],
+  "Teal 76.24": [
+   {
+    "cx": 0,
+    "cy": -27.5,
+    "r": 22.5,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.23,
+    "cy": 2.195,
+    "r": 19.689,
+    "fill": "#880"
+   },
+   {
+    "cx": 32.765,
+    "cy": -0.493,
+    "r": 17.23,
+    "fill": "#090"
+   },
+   {
+    "cx": 2.997,
+    "cy": 12.448,
+    "r": 15.078,
+    "fill": "#066"
+   },
+   {
+    "cx": -17.249,
+    "cy": 32.511,
+    "r": 13.195,
+    "fill": "#048"
+   },
+   {
+    "cx": 26.375,
+    "cy": 27.98,
+    "r": 11.547,
+    "fill": "#009"
+   },
+   {
+    "cx": 7.567,
+    "cy": 39.17,
+    "r": 10.105,
+    "fill": "#408"
+   },
+   {
+    "cx": 31.404,
+    "cy": -26.601,
+    "r": 8.843,
+    "fill": "#804"
+   }
+  ],
+  "Green 76.15": [
+   {
+    "cx": 0,
+    "cy": -30.651,
+    "r": 19.348,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.632,
+    "cy": -9.27,
+    "r": 17.995,
+    "fill": "#880"
+   },
+   {
+    "cx": 2.85,
+    "cy": 6.062,
+    "r": 16.736,
+    "fill": "#090"
+   },
+   {
+    "cx": -24.807,
+    "cy": 23.881,
+    "r": 15.565,
+    "fill": "#066"
+   },
+   {
+    "cx": 35.469,
+    "cy": 1.95,
+    "r": 14.476,
+    "fill": "#048"
+   },
+   {
+    "cx": 1.531,
+    "cy": 36.504,
+    "r": 13.463,
+    "fill": "#009"
+   },
+   {
+    "cx": 25.802,
+    "cy": 27.181,
+    "r": 12.521,
+    "fill": "#408"
+   },
+   {
+    "cx": 30.203,
+    "cy": -23.638,
+    "r": 11.645,
+    "fill": "#804"
+   }
+  ],
+  "Pink+Purple 75.70": [
+   {
+    "cx": 0,
+    "cy": -27.5,
+    "r": 22.5,
+    "fill": "#840"
+   },
+   {
+    "cx": 0.889,
+    "cy": 30.328,
+    "r": 19.658,
+    "fill": "#880"
+   },
+   {
+    "cx": -32.52,
+    "cy": -4.456,
+    "r": 17.175,
+    "fill": "#090"
+   },
+   {
+    "cx": 33.49,
+    "cy": -10.148,
+    "r": 15.005,
+    "fill": "#066"
+   },
+   {
+    "cx": 31.985,
+    "cy": 18.378,
+    "r": 13.11,
+    "fill": "#048"
+   },
+   {
+    "cx": -29.906,
+    "cy": 24.317,
+    "r": 11.454,
+    "fill": "#009"
+   },
+   {
+    "cx": 12.066,
+    "cy": 2.823,
+    "r": 10.007,
+    "fill": "#408"
+   },
+   {
+    "cx": -7.602,
+    "cy": 3.196,
+    "r": 8.743,
+    "fill": "#804"
+   }
+  ],
+  "Royal 75.45": [
+   {
+    "cx": 0,
+    "cy": -28.606,
+    "r": 21.393,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.749,
+    "cy": 3.079,
+    "r": 19.096,
+    "fill": "#880"
+   },
+   {
+    "cx": -8.67,
+    "cy": 31.792,
+    "r": 17.045,
+    "fill": "#090"
+   },
+   {
+    "cx": 34.631,
+    "cy": 3.259,
+    "r": 15.215,
+    "fill": "#066"
+   },
+   {
+    "cx": 21.891,
+    "cy": 29.104,
+    "r": 13.581,
+    "fill": "#048"
+   },
+   {
+    "cx": 5.234,
+    "cy": 4.855,
+    "r": 12.123,
+    "fill": "#009"
+   },
+   {
+    "cx": 31.942,
+    "cy": -22.641,
+    "r": 10.821,
+    "fill": "#408"
+   },
+   {
+    "cx": -31.053,
+    "cy": -25.749,
+    "r": 9.659,
+    "fill": "#804"
+   }
+  ],
+  "Blue 75.39": [
+   {
+    "cx": 0,
+    "cy": -29.988,
+    "r": 20.011,
+    "fill": "#840"
+   },
+   {
+    "cx": -31.292,
+    "cy": 4.776,
+    "r": 18.344,
+    "fill": "#880"
+   },
+   {
+    "cx": -8.833,
+    "cy": 31.985,
+    "r": 16.817,
+    "fill": "#090"
+   },
+   {
+    "cx": 34.206,
+    "cy": 5.088,
+    "r": 15.416,
+    "fill": "#066"
+   },
+   {
+    "cx": 4.549,
+    "cy": 4.057,
+    "r": 14.132,
+    "fill": "#048"
+   },
+   {
+    "cx": 21.091,
+    "cy": 30.453,
+    "r": 12.956,
+    "fill": "#009"
+   },
+   {
+    "cx": 31.021,
+    "cy": -22.158,
+    "r": 11.877,
+    "fill": "#408"
+   },
+   {
+    "cx": -30.468,
+    "cy": -24.523,
+    "r": 10.888,
+    "fill": "#804"
+   }
+  ],
+  "Teal 75.32": [
+   {
+    "cx": 0,
+    "cy": -28.854,
+    "r": 21.145,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.885,
+    "cy": -3.086,
+    "r": 18.96,
+    "fill": "#880"
+   },
+   {
+    "cx": -15.124,
+    "cy": 29.328,
+    "r": 17.001,
+    "fill": "#090"
+   },
+   {
+    "cx": 8.799,
+    "cy": 7.067,
+    "r": 15.244,
+    "fill": "#066"
+   },
+   {
+    "cx": 36.225,
+    "cy": -2.757,
+    "r": 13.669,
+    "fill": "#048"
+   },
+   {
+    "cx": 13.534,
+    "cy": 35.233,
+    "r": 12.256,
+    "fill": "#009"
+   },
+   {
+    "cx": 32.461,
+    "cy": 21.633,
+    "r": 10.99,
+    "fill": "#408"
+   },
+   {
+    "cx": 30.864,
+    "cy": -25.671,
+    "r": 9.854,
+    "fill": "#804"
+   }
+  ],
+  "Purple+Pink 75.18": [
+   {
+    "cx": 0,
+    "cy": -27.723,
+    "r": 22.276,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.463,
+    "cy": 0.97,
+    "r": 19.521,
+    "fill": "#880"
+   },
+   {
+    "cx": 17.356,
+    "cy": 27.942,
+    "r": 17.106,
+    "fill": "#090"
+   },
+   {
+    "cx": -14.773,
+    "cy": 31.74,
+    "r": 14.99,
+    "fill": "#066"
+   },
+   {
+    "cx": 36.586,
+    "cy": 4.516,
+    "r": 13.135,
+    "fill": "#048"
+   },
+   {
+    "cx": 32.921,
+    "cy": -19.94,
+    "r": 11.51,
+    "fill": "#009"
+   },
+   {
+    "cx": -1.855,
+    "cy": 8.645,
+    "r": 10.086,
+    "fill": "#408"
+   },
+   {
+    "cx": 15.077,
+    "cy": -0.376,
+    "r": 8.838,
+    "fill": "#804"
+   }
+  ],
+  "Pink+Purple 74.51": [
+   {
+    "cx": 0,
+    "cy": -28.359,
+    "r": 21.64,
+    "fill": "#840"
+   },
+   {
+    "cx": -7.844,
+    "cy": 29.814,
+    "r": 19.17,
+    "fill": "#880"
+   },
+   {
+    "cx": 32.241,
+    "cy": -6.997,
+    "r": 16.982,
+    "fill": "#090"
+   },
+   {
+    "cx": -32.875,
+    "cy": -11.878,
+    "r": 15.044,
+    "fill": "#066"
+   },
+   {
+    "cx": 26.788,
+    "cy": 25.045,
+    "r": 13.327,
+    "fill": "#048"
+   },
+   {
+    "cx": -35.144,
+    "cy": 14.953,
+    "r": 11.806,
+    "fill": "#009"
+   },
+   {
+    "cx": 7,
+    "cy": 4.089,
+    "r": 10.459,
+    "fill": "#408"
+   },
+   {
+    "cx": -12.561,
+    "cy": 1.507,
+    "r": 9.265,
+    "fill": "#804"
+   }
+  ],
+  "Royal+Blue 73.73": [
+   {
+    "cx": 0,
+    "cy": -27.5,
+    "r": 22.5,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.423,
+    "cy": 1.535,
+    "r": 19.537,
+    "fill": "#880"
+   },
+   {
+    "cx": -9.649,
+    "cy": 31.593,
+    "r": 16.965,
+    "fill": "#090"
+   },
+   {
+    "cx": 21.847,
+    "cy": 27.685,
+    "r": 14.732,
+    "fill": "#066"
+   },
+   {
+    "cx": 25.47,
+    "cy": -3.005,
+    "r": 12.792,
+    "fill": "#048"
+   },
+   {
+    "cx": 2.905,
+    "cy": 6.244,
+    "r": 11.108,
+    "fill": "#009"
+   },
+   {
+    "cx": 32.054,
+    "cy": -24.513,
+    "r": 9.646,
+    "fill": "#408"
+   },
+   {
+    "cx": 39.626,
+    "cy": 12.739,
+    "r": 8.376,
+    "fill": "#804"
+   }
+  ],
+  "Royal+Pink 73.32": [
+   {
+    "cx": 0,
+    "cy": -29.979,
+    "r": 20.02,
+    "fill": "#840"
+   },
+   {
+    "cx": -30.894,
+    "cy": -7.311,
+    "r": 18.251,
+    "fill": "#880"
+   },
+   {
+    "cx": 7.155,
+    "cy": 32.584,
+    "r": 16.639,
+    "fill": "#090"
+   },
+   {
+    "cx": -23.841,
+    "cy": 25.392,
+    "r": 15.169,
+    "fill": "#066"
+   },
+   {
+    "cx": 32.651,
+    "cy": 15.564,
+    "r": 13.828,
+    "fill": "#048"
+   },
+   {
+    "cx": -2.581,
+    "cy": 4.978,
+    "r": 12.606,
+    "fill": "#009"
+   },
+   {
+    "cx": 30.814,
+    "cy": -23.091,
+    "r": 11.492,
+    "fill": "#408"
+   },
+   {
+    "cx": 18.491,
+    "cy": -4.701,
+    "r": 10.477,
+    "fill": "#804"
+   }
+  ],
+  "Off Centre (72.96)": [
+   {
+    "cx": 0,
+    "cy": -5.309,
+    "r": 15.1,
+    "fill": "#840"
+   },
+   {
+    "cx": 15.1,
+    "cy": -31.463,
+    "r": 15.1,
+    "fill": "#880"
+   },
+   {
+    "cx": 34.025,
+    "cy": -7.765,
+    "r": 15.1,
+    "fill": "#090"
+   },
+   {
+    "cx": 27.285,
+    "cy": 21.759,
+    "r": 15.1,
+    "fill": "#066"
+   },
+   {
+    "cx": 0,
+    "cy": 34.9,
+    "r": 15.1,
+    "fill": "#048"
+   },
+   {
+    "cx": -27.285,
+    "cy": 21.759,
+    "r": 15.1,
+    "fill": "#009"
+   },
+   {
+    "cx": -34.025,
+    "cy": -7.765,
+    "r": 15.1,
+    "fill": "#408"
+   },
+   {
+    "cx": -15.142,
+    "cy": -31.444,
+    "r": 15.1,
+    "fill": "#804"
+   }
+  ]
+ },
+ "cardData": [
+  {
+   "images": [
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 75.71391084,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 149.45027112,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 265.22386164000005,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 92.27404943999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 10.977197399999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 270.80092728,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 332.65321668,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 7,
+     "specificScale": 1,
+     "rotation": 276.11574047999994,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Big Centre (79.66)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 8,
+     "specificScale": 1,
+     "rotation": 134.61444936,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 304.02477971999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 9,
+     "specificScale": 1,
+     "rotation": 189.28436399999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 10,
+     "specificScale": 1,
+     "rotation": 37.014992279999966,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 11,
+     "specificScale": 1,
+     "rotation": 235.02805848,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 12,
+     "specificScale": 1,
+     "rotation": 11.59242084,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 13,
+     "specificScale": 1,
+     "rotation": 70.66287936,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 14,
+     "specificScale": 1,
+     "rotation": 281.76176555999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal 75.45",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 15,
+     "specificScale": 1,
+     "rotation": 128.27159604,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 16,
+     "specificScale": 1,
+     "rotation": 44.220126240000056,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 344.5591014,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 17,
+     "specificScale": 1,
+     "rotation": 92.07209592000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 18,
+     "specificScale": 1,
+     "rotation": 3.61601028,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 19,
+     "specificScale": 1,
+     "rotation": 6.911824319999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 20,
+     "specificScale": 1,
+     "rotation": 292.13065548000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 21,
+     "specificScale": 1,
+     "rotation": 51.035564880000024,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal 76.82",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 22,
+     "specificScale": 1,
+     "rotation": 105.21763055999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 23,
+     "specificScale": 1,
+     "rotation": 109.39554971999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 24,
+     "specificScale": 1,
+     "rotation": 128.51967384,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 152.60052132,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 25,
+     "specificScale": 1,
+     "rotation": 348.51187584,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 26,
+     "specificScale": 1,
+     "rotation": 272.22839532,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 27,
+     "specificScale": 1,
+     "rotation": 44.10200232,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 28,
+     "specificScale": 1,
+     "rotation": 109.79875187999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 77.12",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 29,
+     "specificScale": 1,
+     "rotation": 260.47335996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 30,
+     "specificScale": 1,
+     "rotation": 41.91697080000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 31,
+     "specificScale": 1,
+     "rotation": 233.44533828,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 32,
+     "specificScale": 1,
+     "rotation": 317.20998815999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 201.78476171999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 33,
+     "specificScale": 1,
+     "rotation": 19.000293839999944,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 34,
+     "specificScale": 1,
+     "rotation": 355.66660116,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 35,
+     "specificScale": 1,
+     "rotation": 56.97275184000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Blue 75.39",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 36,
+     "specificScale": 1,
+     "rotation": 357.24255192000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 37,
+     "specificScale": 1,
+     "rotation": 181.9365066,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 38,
+     "specificScale": 1,
+     "rotation": 306.57691583999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 39,
+     "specificScale": 1,
+     "rotation": 162.05372459999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 40,
+     "specificScale": 1,
+     "rotation": 242.75224296000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 292.22420148,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 41,
+     "specificScale": 1,
+     "rotation": 50.60157264000006,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 42,
+     "specificScale": 1,
+     "rotation": 52.84345211999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal 76.82",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 43,
+     "specificScale": 1,
+     "rotation": 303.4002906,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 44,
+     "specificScale": 1,
+     "rotation": 205.82306784,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 45,
+     "specificScale": 1,
+     "rotation": 229.83645132,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 46,
+     "specificScale": 1,
+     "rotation": 289.50418440000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 47,
+     "specificScale": 1,
+     "rotation": 18.35941716,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 48,
+     "specificScale": 1,
+     "rotation": 290.57213808,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 71.61406235999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 49,
+     "specificScale": 1,
+     "rotation": 163.53735192,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal 76.82",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 50,
+     "specificScale": 1,
+     "rotation": 6.7981824,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 51,
+     "specificScale": 1,
+     "rotation": 350.29405548,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 52,
+     "specificScale": 1,
+     "rotation": 213.30058536,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 53,
+     "specificScale": 1,
+     "rotation": 210.97896948,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 54,
+     "specificScale": 1,
+     "rotation": 94.51448208,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 55,
+     "specificScale": 1,
+     "rotation": 174.33754812,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 56,
+     "specificScale": 1,
+     "rotation": 287.54881848,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 0,
+     "specificScale": 1,
+     "rotation": 201.64217796,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Yellow 77.36",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 158.773563,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 8,
+     "specificScale": 1,
+     "rotation": 214.98260040000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 15,
+     "specificScale": 1,
+     "rotation": 2.1597915600000217,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 22,
+     "specificScale": 1,
+     "rotation": 354.05540784,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 29,
+     "specificScale": 1,
+     "rotation": 13.772539799999954,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 36,
+     "specificScale": 1,
+     "rotation": 215.52315479999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 43,
+     "specificScale": 1,
+     "rotation": 83.71160676,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 50,
+     "specificScale": 1,
+     "rotation": 103.12165439999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Big Centre (79.66)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 16,
+     "specificScale": 1,
+     "rotation": 208.23520104000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 9,
+     "specificScale": 1,
+     "rotation": 110.78416692000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 82.51299792000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 23,
+     "specificScale": 1,
+     "rotation": 279.35233020000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 30,
+     "specificScale": 1,
+     "rotation": 117.1860876,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 37,
+     "specificScale": 1,
+     "rotation": 174.04189956,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 44,
+     "specificScale": 1,
+     "rotation": 328.67798111999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 51,
+     "specificScale": 1,
+     "rotation": 260.69370444000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 74.51",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 10,
+     "specificScale": 1,
+     "rotation": 45.341065799999924,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 24,
+     "specificScale": 1,
+     "rotation": 221.02203888000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 17,
+     "specificScale": 1,
+     "rotation": 267.14980764,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 130.64011416,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 31,
+     "specificScale": 1,
+     "rotation": 148.15023012,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 38,
+     "specificScale": 1,
+     "rotation": 20.288851199999982,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 45,
+     "specificScale": 1,
+     "rotation": 49.14159083999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 52,
+     "specificScale": 1,
+     "rotation": 180.96865704000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Yellow 77.36",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 11,
+     "specificScale": 1,
+     "rotation": 114.03149328,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 18,
+     "specificScale": 1,
+     "rotation": 14.102700120000033,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 32,
+     "specificScale": 1,
+     "rotation": 109.4652972,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 25,
+     "specificScale": 1,
+     "rotation": 339.74021700000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 175.66496927999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 39,
+     "specificScale": 1,
+     "rotation": 234.29984652,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 46,
+     "specificScale": 1,
+     "rotation": 329.77710792,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 53,
+     "specificScale": 1,
+     "rotation": 54.41300244,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Orange 78.43",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 12,
+     "specificScale": 1,
+     "rotation": 168.15792348000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 19,
+     "specificScale": 1,
+     "rotation": 118.47444696,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 26,
+     "specificScale": 1,
+     "rotation": 318.18928356,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 40,
+     "specificScale": 1,
+     "rotation": 275.22650304,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 33,
+     "specificScale": 1,
+     "rotation": 89.96831531999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 147.94524648,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 47,
+     "specificScale": 1,
+     "rotation": 137.5367058,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 54,
+     "specificScale": 1,
+     "rotation": 271.75462991999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Orange 78.43",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 13,
+     "specificScale": 1,
+     "rotation": 120.27567096,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 20,
+     "specificScale": 1,
+     "rotation": 29.57866884000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 27,
+     "specificScale": 1,
+     "rotation": 205.91893728000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 34,
+     "specificScale": 1,
+     "rotation": 313.55471052,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 48,
+     "specificScale": 1,
+     "rotation": 216.14097672,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 41,
+     "specificScale": 1,
+     "rotation": 79.68205907999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 167.42317680000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 55,
+     "specificScale": 1,
+     "rotation": 224.33232924,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Big Centre (79.66)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 14,
+     "specificScale": 1,
+     "rotation": 7.454315879999989,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 21,
+     "specificScale": 1,
+     "rotation": 95.11863552,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 28,
+     "specificScale": 1,
+     "rotation": 284.35793004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 35,
+     "specificScale": 1,
+     "rotation": 285.27775272,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 42,
+     "specificScale": 1,
+     "rotation": 27.148822919999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 56,
+     "specificScale": 1,
+     "rotation": 39.68944272,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 49,
+     "specificScale": 1,
+     "rotation": 152.54624699999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 1,
+     "specificScale": 1,
+     "rotation": 329.51352887999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 75.70",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 13.910448960000057,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 32,
+     "specificScale": 1,
+     "rotation": 352.29990924,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 8,
+     "specificScale": 1,
+     "rotation": 64.84845384000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 16,
+     "specificScale": 1,
+     "rotation": 267.49407636,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 24,
+     "specificScale": 1,
+     "rotation": 4.680925919999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 40,
+     "specificScale": 1,
+     "rotation": 289.89212508,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 48,
+     "specificScale": 1,
+     "rotation": 294.77930327999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 56,
+     "specificScale": 1,
+     "rotation": 244.9708938,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 77.12",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 9,
+     "specificScale": 1,
+     "rotation": 210.2001246,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 39.91364711999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 25,
+     "specificScale": 1,
+     "rotation": 230.22622260000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 33,
+     "specificScale": 1,
+     "rotation": 211.46089679999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 17,
+     "specificScale": 1,
+     "rotation": 78.56769276,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 49,
+     "specificScale": 1,
+     "rotation": 151.53082488,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 50,
+     "specificScale": 1,
+     "rotation": 228.56645124000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 41,
+     "specificScale": 1,
+     "rotation": 288.96367968,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Off Centre (72.96)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 18,
+     "specificScale": 1,
+     "rotation": 27.238424399999968,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 10,
+     "specificScale": 1,
+     "rotation": 328.171005,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 34,
+     "specificScale": 1,
+     "rotation": 21.24793584,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 48.923890199999995,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 26,
+     "specificScale": 1,
+     "rotation": 82.65998232000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 42,
+     "specificScale": 1,
+     "rotation": 39.06608292,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 51,
+     "specificScale": 1,
+     "rotation": 50.77411200000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 43,
+     "specificScale": 1,
+     "rotation": 150.03921132,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal+Blue 73.73",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 19,
+     "specificScale": 1,
+     "rotation": 124.53315444,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 11,
+     "specificScale": 1,
+     "rotation": 148.383972,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 35,
+     "specificScale": 1,
+     "rotation": 152.97245243999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 27,
+     "specificScale": 1,
+     "rotation": 291.05425080000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1.1178773361417444,
+     "rotation": 95.34528324,
+     "offsetX": -0.9724472872911039,
+     "offsetY": -0.7779578298328831,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 52,
+     "specificScale": 1,
+     "rotation": 84.98729376,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 36,
+     "specificScale": 1,
+     "rotation": 214.50159756,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 44,
+     "specificScale": 1,
+     "rotation": 242.81606088,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 74.51",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 20,
+     "specificScale": 1,
+     "rotation": 221.168556,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 12,
+     "specificScale": 1,
+     "rotation": 260.00082396,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 29,
+     "specificScale": 1,
+     "rotation": 108.44598744,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 28,
+     "specificScale": 1,
+     "rotation": 206.74049508,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 37,
+     "specificScale": 1,
+     "rotation": 285.24044736,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 187.35205932,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 53,
+     "specificScale": 1,
+     "rotation": 104.04411624000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 45,
+     "specificScale": 1,
+     "rotation": 217.66219956,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Big Centre (79.66)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 21,
+     "specificScale": 1,
+     "rotation": 111.69447804,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 13,
+     "specificScale": 1,
+     "rotation": 1.25732088,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 22,
+     "specificScale": 1,
+     "rotation": 47.17323396,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 30,
+     "specificScale": 1,
+     "rotation": 263.2994352,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 38,
+     "specificScale": 1,
+     "rotation": 299.16072396000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 54,
+     "specificScale": 1,
+     "rotation": 162.795474,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 89.37924948,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 46,
+     "specificScale": 1,
+     "rotation": 67.67935343999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Green 76.15",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 23,
+     "specificScale": 1,
+     "rotation": 87.97006872,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 14,
+     "specificScale": 1,
+     "rotation": 351.38154276,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 47,
+     "specificScale": 1,
+     "rotation": 221.52900095999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 15,
+     "specificScale": 1,
+     "rotation": 170.44957548,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 39,
+     "specificScale": 1,
+     "rotation": 60.12610343999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 31,
+     "specificScale": 1,
+     "rotation": 57.12397812,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 55,
+     "specificScale": 1,
+     "rotation": 337.62726288,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 2,
+     "specificScale": 1,
+     "rotation": 156.11829948,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Big Centre (79.66)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 224.47062468000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 17,
+     "specificScale": 1,
+     "rotation": 337.60569888,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 55,
+     "specificScale": 1,
+     "rotation": 179.70664716,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 8,
+     "specificScale": 1,
+     "rotation": 86.73647688000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 35,
+     "specificScale": 1,
+     "rotation": 51.73657236000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 46,
+     "specificScale": 1,
+     "rotation": 126.03410352000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 26,
+     "specificScale": 1.1097177435226433,
+     "rotation": 123.84830556,
+     "offsetX": -1.3614262022075454,
+     "offsetY": -0.7779578298328831,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 37,
+     "specificScale": 1,
+     "rotation": 29.749284719999984,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 76.24",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 27,
+     "specificScale": 1,
+     "rotation": 177.88521024000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 354.94286508,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 18,
+     "specificScale": 1,
+     "rotation": 146.8657188,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 9,
+     "specificScale": 1,
+     "rotation": 259.71919668,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 56,
+     "specificScale": 1,
+     "rotation": 137.88774864,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 29,
+     "specificScale": 1,
+     "rotation": 49.35695867999995,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 38,
+     "specificScale": 1,
+     "rotation": 353.65099896,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 47,
+     "specificScale": 1,
+     "rotation": 51.55559172000005,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Orange 78.43",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 28,
+     "specificScale": 1,
+     "rotation": 123.32097612000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 50,
+     "specificScale": 1,
+     "rotation": 72.99312264,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 338.4137826,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 19,
+     "specificScale": 1,
+     "rotation": 0.1405540800000793,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 10,
+     "specificScale": 1,
+     "rotation": 37.45266588,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 30,
+     "specificScale": 1,
+     "rotation": 331.62176664,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 39,
+     "specificScale": 1,
+     "rotation": 224.22061476,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 48,
+     "specificScale": 1,
+     "rotation": 175.72650624,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 77.12",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 49,
+     "specificScale": 1,
+     "rotation": 317.53526184,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 22,
+     "specificScale": 1,
+     "rotation": 156.15778932,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 11,
+     "specificScale": 1,
+     "rotation": 125.54803727999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 20,
+     "specificScale": 1,
+     "rotation": 107.05937723999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 349.13000376,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 51,
+     "specificScale": 1,
+     "rotation": 0.5455673999999977,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 31,
+     "specificScale": 1,
+     "rotation": 102.16888992000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 40,
+     "specificScale": 1,
+     "rotation": 130.69656971999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Blue 75.39",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 41,
+     "specificScale": 1,
+     "rotation": 280.73552148,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 43,
+     "specificScale": 1,
+     "rotation": 123.00896304,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 12,
+     "specificScale": 1,
+     "rotation": 197.32568796,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 21,
+     "specificScale": 1,
+     "rotation": 77.38348248000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 23,
+     "specificScale": 1.1186681250331505,
+     "rotation": 290.00532708000003,
+     "offsetX": -1.3614262022075454,
+     "offsetY": -0.9724472872911039,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 142.46730431999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 52,
+     "specificScale": 1,
+     "rotation": 210.47106348,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 32,
+     "specificScale": 1,
+     "rotation": 69.15641831999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 74.51",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 24,
+     "specificScale": 1,
+     "rotation": 187.77166416,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 15,
+     "specificScale": 1,
+     "rotation": 146.06474364,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 13,
+     "specificScale": 1,
+     "rotation": 107.51542776000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 42,
+     "specificScale": 1,
+     "rotation": 180.01166723999995,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 44,
+     "specificScale": 1,
+     "rotation": 91.95208416000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 53,
+     "specificScale": 1,
+     "rotation": 271.59781068,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 22.261265999999978,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 33,
+     "specificScale": 1.0275800231569119,
+     "rotation": 62.164332359999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal+Pink 73.32",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 25,
+     "specificScale": 1,
+     "rotation": 113.17211676,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 34,
+     "specificScale": 1,
+     "rotation": 119.61322775999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 14,
+     "specificScale": 1,
+     "rotation": 174.29769252000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 36,
+     "specificScale": 1,
+     "rotation": 261.96754176,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 16,
+     "specificScale": 1,
+     "rotation": 115.28363628,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 45,
+     "specificScale": 1,
+     "rotation": 85.32525095999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 54,
+     "specificScale": 1,
+     "rotation": 310.84204788,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 3,
+     "specificScale": 1,
+     "rotation": 344.70333072,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 75.70",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 202.55451192000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 41,
+     "specificScale": 1,
+     "rotation": 33.40960452,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 54,
+     "specificScale": 1,
+     "rotation": 156.24368928000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 18,
+     "specificScale": 1,
+     "rotation": 34.95031308000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 8,
+     "specificScale": 1,
+     "rotation": 243.52996679999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 44,
+     "specificScale": 1,
+     "rotation": 80.04916116000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 28,
+     "specificScale": 1,
+     "rotation": 236.44106928,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 31,
+     "specificScale": 1,
+     "rotation": 134.47446876,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal 76.82",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 45,
+     "specificScale": 1,
+     "rotation": 311.83523172,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 298.07532864,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 19,
+     "specificScale": 1,
+     "rotation": 215.41495211999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 55,
+     "specificScale": 1,
+     "rotation": 119.75485031999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 9,
+     "specificScale": 1,
+     "rotation": 252.74335284,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 32,
+     "specificScale": 1,
+     "rotation": 61.3527624,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 42,
+     "specificScale": 1,
+     "rotation": 59.230727640000005,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 22,
+     "specificScale": 1,
+     "rotation": 135.54424439999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 77.12",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 33,
+     "specificScale": 1,
+     "rotation": 61.40262240000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 46,
+     "specificScale": 1,
+     "rotation": 346.55417676,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 316.18458504,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 56,
+     "specificScale": 1,
+     "rotation": 230.96215764,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 20,
+     "specificScale": 1,
+     "rotation": 359.9275032,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 10,
+     "specificScale": 1,
+     "rotation": 27.4886262,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 23,
+     "specificScale": 1,
+     "rotation": 118.0208988,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 36,
+     "specificScale": 1,
+     "rotation": 249.75107748000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Purple+Pink 75.18",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 37,
+     "specificScale": 1,
+     "rotation": 242.66392811999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 47,
+     "specificScale": 1,
+     "rotation": 279.10032551999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 21,
+     "specificScale": 1,
+     "rotation": 21.44929140000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 315.1726056,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 50,
+     "specificScale": 1,
+     "rotation": 200.51083835999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 11,
+     "specificScale": 1,
+     "rotation": 231.96812472000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 24,
+     "specificScale": 1,
+     "rotation": 9.796703400000073,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 34,
+     "specificScale": 1,
+     "rotation": 98.37228959999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 75.70",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 48,
+     "specificScale": 1,
+     "rotation": 246.85474247999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 25,
+     "specificScale": 1,
+     "rotation": 45.54128915999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 51,
+     "specificScale": 1,
+     "rotation": 111.29489711999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 12,
+     "specificScale": 1,
+     "rotation": 19.14531803999994,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 15,
+     "specificScale": 1,
+     "rotation": 55.87207128000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 316.94602212,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 35,
+     "specificScale": 1,
+     "rotation": 145.49091264000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 38,
+     "specificScale": 1,
+     "rotation": 249.04437804,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Yellow 77.36",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 26,
+     "specificScale": 1,
+     "rotation": 30.443813640000013,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 29,
+     "specificScale": 1,
+     "rotation": 175.56583247999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 49,
+     "specificScale": 1,
+     "rotation": 224.41818492000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 13,
+     "specificScale": 1,
+     "rotation": 351.2270412,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 52,
+     "specificScale": 1,
+     "rotation": 66.09225348,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 16,
+     "specificScale": 1,
+     "rotation": 152.41146335999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 88.54457292,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 39,
+     "specificScale": 1,
+     "rotation": 20.784885840000022,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 77.12",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 17,
+     "specificScale": 1,
+     "rotation": 24.088088160000034,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 27,
+     "specificScale": 1,
+     "rotation": 253.32805403999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 30,
+     "specificScale": 1,
+     "rotation": 33.717181680000024,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 14,
+     "specificScale": 1,
+     "rotation": 295.61354532,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 53,
+     "specificScale": 1,
+     "rotation": 172.01369087999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 43,
+     "specificScale": 1,
+     "rotation": 51.40415339999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 40,
+     "specificScale": 1,
+     "rotation": 108.71363879999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 4,
+     "specificScale": 1,
+     "rotation": 305.5053618,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 74.51",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 187.24188347999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 38,
+     "specificScale": 1,
+     "rotation": 77.80546872,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 53,
+     "specificScale": 1,
+     "rotation": 121.67651267999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 49,
+     "specificScale": 1,
+     "rotation": 307.3545936,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 34,
+     "specificScale": 1,
+     "rotation": 19.969820279999972,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 8,
+     "specificScale": 1,
+     "rotation": 217.75339079999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 19,
+     "specificScale": 1,
+     "rotation": 24.140780999999983,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 23,
+     "specificScale": 1,
+     "rotation": 293.86912176000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Big Centre (79.66)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 39,
+     "specificScale": 1,
+     "rotation": 67.37715288000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 276.08242788,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 20,
+     "specificScale": 1,
+     "rotation": 18.847509120000048,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 54,
+     "specificScale": 1,
+     "rotation": 127.70307756000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 43,
+     "specificScale": 1,
+     "rotation": 136.50919272,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 35,
+     "specificScale": 1,
+     "rotation": 289.3260114,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 9,
+     "specificScale": 1,
+     "rotation": 101.77397712,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 24,
+     "specificScale": 1,
+     "rotation": 214.62310908000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Blue 75.39",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 40,
+     "specificScale": 1,
+     "rotation": 113.12662788000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 55,
+     "specificScale": 1,
+     "rotation": 21.53091168,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 44,
+     "specificScale": 1,
+     "rotation": 254.997387,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 43.23875976,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 21,
+     "specificScale": 1,
+     "rotation": 134.16183252,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 25,
+     "specificScale": 1,
+     "rotation": 101.75990256,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 10,
+     "specificScale": 1,
+     "rotation": 294.86075292,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 29,
+     "specificScale": 1,
+     "rotation": 308.18220696000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Big Centre (79.66)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 56,
+     "specificScale": 1,
+     "rotation": 197.89748352,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 45,
+     "specificScale": 1,
+     "rotation": 300.19676652,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 41,
+     "specificScale": 1,
+     "rotation": 11.361355920000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 26,
+     "specificScale": 1,
+     "rotation": 97.78940531999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 187.26542351999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 15,
+     "specificScale": 1,
+     "rotation": 117.11536955999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 11,
+     "specificScale": 1,
+     "rotation": 168.2030124,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 30,
+     "specificScale": 1,
+     "rotation": 51.00726852,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Yellow 76.98",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 46,
+     "specificScale": 1,
+     "rotation": 122.49824651999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 42,
+     "specificScale": 1,
+     "rotation": 263.62106568,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 16,
+     "specificScale": 1,
+     "rotation": 246.93570324,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 31,
+     "specificScale": 1,
+     "rotation": 284.17307184,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 27,
+     "specificScale": 1,
+     "rotation": 151.01957340000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 50,
+     "specificScale": 1,
+     "rotation": 260.32628952,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 12,
+     "specificScale": 1,
+     "rotation": 263.78953956000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 47.06571455999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 76.68",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 47,
+     "specificScale": 1,
+     "rotation": 257.05743336,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 36,
+     "specificScale": 1,
+     "rotation": 336.24868788000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 111.9568392,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 51,
+     "specificScale": 1,
+     "rotation": 127.18009980000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 28,
+     "specificScale": 1,
+     "rotation": 311.11626744,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 17,
+     "specificScale": 1,
+     "rotation": 196.14856067999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 32,
+     "specificScale": 1,
+     "rotation": 105.57098208000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 13,
+     "specificScale": 1,
+     "rotation": 301.13255628,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal 76.82",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 52,
+     "specificScale": 1,
+     "rotation": 330.73981524000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 48,
+     "specificScale": 1,
+     "rotation": 83.26054511999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 33,
+     "specificScale": 1,
+     "rotation": 233.68979484,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 37,
+     "specificScale": 1,
+     "rotation": 63.69206040000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 14,
+     "specificScale": 1,
+     "rotation": 174.38105124,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 22,
+     "specificScale": 1,
+     "rotation": 240.69982464,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 5,
+     "specificScale": 1,
+     "rotation": 85.52577132,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 18,
+     "specificScale": 1,
+     "rotation": 264.67676711999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Yellow 77.36",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 30,
+     "specificScale": 1,
+     "rotation": 219.75413903999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 52,
+     "specificScale": 1,
+     "rotation": 249.27636923999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 42,
+     "specificScale": 1,
+     "rotation": 332.09317944,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 47,
+     "specificScale": 1,
+     "rotation": 250.45345475999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 215.01564192,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 20,
+     "specificScale": 1,
+     "rotation": 115.62759179999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 25,
+     "specificScale": 1,
+     "rotation": 279.19593288,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 8,
+     "specificScale": 1,
+     "rotation": 302.26742676000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Yellow 76.98",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 31,
+     "specificScale": 1,
+     "rotation": 307.61735004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 53,
+     "specificScale": 1,
+     "rotation": 177.39354456,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 192.94224228,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 48,
+     "specificScale": 1,
+     "rotation": 59.323835519999975,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 36,
+     "specificScale": 1,
+     "rotation": 41.34687659999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 9,
+     "specificScale": 1.0252895618422597,
+     "rotation": 41.60395368,
+     "offsetX": -0.19448945745822077,
+     "offsetY": -0.38897891491644154,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 21,
+     "specificScale": 1.1039591660622343,
+     "rotation": 62.94743603999999,
+     "offsetX": -1.5559156596657662,
+     "offsetY": -0.9724472872911039,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 26,
+     "specificScale": 1,
+     "rotation": 45.61648848000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 76.24",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 54,
+     "specificScale": 1,
+     "rotation": 73.18754424000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 49,
+     "specificScale": 1,
+     "rotation": 200.08154628000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 10,
+     "specificScale": 1,
+     "rotation": 329.22294624,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 179.96156747999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 32,
+     "specificScale": 1,
+     "rotation": 113.31687816,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 27,
+     "specificScale": 1,
+     "rotation": 96.71733971999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 37,
+     "specificScale": 1,
+     "rotation": 0.2418148800000175,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 15,
+     "specificScale": 1.032138104018957,
+     "rotation": 61.94508444,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal+Pink 73.32",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 38,
+     "specificScale": 1,
+     "rotation": 45.41231268000001,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 28,
+     "specificScale": 1,
+     "rotation": 260.08670592,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 43,
+     "specificScale": 1,
+     "rotation": 347.13728748000005,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 11,
+     "specificScale": 1,
+     "rotation": 308.16560808,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 55,
+     "specificScale": 1,
+     "rotation": 334.57749876,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 11.47540751999994,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 33,
+     "specificScale": 1,
+     "rotation": 287.20856124,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 16,
+     "specificScale": 1.0286840885448663,
+     "rotation": 53.01612216000003,
+     "offsetX": -0.38897891491644154,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Yellow 77.36",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 176.17104287999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 39,
+     "specificScale": 1,
+     "rotation": 307.45334412,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 56,
+     "specificScale": 1,
+     "rotation": 200.37094344,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 44,
+     "specificScale": 1,
+     "rotation": 3.35417364,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 12,
+     "specificScale": 1,
+     "rotation": 46.33725744,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 34,
+     "specificScale": 1,
+     "rotation": 18.14948316000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 22,
+     "specificScale": 1,
+     "rotation": 308.23716312,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 17,
+     "specificScale": 1,
+     "rotation": 186.40400867999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 74.51",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 35,
+     "specificScale": 1,
+     "rotation": 197.2595358,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 40,
+     "specificScale": 1,
+     "rotation": 168.79656168000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 23,
+     "specificScale": 1,
+     "rotation": 10.787606280000048,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 50,
+     "specificScale": 1,
+     "rotation": 336.68330832000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 45,
+     "specificScale": 1,
+     "rotation": 328.22872956000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 13,
+     "specificScale": 1,
+     "rotation": 5.54838264,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 18,
+     "specificScale": 1,
+     "rotation": 7.461213479999955,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 105.05933279999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Yellow 76.98",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 51,
+     "specificScale": 1,
+     "rotation": 85.82113800000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 6,
+     "specificScale": 1,
+     "rotation": 110.12750676,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 46,
+     "specificScale": 1,
+     "rotation": 171.87793776,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 24,
+     "specificScale": 1,
+     "rotation": 296.09513244000004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 41,
+     "specificScale": 1,
+     "rotation": 3.30682392,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 14,
+     "specificScale": 1,
+     "rotation": 323.10510372,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 29,
+     "specificScale": 1,
+     "rotation": 63.605376,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 19,
+     "specificScale": 1,
+     "rotation": 150.19253099999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Blue 75.39",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 7,
+     "specificScale": 1,
+     "rotation": 50.15345652,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 33,
+     "specificScale": 1,
+     "rotation": 267.02671247999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 39,
+     "specificScale": 1,
+     "rotation": 151.82834363999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 45,
+     "specificScale": 1,
+     "rotation": 174.59028791999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 51,
+     "specificScale": 1.1146798074103728,
+     "rotation": 260.56370627999996,
+     "offsetX": -1.1669367447493246,
+     "offsetY": -0.7779578298328831,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 21,
+     "specificScale": 1,
+     "rotation": 49.85112095999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 8,
+     "specificScale": 1,
+     "rotation": 170.05076748,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 27,
+     "specificScale": 1,
+     "rotation": 110.38206024,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Pink+Purple 74.51",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 34,
+     "specificScale": 1,
+     "rotation": 202.73417135999998,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 7,
+     "specificScale": 1,
+     "rotation": 241.25378652,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 40,
+     "specificScale": 1,
+     "rotation": 24.02900568,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 52,
+     "specificScale": 1,
+     "rotation": 311.55633252,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 46,
+     "specificScale": 1,
+     "rotation": 138.2675616,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 28,
+     "specificScale": 1.0379276874357797,
+     "rotation": 186.24481451999998,
+     "offsetX": -0.38897891491644154,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 15,
+     "specificScale": 1.0884193739624646,
+     "rotation": 66.06139752,
+     "offsetX": -1.750405117123987,
+     "offsetY": -0.38897891491644154,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 9,
+     "specificScale": 1,
+     "rotation": 66.72906036000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 76.24",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 53,
+     "specificScale": 1,
+     "rotation": 45.45905148,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 35,
+     "specificScale": 1,
+     "rotation": 212.57403768,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 7,
+     "specificScale": 1,
+     "rotation": 112.24709892,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 41,
+     "specificScale": 1,
+     "rotation": 39.004493759999974,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 22,
+     "specificScale": 1,
+     "rotation": 119.30473547999999,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 47,
+     "specificScale": 1,
+     "rotation": 225.93900168000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 16,
+     "specificScale": 1,
+     "rotation": 353.1626082,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 10,
+     "specificScale": 1,
+     "rotation": 284.1479064,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Big Centre (79.66)",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 42,
+     "specificScale": 1,
+     "rotation": 169.0377948,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 54,
+     "specificScale": 1,
+     "rotation": 120.55287204,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 48,
+     "specificScale": 1,
+     "rotation": 185.96668032000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 29,
+     "specificScale": 1,
+     "rotation": 43.114833720000036,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 7,
+     "specificScale": 1,
+     "rotation": 337.53094056,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 23,
+     "specificScale": 1.0715991167078505,
+     "rotation": 82.28942964,
+     "offsetX": -0.9724472872911039,
+     "offsetY": 0.19448945745822077,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 17,
+     "specificScale": 1.0386911866672794,
+     "rotation": 337.81030416000004,
+     "offsetX": -2.1393840320404287,
+     "offsetY": -0.19448945745822077,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 11,
+     "specificScale": 1,
+     "rotation": 341.48483388,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Teal 76.24",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 55,
+     "specificScale": 1,
+     "rotation": 244.61741124000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": "18",
+     "specificScale": 1,
+     "rotation": 132.82674336,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 36,
+     "specificScale": 1,
+     "rotation": 33.28667532000008,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": "24",
+     "specificScale": 1,
+     "rotation": 239.80825799999997,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 49,
+     "specificScale": 1,
+     "rotation": 312.87328019999995,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 7,
+     "specificScale": 1,
+     "rotation": 162.84005424,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 30,
+     "specificScale": 1.0243253362256974,
+     "rotation": 353.00079324,
+     "offsetX": -0.19448945745822077,
+     "offsetY": -0.19448945745822077,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 12,
+     "specificScale": 1,
+     "rotation": 2.92511448,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Green 77.17",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": "56",
+     "specificScale": 1,
+     "rotation": 88.18663104,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 31,
+     "specificScale": 1,
+     "rotation": 312.88653612,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 37,
+     "specificScale": 1,
+     "rotation": 240.54406632,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 43,
+     "specificScale": 1,
+     "rotation": 47.36141748000005,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 13,
+     "specificScale": 1,
+     "rotation": 29.84269392,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": "19",
+     "specificScale": 1.1012421481009034,
+     "rotation": 194.89525884000003,
+     "offsetX": 0.9724472872911039,
+     "offsetY": 0.38897891491644154,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 7,
+     "specificScale": 1,
+     "rotation": 146.34160632,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 25,
+     "specificScale": 1,
+     "rotation": 191.48144004,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal 75.45",
+   "cardScale": 1
+  },
+  {
+   "images": [
+    {
+     "imageIndex": 44,
+     "specificScale": 1,
+     "rotation": 119.55251916000003,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 26,
+     "specificScale": 1,
+     "rotation": 324.46800648,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 50,
+     "specificScale": 1,
+     "rotation": 5.985900359999956,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 7,
+     "specificScale": 1,
+     "rotation": 151.27080048,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": "32",
+     "specificScale": 1,
+     "rotation": 242.74069020000002,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": "38",
+     "specificScale": 1.0554794845173,
+     "rotation": 139.06571543999996,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 14,
+     "specificScale": 1,
+     "rotation": 147.74353956,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    },
+    {
+     "imageIndex": 20,
+     "specificScale": 1,
+     "rotation": 342.85683456,
+     "offsetX": 0,
+     "offsetY": 0,
+     "zIndex": 0,
+     "crop": 0
+    }
+   ],
+   "layoutName": "Royal 76.82",
+   "cardScale": 1
+  }
+ ],
+ "imageSources": [
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "community.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "redcheeks.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "boat.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "smoke.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "sailing.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "players.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "two_ships.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "trees.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "houses.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "snow.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "rowboat.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "distance.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "reflections.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "contemplation.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "sailboat.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "wood.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "river.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "belltower.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "wounded.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "church.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "one_ship.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "two_women.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "wetlands.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "camp.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "homeward.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "island.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "clouds.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "headscarf.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "cards.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "shield.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "pizza.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "sleeping.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "nails.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "dignitary.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "washing.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "ducks.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "moon.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "redshawl.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "churches.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "view.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "fighters.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "gondola.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "shore.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "dome.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "shirtfront.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "dog.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "hunter.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "leaning.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "red_house.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "assault.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "buildings.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "wreck.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "watchtower.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "boy.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "birches.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "hilltops.webp"
+  },
+  {
+   "crop": 0,
+   "selfScale": 1,
+   "source": "forest.webp"
+  }
+ ]
+}
