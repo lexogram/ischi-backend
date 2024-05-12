@@ -9,11 +9,7 @@ function getEventPacks(req, res) {
   let status = 0
   let message = {}
 
-  // const query = req.body?.query || { a: "b" }
-  const query = { munge_name : null }
-
-  console.log("query:", query);
-  
+  const query = req.body?.query || {}  
 
   Organization
     .findOne(query)
@@ -21,9 +17,7 @@ function getEventPacks(req, res) {
     .catch(treatError)
     .finally(proceed)
 
-  async function getPacksFor(organization) {
-    console.log("organization:", organization);
-    
+  async function getPacksFor(organization) {    
     if (!organization) {
       return treatError(
         `Organization ${query.organization} not found`
@@ -31,9 +25,7 @@ function getEventPacks(req, res) {
     }
 
     const { _id: owner_id } = organization
-    const packQuery = { owner_id }
-    console.log("packQuery:", packQuery);
-    
+    const packQuery = { owner_id }    
 
     await Pack
       .find(packQuery)
@@ -42,9 +34,7 @@ function getEventPacks(req, res) {
   }
 
 
-  function treatResult(packs) {
-    console.log("packs:", packs);
-    
+  function treatResult(packs) {    
     const length = packs.length
     if (!length) {
       status = 404 // Not Found
