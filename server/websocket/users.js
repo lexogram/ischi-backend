@@ -166,7 +166,9 @@ module.exports = {
   // Re-export message methods
   addMessageListener,
   removeMessageListener,
-  treatMessage
+  treatMessage,
+  // For Event
+  joinRoom
 }
 
 
@@ -174,6 +176,7 @@ module.exports = {
 // SYSTEM MESSAGES // SYSTEM MESSAGES // SYSTEM MESSAGES //
 
 const treatSystemMessage = ({ subject, sender_id, content }) => {
+  console.log("SYSTEM:", { subject, sender_id, content })  
   switch (subject) {
     case "restore_user_id":
       return restoreUserId(sender_id, content) // last_id
@@ -264,8 +267,10 @@ const restoreUserId = (temp_id, last_id) => {
 const sendUserToRoom = (user_id, content) => {
   // console.log("user_id, content:", user_id, content);
 
-  const { user_name, last_id } = content
+  const { user_name } = content
 
+  // const { user_name, last_id } = content
+  //
   // if (last_id) {
   //   const lastData = users[last_id]
   //   if (lastData) {
@@ -320,7 +325,7 @@ const getExistingRoom = (sender_id, room) => {
 }
 
 
-const joinRoom = (user_id, content) => {
+function joinRoom(user_id, content) {
   const { user_name, room, create_room } = content
   // Join the room?
   let host_id, members, host, status
@@ -335,9 +340,15 @@ const joinRoom = (user_id, content) => {
   if (create_room) {
     // Try to create a room, if requested
     if (roomObject) {
-      status = "create-failed"
+      if (user_id === host_id) {
+        // The host is logging back in after a disconnection
+        // Set no status
 
-    } else {
+      } else {
+        status = "create-failed"
+      }
+
+    } else { // no roomObject yet, with a request to create one
       members = new Set().add(user_id)
       rooms[room] = roomObject = {
         host_id: user_id,
@@ -347,12 +358,12 @@ const joinRoom = (user_id, content) => {
       host = user_name
       broadcastMembersToRoom(room)
     }
+  }
 
-  } else if (roomObject) {
+  if (roomObject && !status) {
     members.add(user_id)
     status = "joined"
     broadcastMembersToRoom(room)
-
 
   } else {
     // The room does not yet exist, and there was no request to
@@ -379,7 +390,7 @@ const joinRoom = (user_id, content) => {
 const broadcastMembersToRoom = (room) => {
   let { host_id, members } = rooms[room]
 
-  recipient_id = Array.from(members)
+  const recipient_id = Array.from(members)
   members = recipient_id.reduce((memberMap, user_id) => {
     memberMap[ user_id ] = getUserNameFromId(user_id)
     return memberMap

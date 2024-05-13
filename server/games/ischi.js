@@ -10,7 +10,9 @@ const {
   // removeMessageListener,
   sendMessageToUser,
   sendMessageToRoom,
-  getUserNameFromId
+  getUserNameFromId,
+  // For Event:
+  joinRoom
 } = require("../websocket/users");
 const publicPath = "../../public/ischi/"
 const { shuffle } = require('../utilities/shuffle')
@@ -31,6 +33,8 @@ const ischiData = {}
 
 
 const treatGameMessages = (messageData) => {
+  console.log("messageData:", messageData);
+
   switch (messageData.subject) {
     // case "send_user_to_room": // called directly from treatMessage
     //   return setUserNameAndRoom(messageData)
@@ -42,6 +46,11 @@ const treatGameMessages = (messageData) => {
       return scoreMatch(messageData)
     case "request_next_card":
       return requestNextCard(messageData)
+
+    // EVENTS //
+
+    case "create_event_room":
+      return createEventRoom(messageData)
   }
 
   return false // not handled
@@ -314,6 +323,78 @@ const showNextCard = (gameData, room, content) => {
 
 
 addMessageListener([
+  // Get _all_ messages addressed to GAME ("game") and also
+  // messages addressed to "system" with the "subject"
+  // "send_user_to_room". System will treat "send_user_to_room"
+  // messages first.
   { recipient_id: GAME, callback: treatGameMessages },
   { subject: "send_user_to_room", callback: setUserNameAndRoom }
 ])
+
+
+
+// EVENTS //
+
+function createEventRoom({ sender_id, content }) {
+  // console.log("createEventRoom message:", message);
+  // {
+  //   recipient_id: 'game',
+  //   subject: 'create_event_room',
+  //   content: {
+  //     host: 'nevzorovyh',
+  //     name: 'Help',
+  //     emoji: '⛑️',
+  //     folder: '663013af1db981a3f72b2e92/18-19_век'
+  //   },
+  //   sender_id: 'eeb37e55-1798-4a82-8af2-4cadfbb76f1e'
+  // }
+
+  const { host, name, emoji, folder, delay=2000 } = content
+
+  const player = `${name}_${emoji}`
+  const room = `${host}_${player}`
+  const gameData = createGameData(folder, delay)
+  // gameData.last = total - 2
+  // gameData.randomIndices = randomIndices
+  // gameData.index = 0
+  // gameData.nextIndex = 1
+  // gameData.root = `${folder}/images/`
+  // gameData.delay = delay
+  // gameData.lastClick = {}
+
+
+  const createdTime = new Date() // date object
+  const roomData = { gameData, createdTime }
+
+  ischiData[room] = roomData
+
+  content = {
+    folder,
+    room,
+    createdTime: +createdTime // e.g. 1715608558839
+  }
+
+  sendMessageToUser({
+    sender_id: GAME,
+    recipient_id: sender_id,
+    subject: "event_room_created",
+    content
+  })
+
+  // Move the room host to the user room that has just opened
+  joinRoom(
+    sender_id, { user_name: player, room, create_room: true }
+  )
+  // Will send a second message
+  // const message = {
+  //   sender_id: "system",
+  //   recipient_id: sender_id,
+  //   subject: "room_joined",
+  //   content: {
+  //     status: "created"|"joined",
+  //     user_name: player,
+  //     room,
+  //     host: player
+  //   }
+  // }
+}

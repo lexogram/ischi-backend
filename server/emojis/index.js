@@ -123,7 +123,7 @@ const getRandomEmojis = ( id, result ) => {
 const checkIfEmojiIsTaken = (id, { name, emoji }, result) => {
   const munged_name = name.toLowerCase()
   const userData = users[id]
-  userData.name = name               // respects case
+  userData.user_name = `${emoji}_${name}` // respects case
   userData.munged_name = munged_name // for inter-user comparisons
   const ownerNames = getOwnerNames(emoji)
 
@@ -156,7 +156,7 @@ const confirmNameAndEmoji = (id, { name, emoji }, result) => {
   // Update the user's data
   const userData = users[id]
   const munged_name = name.toLowerCase()
-  userData.name = name
+  userData.user_name = `${emoji}_${name}`
   userData.munged_name = munged_name
 
   const owners = getOwnerNames(emoji)
