@@ -341,7 +341,7 @@ function createEventRoom({ sender_id, content }) {
   //   recipient_id: 'game',
   //   subject: 'create_event_room',
   //   content: {
-  //     host: 'nevzorovyh',
+  //     organization: 'nevzorovyh',
   //     name: 'Help',
   //     emoji: '⛑️',
   //     folder: '663013af1db981a3f72b2e92/18-19_век'
@@ -349,10 +349,10 @@ function createEventRoom({ sender_id, content }) {
   //   sender_id: 'eeb37e55-1798-4a82-8af2-4cadfbb76f1e'
   // }
 
-  const { host, name, emoji, folder, delay=2000 } = content
+  const {organization, name, emoji, folder, delay=2000} = content
 
   const player = `${name}_${emoji}`
-  const room = `${host}_${player}`
+  const room = `${organization}/${player}` // same as relative URL
   const gameData = createGameData(folder, delay)
   // gameData.last = total - 2
   // gameData.randomIndices = randomIndices
