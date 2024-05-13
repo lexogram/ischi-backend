@@ -351,7 +351,7 @@ function createEventRoom({ sender_id, content }) {
 
   const {organization, name, emoji, folder, delay=2000} = content
 
-  const player = `${name}_${emoji}`
+  const player = `${emoji}_${name}`
   const room = `${organization}/${player}` // same as relative URL
   const gameData = createGameData(folder, delay)
   // gameData.last = total - 2
@@ -397,4 +397,6 @@ function createEventRoom({ sender_id, content }) {
   //     host: player
   //   }
   // }
+
+  return true // handled message
 }
