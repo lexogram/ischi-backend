@@ -51,6 +51,8 @@ const treatGameMessages = (messageData) => {
 
     case "create_event_room":
       return createEventRoom(messageData)
+    case "start_event_game":
+      return startEventGame(messageData)
   }
 
   return false // not handled
@@ -399,4 +401,16 @@ function createEventRoom({ sender_id, content }) {
   // }
 
   return true // handled message
+}
+
+
+function startEventGame({ content }) {
+  const { room } = content
+  content.startTime = +new Date()
+
+  sendMessageToRoom({
+    recipient_id: room,
+    subject: "event_game_started",
+    content
+  })
 }
