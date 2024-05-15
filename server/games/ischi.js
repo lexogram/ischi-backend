@@ -364,16 +364,16 @@ function createEventRoom({ sender_id, content }) {
   // gameData.delay = delay
   // gameData.lastClick = {}
 
-
-  const createdTime = new Date() // date object
-  const roomData = { gameData, createdTime }
+  const createdTime = +new Date()
+  gameData.createdTime = createdTime
+  const roomData = { gameData }
 
   ischiData[room] = roomData
 
   content = {
     folder,
     room,
-    createdTime: +createdTime // e.g. 1715608558839
+    createdTime
   }
 
   sendMessageToUser({
@@ -406,11 +406,20 @@ function createEventRoom({ sender_id, content }) {
 
 function startEventGame({ content }) {
   const { room } = content
-  content.startTime = +new Date()
+
+  // Set startTime, and save it in the roomData...
+  const startTime = +new Date()
+  const { gameData } = ischiData[room]
+  gameData.startTime = startTime
+
+  // ... and send it to the users in the room
+  content.startTime = startTime
 
   sendMessageToRoom({
     recipient_id: room,
     subject: "event_game_started",
     content
   })
+
+  return true // message handled
 }

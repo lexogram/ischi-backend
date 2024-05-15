@@ -265,7 +265,7 @@ const restoreUserId = (temp_id, last_id) => {
 
 
 const sendUserToRoom = (user_id, content) => {
-  // console.log("user_id, content:", user_id, content);
+  console.log("user_id, content:", user_id, content);
 
   const { user_name } = content
 
@@ -327,14 +327,16 @@ const getExistingRoom = (sender_id, room) => {
 
 function joinRoom(user_id, content) {
   const { user_name, room, create_room } = content
+
   // Join the room?
-  let host_id, members, host, status
+  let host_id, members, host, status, error
   let roomObject = rooms[room]
 
   if (roomObject) {
     // A room of this name already exists
-    ({ host_id, members } = roomObject)
-    host = getUserNameFromId(host_id)
+    ({ host_id, host, members } = roomObject)
+    console.log("request to joinRoom:", roomObject);
+    
   }
 
   if (create_room) {
@@ -345,25 +347,30 @@ function joinRoom(user_id, content) {
         // Set no status
 
       } else {
+        error = true
         status = "create-failed"
       }
 
     } else { // no roomObject yet, with a request to create one
-      members = new Set().add(user_id)
+      members = new Set()
       rooms[room] = roomObject = {
         host_id: user_id,
+        host: user_name,
         members
       }
+
       status = "created"
-      host = user_name
-      broadcastMembersToRoom(room)
     }
   }
 
-  if (roomObject && !status) {
+  if (roomObject && !error) {
     members.add(user_id)
-    status = "joined"
+    status = status || "joined"
     broadcastMembersToRoom(room)
+
+    // Set room in users[user_id], to send it on reconnection
+    const userData = users[user_id]
+    userData.room = room
 
   } else {
     // The room does not yet exist, and there was no request to

@@ -18,9 +18,7 @@ const {
   // }
   addMessageListener,
   // removeMessageListener,
-  sendMessageToUser,
-  sendMessageToRoom,
-  getUserNameFromId
+  sendMessageToUser
 } = require("../websocket/users");
 const { shuffle } = require('../utilities/shuffle')
 const allEmojis = require('./emojis.json')
@@ -123,8 +121,10 @@ const getRandomEmojis = ( id, result ) => {
 const checkIfEmojiIsTaken = (id, { name, emoji }, result) => {
   const munged_name = name.toLowerCase()
   const userData = users[id]
-  userData.user_name = `${emoji}_${name}` // respects case
+
+  userData.name = name // respects case
   userData.munged_name = munged_name // for inter-user comparisons
+  userData.user_name = `${emoji}_${name}` 
   const ownerNames = getOwnerNames(emoji)
 
   if (ownerNames.length) {
@@ -156,8 +156,9 @@ const confirmNameAndEmoji = (id, { name, emoji }, result) => {
   // Update the user's data
   const userData = users[id]
   const munged_name = name.toLowerCase()
-  userData.user_name = `${emoji}_${name}`
+  userData.name = name
   userData.munged_name = munged_name
+  userData.user_name = `${emoji}_${name}`
 
   const owners = getOwnerNames(emoji)
   // If owners is empty, then all is good
