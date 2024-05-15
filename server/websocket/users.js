@@ -106,6 +106,14 @@ const deleteUserData = uuid => {
 // SENDING MESSAGES // SENDING MESSAGES // SENDING MESSAGES //
 
 const sendMessageToUser = (message) => {
+  const replacer = (key, value) => {
+    if (key === "choices" || key === "emojis") {
+      return `Array(${value.length})`
+    }
+    return value
+  }
+  console.log(`sendMessageToUser${JSON.stringify(message, replacer, 2)}`)
+
   const { recipient_id } = message
   const { socket } = users[recipient_id]
   message = JSON.stringify(message)
@@ -114,11 +122,13 @@ const sendMessageToUser = (message) => {
 
 
 const sendMessageToRoom = (message) => {
+  console.log(`sendMessageToRoom${JSON.stringify(message, null, 2)}`)
   let { recipient_id } = message
   // May be array of user_ids or string room name
 
   if (typeof recipient_id === "string") {
-    recipient_id = rooms[recipient_id].members
+    // A room may be deleted while a game is in progress
+    recipient_id = rooms[recipient_id]?.members
   }
   if (recipient_id instanceof Set) {
     recipient_id = Array.from(recipient_id)
@@ -168,7 +178,8 @@ module.exports = {
   removeMessageListener,
   treatMessage,
   // For Event
-  joinRoom
+  joinRoom,
+  leaveRoom
 }
 
 
@@ -176,7 +187,12 @@ module.exports = {
 // SYSTEM MESSAGES // SYSTEM MESSAGES // SYSTEM MESSAGES //
 
 const treatSystemMessage = ({ subject, sender_id, content }) => {
-  console.log("SYSTEM:", { subject, sender_id, content })  
+  console.log(`\nSystem message received
+  sender: ${sender_id}
+  subject: ${subject}
+  content: ${JSON.stringify(content, null, 2)}
+  `)
+
   switch (subject) {
     case "restore_user_id":
       return restoreUserId(sender_id, content) // last_id
@@ -187,6 +203,8 @@ const treatSystemMessage = ({ subject, sender_id, content }) => {
       return getExistingRoom(sender_id, content)
     case "send_user_to_room":
       return sendUserToRoom(sender_id, content)
+    case "leave_room":
+      return leaveRoom(sender_id, content)
   }
 }
 
@@ -269,19 +287,6 @@ const sendUserToRoom = (user_id, content) => {
 
   const { user_name } = content
 
-  // const { user_name, last_id } = content
-  //
-  // if (last_id) {
-  //   const lastData = users[last_id]
-  //   if (lastData) {
-  //     const last_name = lastData.user_name
-  //     if (last_name === user_name) {
-  //       // This user is reconnecting. Remove the temporary user_id
-  //       // from users, and use last_id instead.
-  //       return reconnectUser(last_id, user_id, lastData, content)
-  //     }
-  //   }
-  // }
 
   // Ignore password for now
   const userData = users[user_id]
@@ -295,14 +300,6 @@ const sendUserToRoom = (user_id, content) => {
   // Give a name to this user_id
   userData.user_name = user_name
   joinRoom(user_id, content)
-}
-
-
-const reconnectUser = (user_id, temp_id, userData, content) => {
-  // users[user_id] = userData
-  // delete users[temp_id]
-
-  // const { room, create_room } = content
 }
 
 
@@ -326,6 +323,8 @@ const getExistingRoom = (sender_id, room) => {
 
 
 function joinRoom(user_id, content) {
+  console.log(`joinRoom(${user_id}, ${JSON.stringify(content, null, 2)})
+  name:`, users[user_id].user_name);
   const { user_name, room, create_room } = content
 
   // Join the room?
@@ -336,7 +335,7 @@ function joinRoom(user_id, content) {
     // A room of this name already exists
     ({ host_id, host, members } = roomObject)
     console.log("request to joinRoom:", roomObject);
-    
+
   }
 
   if (create_room) {
@@ -394,16 +393,102 @@ function joinRoom(user_id, content) {
 }
 
 
+function leaveRoom( sender_id, { room } ) {
+  console.log(`leaveRoom(${sender_id}, ${room})`)
+  console.log("users[sender_id].user_name:", users[sender_id].user_name);
+
+  const roomData = rooms[room]
+  if (!roomData) {
+    // TODO: send a message to the confused user
+    return // not handled
+  }
+
+  // console.log("roomData:", roomData);
+  // {
+  //   host_id: '74c43c6f-17dc-4f1f-8c8d-d97f2d639cda',
+  //   host: '😉_wink',
+  //   members: Set(1)
+  // }
+
+  const { host_id, members } = roomData
+
+  // If the current host leaves, the room will close
+  const roomIsClosing = host_id === sender_id
+
+  if ( roomIsClosing ) {
+    // Send "room_closing" message to all members
+    closeRoom(room, members)
+
+  } else {
+    // Send "user_left_room" message to all members
+    showUserToTheDoor(room, members, sender_id)
+  }
+
+  // Respond to the specific user who left (who may be the host
+  sendMessageToUser({
+    sender_id: "system",
+    recipient_id: sender_id,
+    subject: "left_room",
+    content: { room }
+  })
+
+  return true
+}
+
+
+const closeRoom = (room, members) => {
+  // Warn members that the room is about to close
+  sendMessageToRoom({
+    sender_id: "system",
+    recipient_id: room,
+    subject: "room_closing",
+    content: { room }
+  })
+
+  // Remove the room from the userData for each member
+  ;([...members]).forEach( user_id => {
+    userData = users[user_id]
+    if (userData.room === room) {
+      delete userData.room
+    }
+  })
+
+  members.clear()
+
+  // Delete all trace of the room, no that the members have
+  // been told that the room is empty.
+  delete rooms[room]
+}
+
+
+const showUserToTheDoor = (room, members, sender_id) => {
+  members.delete(sender_id)
+
+  // Tell other members of the room who has left and who is left
+  sendMessageToRoom({
+    sender_id: "system",
+    recipient_id: room,
+    subject: "user_left_room",
+    content: { sender_id }
+  })
+
+  broadcastMembersToRoom(room)
+
+  const userData = users[sender_id]
+  if (userData.room === room) {
+    delete userData.room
+  }
+}
+
+
 const broadcastMembersToRoom = (room) => {
-  let { host_id, members } = rooms[room]
+  let { host_id, host, members } = rooms[room]
 
   const recipient_id = Array.from(members)
   members = recipient_id.reduce((memberMap, user_id) => {
     memberMap[ user_id ] = getUserNameFromId(user_id)
     return memberMap
   }, {})
-
-  const host = getUserNameFromId(host_id)
 
   const content = {
     room,

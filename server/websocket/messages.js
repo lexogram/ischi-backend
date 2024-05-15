@@ -84,6 +84,10 @@ const treatMessage = (message) => {
   // console.log("New message:", message);
   let handled = false
 
+  console.log(`** INCOMING **
+  ${JSON.stringify(message, null, 2)}`)
+
+
   // The same message can be handled twice.
   // Once for its recipient (treat messages to "system" first)...
   let listeners = Array.from(

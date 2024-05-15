@@ -12,7 +12,8 @@ const {
   sendMessageToRoom,
   getUserNameFromId,
   // For Event:
-  joinRoom
+  joinRoom,
+  leaveRoom
 } = require("../websocket/users");
 const publicPath = "../../public/ischi/"
 const { shuffle } = require('../utilities/shuffle')
@@ -53,6 +54,10 @@ const treatGameMessages = (messageData) => {
       return createEventRoom(messageData)
     case "start_event_game":
       return startEventGame(messageData)
+    case "leave_event_game":
+      return leaveEventGame(messageData)
+    case "end_event_game":
+      return endEventGame(messageData)
   }
 
   return false // not handled
@@ -351,7 +356,13 @@ function createEventRoom({ sender_id, content }) {
   //   sender_id: 'eeb37e55-1798-4a82-8af2-4cadfbb76f1e'
   // }
 
-  const {organization, name, emoji, folder, delay=2000} = content
+  const {
+    organization,
+    name,
+    emoji,
+    folder,
+    delay=2000
+  } = content
 
   const player = `${emoji}_${name}`
   const room = `${organization}/${player}` // same as relative URL
@@ -422,4 +433,67 @@ function startEventGame({ content }) {
   })
 
   return true // message handled
+}
+
+
+function leaveEventGame({ sender_id, content }) {
+  const { room } = content
+  const roomData = ischiData[room]
+
+  if (!roomData) {
+    // TODO: send an explanation to the confused user
+    return
+  }
+
+  sendMessageToUser({
+    sender_id: GAME,
+    recipient_id: sender_id,
+    subject: "left_game",
+    content: { room }
+  })
+
+  // Remove the user from the members set and delete
+  // the room field from their users data
+  leaveRoom(sender_id, content)
+  // All users will receive a "user_left_room" message
+  // from "system". The user will receive a "left_room"
+  // message from system.
+
+  // Tell the other players that a player has left
+  sendMessageToRoom({
+    sender_id: GAME,
+    recipient_id: room,
+    subject: "user_left_game",
+    content: { room, sender_id }
+  })
+
+  return true
+}
+
+
+
+function endEventGame({ sender_id, content }) {
+  const { room } = content
+  const roomData = ischiData[room]
+
+  if (!roomData) {
+    // TODO: send an explanation to the confused user
+    return
+  }
+
+  delete ischiData[room]
+
+  // Tell the client Games that the game has ended...
+  // while the room still exists
+  sendMessageToRoom({
+    sender_id: GAME,
+    recipient_id: room,
+    subject: "game_ended_by_host",
+    content: { room }
+  })
+
+  // This can only be called by the room host, and the
+  // departure of the room host will close the room.
+  return leaveRoom(sender_id, content)
+  // All users will receive a "room_closing" message
 }
