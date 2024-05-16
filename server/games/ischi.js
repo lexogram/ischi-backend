@@ -150,6 +150,13 @@ const createGameData = (folder, delay) => {
   // )
   // const { count } = pack
   const gameData = require(`${publicPath}${folder}/index.json`)
+
+  // <<< QUIRK: Firefox (at least) seems to be restoring gameData
+  // from cache, including the score from a previous game.
+  // Solution: deliberately set gameDate.score to {}
+  gameData.score = {}
+  // QUIRK >>>
+
   const { total } = gameData
   // Create an array of the numbers between 0 and count-1...
   const randomIndices = Array
