@@ -125,20 +125,22 @@ const checkIfEmojiIsTaken = (id, { name, emoji }, result) => {
   userData.name = name // respects case
   userData.munged_name = munged_name // for inter-user comparisons
   userData.user_name = `${emoji}_${name}` 
-  const ownerNames = getOwnerNames(emoji)
+  const owners = getOwnerNames(emoji)
 
-  if (ownerNames.length) {
+  const claimed = !!owners.length && userData.emoji !== emoji
+
+  if (claimed) {
     result.taken = true // Another owner exists. Be strict...
   
     if (shortfall) {
       // ... but there are not enough emojis for everyone to have
       // a unique emoji...
-      if (ownerNames.indexOf(munged_name) < 0) {
+      if (owners.indexOf(munged_name) < 0) {
         // ... *and* although this emoji _is_ taken, none of its
         // owners has the same name as the current user. So
         // be more lenient.
 
-        result.taken = ownerNames
+        result.taken = owners
       }
     }
 
@@ -161,11 +163,13 @@ const confirmNameAndEmoji = (id, { name, emoji }, result) => {
   userData.user_name = `${emoji}_${name}`
 
   const owners = getOwnerNames(emoji)
-  // If owners is empty, then all is good
-  const empty = !owners.length
-  let confirmed = empty
+  // If owners is empty, or this user already has registered 
+  // this emoji then all is good
+  const alreadyRegistered = userData.emoji === emoji
+  const claimed = !!owners.length && !alreadyRegistered
+  let confirmed = !claimed
 
-  if (!confirmed && shortfall) {
+  if (claimed && shortfall) {
     // There are less than 25 emojis that have not been claimed,
     // so the emoji _can_ be used if `munged_name` is not the same
     // as that of any other user who has selected this emoji.
@@ -174,15 +178,30 @@ const confirmNameAndEmoji = (id, { name, emoji }, result) => {
   }
 
   if (confirmed) {
-    if (empty) {
-      taken[emoji] = owners
+    // De-register any previous emoji this user had before
+    const last_emoji = userData.emoji
+    if (last_emoji && last_emoji !== emoji) {
+      const exOwners = getOwnerNames(last_emoji)
+      const index = exOwners.indexOf(munged_name)
+      if (index > -1) {
+        exOwners.splice(index, 1)
+      }
     }
-    owners.push(munged_name)
-    userData.choices.length = 0 // the others are no longer needed
-    userData.emoji = emoji
-    // The user will no longer be able to change userData.name
 
-    pushSwapsToClients(id, munged_name, emoji)
+    if (!alreadyRegistered) {
+      // This is a new registration, or the user is logging in
+      // again with the different emoji. Register this emoji for
+      // this user...
+      if (!claimed) {
+        taken[emoji] = owners
+      }
+      owners.push(munged_name)
+      userData.emoji = emoji
+
+      // ... and ensure other users (with the same name) cannot
+      // use it
+      pushSwapsToClients(id, munged_name, emoji)
+    }
   } 
 
   result.confirmed = confirmed
@@ -195,19 +214,21 @@ function pushSwapsToClients(owner_id, munged_owner, emoji) {
 
   // Treat only other users who could choose emoji to register
   const active = Object.entries(users).filter(([ id, data ]) => (
-       id !== owner_id // This isn't the user taking ownership...
-    && data.choices?.length // ... and they haven't yet registered
-    // NOTE: data.choices will be [] if this user is confirmed
-    // It will be undefined if a user connected and then
-    // disconnected without registering ... and the garbage hasn't
-    // been cleaned up yet.
+      id !== owner_id // This isn't the user taking ownership...
+  && !data.emoji // ... and they haven't yet registered
   ))
 
   const unused = getNeverClaimed() // [ [<emoji>, []], ... ]
   shortfall = Math.max(0, 25 - unused.length)
   // 0 (false) or the shortfall to be filled
 
-  active.forEach(([ id, { munged_name, choices, selected } ]) => {
+  active.forEach(([ id, userData ]) => {
+    const {
+      munged_name,
+      choices,
+      selected
+    } = userData
+
     if ( selected === emoji
       && munged_name !== munged_owner
       && shortfall
@@ -219,13 +240,16 @@ function pushSwapsToClients(owner_id, munged_owner, emoji) {
     } else {
       // Either the owner's name is the same, or this emoji is
       // not currently selected or there are more emojis to choose
-      // from. Find an alternative.
+      // from. Check if this user has emoji as one of their
+      // choices.
       const index = choices.findIndex(choice => (
         choice[0] === emoji
       ))
+      
       if (index > -1) {
-        // This user has `emoji` as a possible choices. Add a 
-        // `replacement` emoji to a swap array to add to swaps
+        // Yes, this user has `emoji` as a possible choices. Find 
+        // an alternative. Add a `replacement` emoji to a swap 
+        // array to add to swaps.
         const swap = { id, emoji, index }  
         getReplacementEmoji(munged_name, choices, unused, swap)
         swaps.push(swap)
@@ -277,7 +301,7 @@ const getReplacementEmoji = (username, choices, unused, swap) => {
   } else {
     // Find a random emoji in unused that is not in emojis
     shuffle(unused)
-    unused.some(( replacement, index, array ) => {
+    unused.some(( replacement ) => {
       const found = choices.find(choice => (
         choice[0] === replacement[0]
       ))

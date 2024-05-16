@@ -464,17 +464,19 @@ const closeRoom = (room, members) => {
 const showUserToTheDoor = (room, members, sender_id) => {
   members.delete(sender_id)
 
+  const userData = users[sender_id]
+  const { user_name } = userData
+
   // Tell other members of the room who has left and who is left
   sendMessageToRoom({
     sender_id: "system",
     recipient_id: room,
     subject: "user_left_room",
-    content: { sender_id }
+    content: { sender_id, user_name }
   })
 
   broadcastMembersToRoom(room)
 
-  const userData = users[sender_id]
   if (userData.room === room) {
     delete userData.room
   }
