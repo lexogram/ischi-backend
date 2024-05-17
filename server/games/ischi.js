@@ -391,6 +391,7 @@ function createEventRoom({ sender_id, content }) {
   content = {
     folder,
     room,
+    gameData,
     createdTime
   }
 

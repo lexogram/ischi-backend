@@ -362,10 +362,11 @@ function joinRoom(user_id, content) {
     }
   }
 
-  if (roomObject && !error) {
+  const roomAvailable = roomObject && !error
+
+  if (roomAvailable) {
     members.add(user_id)
     status = status || "joined"
-    broadcastMembersToRoom(room)
 
     // Set room in users[user_id], to send it on reconnection
     const userData = users[user_id]
@@ -388,6 +389,10 @@ function joinRoom(user_id, content) {
   }
 
   sendMessageToUser(message)
+
+  if (roomAvailable) {
+    broadcastMembersToRoom(room)
+  }
 
   return true // message was handled
 }
