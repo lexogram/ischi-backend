@@ -15,7 +15,8 @@ const users = {}
 //     user_name,   // <Case Sensitive string>
 //     munged_name, // <lowercase user_name>
 //     choices,     // [ [<emoji>, owners[]], ... ]
-//     emoji        // <emoji>
+//     emoji,       // <emoji>
+//     room_counter // <integer)
 //   }, ...
 // }
 const rooms = {} // { <name> : { host_id, members: Set(uuid) }}
@@ -28,7 +29,7 @@ const newUser = (socket) => {
   const user_id = uuid()
   users[user_id] = { socket }
 
-  logConnectionEvent("connect", user_id)
+  // logConnectionEvent("connect", user_id)
 
   const message = JSON.stringify({
     subject: "connection",
@@ -49,7 +50,7 @@ const disconnect = (socket) => {
   if (userEntry) {
     const [ uuid, data ] = userEntry
 
-    logConnectionEvent("disconnect", uuid, data)
+    // logConnectionEvent("disconnect", uuid, data)
 
     // The socket is no longer needed...
     delete data.socket
@@ -76,7 +77,7 @@ const disconnect = (socket) => {
 
 
 const deleteUserData = uuid => {
-  console.log(`At ${new Date().toLocaleString()}: deleting entry for user ${uuid}`)
+  // console.log(`At ${new Date().toLocaleString()}: deleting entry for user ${uuid}`)
 
   delete users[uuid]
 
@@ -112,7 +113,7 @@ const sendMessageToUser = (message) => {
     }
     return value
   }
-  console.log(`sendMessageToUser${JSON.stringify(message, replacer, 2)}`)
+  // console.log(`sendMessageToUser${JSON.stringify(message, replacer, 2)}`)
 
   const { recipient_id } = message
   const { socket } = users[recipient_id]
@@ -122,7 +123,7 @@ const sendMessageToUser = (message) => {
 
 
 const sendMessageToRoom = (message) => {
-  console.log(`sendMessageToRoom${JSON.stringify(message, null, 2)}`)
+  // console.log(`sendMessageToRoom${JSON.stringify(message, null, 2)}`)
   let { recipient_id } = message
   // May be array of user_ids or string room name
 
@@ -161,6 +162,11 @@ const sendMessageToRoom = (message) => {
 }
 
 
+const getUserFromId = user_id => {
+  return users[user_id]
+}
+
+
 const getUserNameFromId = user_id => {
   return users[user_id].user_name
 }
@@ -172,6 +178,7 @@ module.exports = {
   disconnect,
   sendMessageToRoom,
   sendMessageToUser,
+  getUserFromId,
   getUserNameFromId,
   // Re-export message methods
   addMessageListener,
@@ -187,11 +194,11 @@ module.exports = {
 // SYSTEM MESSAGES // SYSTEM MESSAGES // SYSTEM MESSAGES //
 
 const treatSystemMessage = ({ subject, sender_id, content }) => {
-  console.log(`\nSystem message received
-  sender: ${sender_id}
-  subject: ${subject}
-  content: ${JSON.stringify(content, null, 2)}
-  `)
+  // console.log(`\nSystem message received
+  // sender: ${sender_id}
+  // subject: ${subject}
+  // content: ${JSON.stringify(content, null, 2)}
+  // `)
 
   switch (subject) {
     case "restore_user_id":
@@ -263,7 +270,7 @@ const restoreUserId = (temp_id, last_id) => {
 
   delete users[temp_id]
 
-  logConnectionEvent("reconnect", last_id, userData, more)
+  // logConnectionEvent("reconnect", last_id, userData, more)
 
   const content = { ...userData } // may only contain socket
   delete content.socket // not needed on the client
@@ -283,7 +290,7 @@ const restoreUserId = (temp_id, last_id) => {
 
 
 const sendUserToRoom = (user_id, content) => {
-  console.log("user_id, content:", user_id, content);
+  // console.log("user_id, content:", user_id, content);
 
   const { user_name } = content
 
@@ -323,8 +330,9 @@ const getExistingRoom = (sender_id, room) => {
 
 
 function joinRoom(user_id, content) {
-  console.log(`joinRoom(${user_id}, ${JSON.stringify(content, null, 2)})
-  name:`, users[user_id].user_name);
+  // console.log(`joinRoom(${user_id}, ${JSON.stringify(content, null, 2)})
+  // name:`, users[user_id].user_name);
+
   const { user_name, room, create_room } = content
 
   // Join the room?
@@ -334,8 +342,7 @@ function joinRoom(user_id, content) {
   if (roomObject) {
     // A room of this name already exists
     ({ host_id, host, members } = roomObject)
-    console.log("request to joinRoom:", roomObject);
-
+    // console.log("request to joinRoom:", roomObject);
   }
 
   if (create_room) {
@@ -351,10 +358,11 @@ function joinRoom(user_id, content) {
       }
 
     } else { // no roomObject yet, with a request to create one
+      host = user_name
       members = new Set()
       rooms[room] = roomObject = {
         host_id: user_id,
-        host: user_name,
+        host,
         members
       }
 
@@ -399,8 +407,8 @@ function joinRoom(user_id, content) {
 
 
 function leaveRoom( sender_id, { room } ) {
-  console.log(`leaveRoom(${sender_id}, ${room})`)
-  console.log("users[sender_id].user_name:", users[sender_id].user_name);
+  // console.log(`leaveRoom(${sender_id}, ${room})`)
+  // console.log("users[sender_id].user_name:", users[sender_id].user_name);
 
   const roomData = rooms[room]
   if (!roomData) {
@@ -415,19 +423,9 @@ function leaveRoom( sender_id, { room } ) {
   //   members: Set(1)
   // }
 
-  const { host_id, members } = roomData
+  const { members } = roomData
 
-  // If the current host leaves, the room will close
-  const roomIsClosing = host_id === sender_id
-
-  if ( roomIsClosing ) {
-    // Send "room_closing" message to all members
-    closeRoom(room, members)
-
-  } else {
-    // Send "user_left_room" message to all members
-    showUserToTheDoor(room, members, sender_id)
-  }
+  showUserOut(room, members, sender_id)
 
   // Respond to the specific user who left (who may be the host
   sendMessageToUser({
@@ -437,50 +435,32 @@ function leaveRoom( sender_id, { room } ) {
     content: { room }
   })
 
-  return true
+  return members.size || true // true if the last member left
 }
 
 
-const closeRoom = (room, members) => {
-  // Warn members that the room is about to close
-  sendMessageToRoom({
-    sender_id: "system",
-    recipient_id: room,
-    subject: "room_closing",
-    content: { room }
-  })
 
-  // Remove the room from the userData for each member
-  ;([...members]).forEach( user_id => {
-    userData = users[user_id]
-    if (userData.room === room) {
-      delete userData.room
-    }
-  })
-
-  members.clear()
-
-  // Delete all trace of the room, no that the members have
-  // been told that the room is empty.
-  delete rooms[room]
-}
-
-
-const showUserToTheDoor = (room, members, sender_id) => {
+const showUserOut = (room, members, sender_id) => {
   members.delete(sender_id)
 
   const userData = users[sender_id]
   const { user_name } = userData
 
-  // Tell other members of the room who has left and who is left
-  sendMessageToRoom({
-    sender_id: "system",
-    recipient_id: room,
-    subject: "user_left_room",
-    content: { sender_id, user_name }
-  })
+  if (members.size) {
+    // Tell other members of the room who has left and who is left
+    sendMessageToRoom({
+      sender_id: "system",
+      recipient_id: room,
+      subject: "user_left_room",
+      content: { sender_id, user_name }
+    })
+  
+    broadcastMembersToRoom(room)
 
-  broadcastMembersToRoom(room)
+  } else {
+    // There's no-one left. Close the room.
+    delete rooms[room]
+  }
 
   if (userData.room === room) {
     delete userData.room

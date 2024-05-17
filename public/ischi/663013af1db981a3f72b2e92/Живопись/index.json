@@ -3,7 +3,7 @@
  "customLayout": true,
  "cropByDefault": true,
  "turnConstraint": true,
- "useSunburst": true,
+ "useSunburst": false,
  "layouts": {
   "Hexagon 66.37": [
    {

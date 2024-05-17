@@ -10,6 +10,7 @@ const {
   // removeMessageListener,
   sendMessageToUser,
   sendMessageToRoom,
+  getUserFromId,
   getUserNameFromId,
   // For Event:
   joinRoom,
@@ -34,7 +35,7 @@ const ischiData = {}
 
 
 const treatGameMessages = (messageData) => {
-  console.log("messageData:", messageData);
+  // console.log("messageData:", messageData);
 
   switch (messageData.subject) {
     // case "send_user_to_room": // called directly from treatMessage
@@ -155,6 +156,8 @@ const createGameData = (folder, delay) => {
   // from cache, including the score from a previous game.
   // Solution: deliberately set gameDate.score to {}
   gameData.score = {}
+  gameData.startTime = 0
+  gameData.endTime = 0
   // QUIRK >>>
 
   const { total } = gameData
@@ -175,7 +178,9 @@ const createGameData = (folder, delay) => {
   gameData.root = `${folder}/images/`
   gameData.delay = delay
   gameData.lastClick = {}
+  gameData.createdTime = +new Date()
   // gameData.foundBy = ""
+  // gameData.Time = 0
 
   return gameData
 }
@@ -237,7 +242,7 @@ const scoreMatch = ({ sender_id, content }) => {
 
     if (href === match) {
       // User sender_id is the first to find the match
-      data = { gameData, sender_id, room, href }
+      const data = { gameData, sender_id, room, href }
       acknowledgeMatch(data)
     }
 
@@ -313,11 +318,19 @@ const requestNextCard = ({ content: room }) => {
 }
 
 
-const showNextCard = (gameData, room, content) => {
-  gameData.index = content
-  gameData.nextIndex = (content === gameData.last)
-   ? "game_over"
-   : (content + 1)
+const showNextCard = (gameData, room, index) => {
+  gameData.index = index // integer or "game_over"
+
+  const content = { index }
+
+  if ((index === gameData.last)) {
+    // No more cards
+    gameData.nextIndex = "game_over"
+    gameData.endTime = content.endTime = +new Date()
+
+  } else {
+    gameData.nextIndex = content + 1
+  }
 
   // <<< Reset entries in gameData that will be sent to any
   // player who joins the game between now and when the next
@@ -342,7 +355,7 @@ addMessageListener([
   // "send_user_to_room". System will treat "send_user_to_room"
   // messages first.
   { recipient_id: GAME, callback: treatGameMessages },
-  { subject: "send_user_to_room", callback: setUserNameAndRoom }
+  { subject: "send_user_to_room", callback: setUserNameAndRoom },
 ])
 
 
@@ -368,11 +381,19 @@ function createEventRoom({ sender_id, content }) {
     name,
     emoji,
     folder,
-    delay=2000
+    delay=2000 // 500
   } = content
 
+  const user = getUserFromId(sender_id)
+  const counter = (user.room_counter || 0) + 1
+  user.room_counter = counter
+
   const player = `${emoji}_${name}`
-  const room = `${organization}/${player}` // same as relative URL
+  const roomHost = `${player}_${counter}`
+  const room = `/${organization}/${roomHost}`
+  // Must match expression used in setParams in Event Routes:
+  //  setRoomHost(`/${organization}/${room_host}`)
+  
   const gameData = createGameData(folder, delay)
   // gameData.last = total - 2
   // gameData.randomIndices = randomIndices
@@ -382,8 +403,6 @@ function createEventRoom({ sender_id, content }) {
   // gameData.delay = delay
   // gameData.lastClick = {}
 
-  const createdTime = +new Date()
-  gameData.createdTime = createdTime
   const roomData = { gameData }
 
   ischiData[room] = roomData
@@ -391,8 +410,7 @@ function createEventRoom({ sender_id, content }) {
   content = {
     folder,
     room,
-    gameData,
-    createdTime
+    gameData
   }
 
   sendMessageToUser({
@@ -462,22 +480,29 @@ function leaveEventGame({ sender_id, content }) {
 
   // Remove the user from the members set and delete
   // the room field from their users data
-  leaveRoom(sender_id, content)
+  const playersLeft = leaveRoom(sender_id, content)
+  // Will be true if the last player left, or an integer number
+  // of players remaining.
+
   // All users will receive a "user_left_room" message
   // from "system". The user will receive a "left_room"
   // message from system.
 
-  // Tell the other players that a player has left
-  sendMessageToRoom({
-    sender_id: GAME,
-    recipient_id: room,
-    subject: "user_left_game",
-    content: { room, sender_id }
-  })
+  if (playersLeft === true) {
+    delete ischiData[room]
+
+  } else {
+    // Tell the other players which player has left
+    sendMessageToRoom({
+      sender_id: GAME,
+      recipient_id: room,
+      subject: "user_left_game",
+      content: { room, sender_id }
+    })
+  }
 
   return true
 }
-
 
 
 function endEventGame({ sender_id, content }) {
